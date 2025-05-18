@@ -168,3 +168,7 @@ pre[class*="language-"] {
 	padding-inline-end: 4px;
 	color: rgb(0, 0, 0);
 }
+
+.language-yarnspinner .token.command-keyword {
+	color: #d19a66;
+}

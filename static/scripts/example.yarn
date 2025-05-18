@@ -22,9 +22,9 @@ flags: concept = ally_hurt, speaker = dahlia, target = casey, target_health < 5,
 how_to_handle_busy: QUEUE
 ---
 Dahlia: Honey, you good over there!? #line:0b4b7c8
-<<set $target = "dahlia">>
-<<set $target_health = $dahlia_health>>
-<<then ask_if_okay casey>>
+// <<set $target = "dahlia">>
+// <<set $target_health = $dahlia_health>>
+// <<then ask_if_okay casey>>
 ===
 
 title: EdwardRespondToAllyHurt
