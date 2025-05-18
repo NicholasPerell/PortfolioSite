@@ -1,7 +1,4 @@
-**ThenSample.yarn**
-
 ```yarnspinner
-
 title: DahliaRespondToAllyHurt
 priority_value: COND
 flags: concept = ally_hurt, speaker = dahlia, !dahliaIsBeingDamaged
@@ -171,4 +168,3 @@ TODO: wow
 "I'm still mad at you for that," {they} {s("say")}.
 -> END
 ```
-
