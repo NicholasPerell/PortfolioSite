@@ -1,3 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+body {
+    --np-copy-text-color: rgb(8, 8, 8);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --np-copy-text-color: rgb(255, 255, 255);
+    }
+}
