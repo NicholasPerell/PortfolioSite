@@ -14,8 +14,8 @@
 <div class="w-full bg-gray-100 p-6 flex justify-center text-black">
     <div class="max-w-screen-lg w-full flex gap-5">
         <div class="flex flex-col gap-2">
-            <p class="text-xl font-semibold"><span class="hover:text-2xl hover:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
-            <p class="text-lg">I'm a game programmer & software engineer who excels in communication, technical research, and planning. I collaborate intentionally with my clients to give users an experience that communicates a sense of care was put behind it. Focus on (behavioral) AI, systems, narrative, UI, & gameplay programming. Well-versed in narrative structure, management, and writing.</p>
+            <p class="text-lg font-semibold"><span class="hover:text-xl hover:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
+            <p>I'm a game programmer & software engineer who excels in communication, technical research, and planning. I collaborate intentionally with my clients to give users an experience that communicates a sense of care was put behind it. Focus on (behavioral) AI, systems, narrative, UI, & gameplay programming. Well-versed in narrative structure, management, and writing.</p>
             <!-- <div class="flex gap-3">
                 <ToolIconImage length={40} tool={'C#'} />
                 <ToolIconImage length={40} tool={'Unity'} />
