@@ -57,8 +57,8 @@
                     <ExperienceCard props={work}/>
                 {/each}
             </div>
-            <a class="w-12 h-12 bg-neutral-500 rounded-md p-1" href="/work">
-                <ChevronDoubleRight cls="w-full h-full stroke-white"/>
+            <a class="w-12 h-12 bg-neutral-300 rounded-md p-1" href="/work">
+                <ChevronDoubleRight cls="w-full h-full stroke-white stroke-2"/>
             </a>
         </div>
     </div>
