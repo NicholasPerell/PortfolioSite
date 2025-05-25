@@ -10,17 +10,17 @@
 	});
 </script>
 
-<div class="group w-96 overflow-hidden" style:transform={`translateX(${$offset}vw)`}>
+<div class="group w-full overflow-hidden" style:transform={`translateX(${$offset}vw)`}>
 	<a href={`/posts/${props.uri}`}>
 		<img
 			src={props.thumbnail}
 			alt={props.thumbnail}
-			class="h-80 w-96 object-cover object-center"
+			class="w-full aspect-[7/5] object-cover object-center"
 			onload={() => {
 				offset.set(0);
 			}}
 		/>
-		<div class="h-42 flex w-96 flex-col gap-0.5 pt-2">
+		<div class="flex w-full flex-col gap-0.5 pt-2">
 			<p class="font-serif text-xl font-bold lining-nums group-hover:underline">{props.title}</p>
 			<p class="mb-1 text-ellipsis font-serif text-lg">
 				{props.blurb}
