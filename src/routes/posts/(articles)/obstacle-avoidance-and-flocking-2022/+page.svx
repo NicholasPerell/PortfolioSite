@@ -1,0 +1,15 @@
+# Obstacle Avoidance & Flocking
+
+*2/17/2022*
+
+<iframe width="799" height="404" src="https://www.youtube.com/embed/zaIwVjvwpX0" title="Object Avoidance &amp; Flocking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Building off of [this previous post](/posts/obstacle-avoidance-2022), I gave the AI flocking a behavior, utilizing separation, alignment, and cohesion forces. All of the flocking forces had their own radius to be affected by AI close by, and all of the steering behaviors had their own weights. This was important for fine tuning, like how the radius for separation is the smallest, but its weight is the strongest. It allowed all of the forces to blend appropriately,
+
+I also created an octree to partition up the space. As long as the AI aren't all in the same radius as one another, this avoids the crude looping through every single AI.
+
+In the video, the green lines are only drawn to the fish that are being considered for cohesion. The green dot is the average position of all of them.
+
+The orange line that is occasionally seen is the alignment force's direction.
+
+The purple wire boxes are the nodes of the octree. You can see they only give the nodes children when need be.

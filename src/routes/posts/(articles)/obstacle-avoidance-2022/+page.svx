@@ -1,0 +1,9 @@
+# Obstacle Avoidance
+
+*2/2/2022*
+
+<iframe width="1173" height="594" src="https://www.youtube.com/embed/iqnOg2LYJc0" title="Advanced AI   Object Avoidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+When no obstacles or other AI are near, the AI steers in a wandering direction by seeking a point on a circle in front of it that changes by small random amounts. However, the AI uses sphere casts to determine if an obstacle is in its way. The AI determines if the obstacle is either a wall or a sphere using the physic layers in Unity, then uses the normal of the face or the center of the object to determine what way to steer away. To avoid issues with corners; the AI uses a sphere cast not just forward facing; but to its left, right, up, and down. To avoid the other AI, it uses separation forces.
+
+Based on the [Reynolds Steering Paper](https://www.red3d.com/cwr/papers/1999/gdc99steer.pdf). Fishie model by Crystal Wong. Rock texture by Matthew Conrad.

@@ -1,0 +1,22 @@
+# Flow Fields
+
+*3/7/2022*
+
+<iframe width="668" height="406" src="https://www.youtube.com/embed/I202RGtrSck" title="Advanced AI Assignment 3 : Flow Fields" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ 
+Had fun with this assignment. Flow fields are great for when they're a mass amount of entities, so I had another excuse to use the Fishie friends I've been using.
+
+For the sake of making it easier to visualize, I flattened the steering to 2D and disabled some of the gizmos, but the flocking and obstacle avoidance behaviors are working in conjunction with this new addition.
+
+The flow field generator has a layer mask for what physics layers are impassable, then has a list of pairings of layer masks and ushorts. The list is for physics layers that should be considered a higher cost to go through.
+
+The AI heads towards the goal cube, and when reached, the goal cube finds a new area to move to. The integration and flow fields are updated (but not the cost field as that hasn't changed).
+
+In an attempt to gamify things, I made it so you can (1) spawn more AI by pressing S, and (2) spawn a temporary ring of fire. To keep things optimized, only the cells in range of the fire preform another physics check to update their costs.
+
+Using the past assignment's level partitioning, I also made the fire able to easily find out how many of the AI are in the fire, and there's a timer you have of the collective time the fishies have spent in the fire. I increased the speed of the AI's steering, too, in an attempt to make it a lot more fickle to catch/camp them.
+
+To explain the gizmos:
+Red cubes are impassable, the passable cells go from green to blue based on integration values, and the white lines are the flow values.
+
+Fishie model by Crystal Wong. Rock texture by Matthew Conrad.

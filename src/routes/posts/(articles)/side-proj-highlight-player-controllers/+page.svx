@@ -1,0 +1,19 @@
+# Side-project highlight: player controllers!
+
+*3/9/2022*
+
+Out of all the Quantic Foundry motivations, I'm most partial towards **challenge**. From platforming to sword combat, my favorite games have satisfying player controllers with interesting states that I have to utilize to its fullest extent to get out on top.
+
+Many of my game projects highlight my ability to code for systems and AI, but I wanted to give myself some exercise in gameplay programming. So, I sat down, took notes on the states in *Momodora: Reverie Under the Moonlight*, and decided to take a crack at recreating some of its states. It's one of my favorite games, and for fun I'll play the game all the way through on Insane difficulty (where you die if you take a single hit of damage).
+
+![](C:\Users\fyidr\Documents\PersonalPortfolio\PortfolioSite\static\imgs\side-proj-highlight-player-controllers\286084527_orig.png)
+
+> The first boss fight from Momodora: Reverie Under the Moonlight. From the game's press kit on IGDB.com
+
+The first thing I went to do was to brush up on the state chapter in Game Programming Patterns, then find resources to learn how to apply the lessons in its chapters to Unity and C#. I learnt a lot about the workings of C# through it, and was able to approach my finite state machine with a lot more ease.
+
+What I was able to make for this was a character with states for its different attacks, movement in the air, ground movement, ducking, rolling, and releasing a charged up magic attack. This was a 4 week project, with the 1st week researching, the 2nd and 3rd coding, and the 4th adding the visuals to make sure the states were communicated to a player.
+
+<iframe width="668" height="406" src="https://www.youtube.com/embed/JEuA3noERYQ" title="Player Controller" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+I used sprites from an old game jam project I worked on with [Alex Choate](https://www.artstation.com/alexchoate) and PairOfDox, [Ritual](https://nicholasperell.itch.io/ritual). Thanks to them for letting me use the sprites here.
