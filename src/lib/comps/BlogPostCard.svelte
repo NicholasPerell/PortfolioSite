@@ -21,7 +21,7 @@
 			}}
 		/>
 		<div class="h-42 flex w-96 flex-col gap-0.5 pt-2">
-			<p class="font-serif text-xl font-bold group-hover:underline">{props.title}</p>
+			<p class="font-serif text-xl font-bold lining-nums group-hover:underline">{props.title}</p>
 			<p class="mb-1 text-ellipsis font-serif text-lg">
 				{props.blurb}
 			</p>

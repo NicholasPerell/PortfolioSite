@@ -7,6 +7,7 @@ export interface WorkCardData {
     role: string;
     hoverText: string;
     tools: string[];
+    uri: string;
     //Add icons for tools the project utilized to entice people
 }
 
@@ -23,7 +24,8 @@ export const works: WorkCardData[] = [
         },
         role: 'Game Programmer (Freelance)',
         hoverText: 'March–August 2023',
-        tools: ['Unity', 'C#', 'Git', 'Firestore', 'Bitbucket']
+        tools: ['Unity', 'C#', 'Git', 'Firestore', 'Bitbucket'],
+        uri: 'addagrams'
     },
     {
         title: 'Artemis',
@@ -37,7 +39,8 @@ export const works: WorkCardData[] = [
         },
         role: 'Open-Source Narrative Tool for Unity',
         hoverText: '',
-        tools: ['Unity', 'C#', 'Git', 'Ink', 'Yarnspinner']
+        tools: ['Unity', 'C#', 'Git', 'Ink', 'Yarnspinner'],
+        uri: 'artemis'
     },
     {
         title: 'Project Nautilus',
@@ -51,7 +54,8 @@ export const works: WorkCardData[] = [
         },
         role: 'Technical & Narrative Director',
         hoverText: 'August 2021–May 2022',
-        tools: ['Unity', 'C#', 'Git', 'Ink', 'Google Cloud TTS']
+        tools: ['Unity', 'C#', 'Git', 'Ink', 'Google Cloud TTS'],
+        uri: 'project-nautilus'
     },
     {
         title: 'Lenora Fedora',
@@ -65,7 +69,8 @@ export const works: WorkCardData[] = [
         },
         role: 'Game AI Programmer',
         hoverText: 'January–May 2021',
-        tools: ['Unity', 'C#', 'Git']
+        tools: ['Unity', 'C#', 'Git'],
+        uri: 'lenora-fedora'
     },
     {
         title: 'Black White Red',
@@ -79,7 +84,8 @@ export const works: WorkCardData[] = [
         },
         role: 'Product Owner & Systems Programmer',
         hoverText: 'June–August 2022',
-        tools: ['Unity', 'C#', 'Git']
+        tools: ['Unity', 'C#', 'Git'],
+        uri: 'bwr'
     },
     {
         title: 'High Tide',
@@ -93,6 +99,7 @@ export const works: WorkCardData[] = [
         },
         role: 'Product Owner & Lead Programmer',
         hoverText: 'May–July 2022',
-        tools: ['Unity', 'C#', 'Git', 'Yarnspinner']
+        tools: ['Unity', 'C#', 'Git', 'Yarnspinner'],
+        uri: 'high-tide'
     }
 ];

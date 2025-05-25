@@ -2,11 +2,13 @@
 	import BlogPostCard from "$lib/comps/BlogPostCard.svelte";
 	import ExperienceCard from "$lib/comps/ExperienceCard.svelte";
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
+	import ChevronDoubleRight from "$lib/icons/ChevronDoubleRight.svelte";
 
     import { posts } from "$lib/services/posts";
     import { works } from "$lib/services/work";
 
     let featurePosts = posts.slice(0, 3);
+    let featureWorks = works.slice(0, 4);
 
 </script>
 <div class="w-full bg-gray-100 p-6 flex justify-center text-black">
@@ -38,9 +40,8 @@
             <div class="h-0.5 w-7 bg-black"></div>
         </div>
         <div class="w-fit flex flex-row flex-nowrap gap-10 ">
-            {#each featurePosts as po}
-            <!-- <p>{JSON.stringify(po)}</p> -->
-            <BlogPostCard props={po}/>
+            {#each featurePosts as post}
+                <BlogPostCard props={post}/>
             {/each}
         </div>
     </div>
@@ -52,15 +53,13 @@
         </p>
         <div class="max-w-screen-lg w-full flex items-center gap-5">
             <div class="grid grid-cols-2 w-full gap-5">
-                {#each works as po}
-            <!-- <p>{JSON.stringify(po)}</p> -->
-            <ExperienceCard props={po}/>
-            {/each}
+                {#each featureWorks as work}
+                    <ExperienceCard props={work}/>
+                {/each}
             </div>
-            <div class="w-10 h-10 bg-blue-500">
-
-            </div>
-            <!-- <img class="aspect-square w-full" src=".\imgs\ahoy-orig.jpg" alt="Nicholas Perell" /> -->
+            <a class="w-12 h-12 bg-neutral-500 rounded-md p-1" href="/work">
+                <ChevronDoubleRight cls="w-full h-full stroke-white"/>
+            </a>
         </div>
     </div>
 </div>

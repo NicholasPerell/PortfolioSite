@@ -65,7 +65,10 @@
 	:global(.article ol) {
 	}
 
-	:global(.article li) {
+	:global(.article ul>li) {
 		@apply ml-5 list-disc;
+	}
+	:global(.article ol>li) {
+		@apply ml-5 list-decimal;
 	}
 </style>

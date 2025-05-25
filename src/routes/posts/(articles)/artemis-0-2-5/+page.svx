@@ -20,4 +20,4 @@ I'm very proud of the work I've done on this tool. Outside of the job search (if
 
 Check out [the repository](https://github.com/nicholas-hoy-champain/Artemis.git) and [user documentation](https://github.com/nicholas-hoy-champain/Artemis/blob/abf82be3b0750d2838887fab7b2f167cbeb8b95b/Artemis_User_Documentation_Version_0.2.5.pdf).
 
-> Post originally from [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7115150020546285568/)
+> Posted originally on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7115150020546285568/)

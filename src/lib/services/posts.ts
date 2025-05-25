@@ -19,12 +19,13 @@ export const posts: PostCardData[] = [
         uri: 'ui-toolkit-frameworks'
     },
     {
-        title: 'Artemis 0.2.5',
+        title: 'Artemis v0.2.5',
         blurb: 'Artemis Version 0.2.5 is out now!',
         thumbnail: './imgs/artermis-v0-2-5.jpg',
         tags: ['Narrative Programming'],
         tools: ['Unity', 'CSharp', 'Ink', 'Yarnspinnner'],
-        uri: 'artemis-0-2-5'
+        uri: 'artemis-0-2-5',
+        written: new Date(2023, 10, 3)
     },
     {
         title: "Missing Those Places",
