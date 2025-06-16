@@ -28,7 +28,7 @@
                 <ToolIconImage length={40} tool={'Yarnspinner'} />
                 <ToolIconImage length={40} tool={'Ink'} />
             </div> -->
-            <!-- <div class="flex flex-nowrap gap-6 w-full justify-center grow items-center">
+            <div class="flex flex-nowrap gap-5 w-full justify-center grow items-center">
                 <a href="/contact"
                     class="text-white text-xl font-semibold bg-[#543219] py-2 px-3"
                 >
@@ -39,7 +39,7 @@
                 >
                     Resume
                 </a>
-            </div> -->
+            </div>
         </div>
         <img class="aspect-square w-full" src=".\imgs\ahoy-orig.jpg" alt="Nicholas Perell" />
     </div>
@@ -63,19 +63,21 @@
         </div>
     </div>
 </div>
-<div class="w-full bg-gray-100 p-6 pb-16 flex justify-center">
+<div class="w-full bg-gray-100 p-6 flex justify-center">
     <div class="max-w-screen-lg w-full flex flex-col gap-8">
         <p class="font-bold text-3xl text-black">
             Experience
         </p>
-        <div class="max-w-screen-lg w-full flex items-center relative">
-            <div class="grid grid-cols-2 w-full gap-6 mx-8">
+        <div class="max-w-screen-lg w-full flex items-center">
+            <div class="flex flex-col w-full gap-2 mx-4">
                 {#each featureWorks as work}
                     <ExperienceCard props={work}/>
                 {/each}
             </div>
-            <a class="absolute -right-8 w-12 h-12 bg-neutral-300 hover:bg-neutral-500 hover:active:bg-neutral-600 rounded-md p-1" href="/work">
-                <ChevronDoubleRight cls="w-full h-full stroke-white stroke-2"/>
+        </div>
+        <div class="w-full flex flex-row justify-center">
+            <a class="text-center text-xl font-bold underline w-fit hover:no-underline text-neutral-700" href="/work">
+                See More →
             </a>
         </div>
     </div>

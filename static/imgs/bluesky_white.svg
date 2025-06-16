@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="810.42578"
+   height="810.42578"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="Bluesky_Logo[1].svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="0.7375"
+     inkscape:cx="300.33898"
+     inkscape:cy="324.0678"
+     inkscape:window-width="1920"
+     inkscape:window-height="1130"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M 405.21289,6.2500001e-7 A 405.21332,405.21289 0 0 0 6.25e-7,405.21289 405.21332,405.21289 0 0 0 405.21289,810.42578 405.21332,405.21289 0 0 0 810.42578,405.21289 405.21332,405.21289 0 0 0 405.21289,6.2500001e-7 Z M 160.07812,179.875 c 25.43273,0.3845 56.86259,16.35671 80.85157,34.36719 h 0.004 c 66.49584,49.92095 138.01923,151.14099 164.2792,205.46093 26.26197,-54.31594 97.78136,-155.54098 164.2793,-205.46093 47.97995,-36.02097 125.7207,-63.89199 125.7207,24.79492 0,17.71198 -10.15533,148.79033 -16.11133,170.07031 -20.70298,73.98393 -96.14407,92.85458 -163.25,81.43359 117.29988,19.96399 147.1402,86.09277 82.69727,152.22071 -122.38988,125.58987 -175.91088,-31.51262 -189.63086,-71.76758 -2.514,-7.37969 -3.68973,-10.83208 -3.70703,-7.89648 -0.0174,-2.9357 -1.19304,0.51678 -3.70703,7.89648 -13.71399,40.25496 -67.23399,197.36145 -189.63086,71.76758 -64.44394,-66.12794 -34.60462,-132.26072 82.69726,-152.22071 -67.10793,11.42099 -142.55002,-7.44976 -163.25,-81.43359 -5.95619,-21.28198 -16.11133,-152.36033 -16.11133,-170.07031 0,-44.34346 19.43642,-59.54661 44.86914,-59.16211 z"
+     style="fill:#ffffff;stroke:none;stroke-width:0.601855;stroke-opacity:1"
+     id="path3" />
+</svg>
