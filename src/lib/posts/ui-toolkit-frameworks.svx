@@ -1,0 +1,10 @@
+---
+title: "A Case for UI Toolkit"
+blurb: "UI Toolkit is close to the web standard. It just needs the frameworks that makes web development useable."
+thumbnail: './imgs/unity-6-0-loading.png'
+tags: ['UI Programming']
+tools: ['Unity', 'TailwindCSS', 'UIToolkit', 'TypeScript', 'CSharp']
+written: 2026-1-1
+---
+
+So, UXML, huh?
