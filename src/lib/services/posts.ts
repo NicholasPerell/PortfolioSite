@@ -6,7 +6,7 @@ export interface PostCardData {
     tools: string[];
     written?: Date;
     lastEdited?: Date;
-    uri: string;
+    slug: string;
 }
 
 export const posts: PostCardData[] = [
@@ -16,7 +16,7 @@ export const posts: PostCardData[] = [
         thumbnail: './imgs/unity-6-0-loading.png',
         tags: ['UI Programming'],
         tools: ['Unity', 'TailwindCSS', 'UIToolkit', 'TypeScript', 'CSharp'],
-        uri: 'ui-toolkit-frameworks'
+        slug: 'ui-toolkit-frameworks'
     },
     {
         title: 'Artemis v0.2.5',
@@ -24,7 +24,7 @@ export const posts: PostCardData[] = [
         thumbnail: './imgs/artermis-v0-2-5.jpg',
         tags: ['Narrative Programming'],
         tools: ['Unity', 'CSharp', 'Ink', 'Yarnspinnner'],
-        uri: 'artemis-0-2-5',
+        slug: 'artemis-0-2-5',
         written: new Date(2023, 10, 3)
     },
     {
@@ -33,6 +33,6 @@ export const posts: PostCardData[] = [
         thumbnail: "./imgs/aaron-home-pizza.jpg",
         tags: ['Creative Writing'],
         tools: [],
-        uri: 'missing-places'
+        slug: 'missing-places'
     },
 ];
