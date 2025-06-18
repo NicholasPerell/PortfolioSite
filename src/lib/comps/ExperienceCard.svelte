@@ -5,7 +5,7 @@
 </script>
 
 <div class="group flex">
-	<div class="relative aspect-[4/3] overflow-hidden w-full">
+	<div class="relative aspect-[4/3] overflow-hidden w-2/3">
 		<a href={props.uri}>
 			<img
 				class="absolute h-full w-full object-cover object-center"
@@ -21,7 +21,7 @@
 		</a>
 	</div>
 	<div
-		class="flex grow aspect-[4/3] w-full py-4"
+		class="flex w-full"
 	>
 		<div class="flex h-full w-full flex-col items-center"
 			class:py-4={!props.logline}
