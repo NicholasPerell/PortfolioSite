@@ -9,7 +9,6 @@ export interface WorkCardData {
     logline?: string;
     tools: string[];
     uri: string;
-    //Add icons for tools the project utilized to entice people
 }
 
 export const works: WorkCardData[] = [
@@ -23,10 +22,9 @@ export const works: WorkCardData[] = [
             src: './imgs/c4_BigFun.gif',
             alt: 'BIG FUN'
         },
-        // logline: `"Chat with Nicholas Perell for an hour and you'll find he's a bright, dedicated, and empathetic team member willing to jump in head first to get the job done. After working with him ... my only regret is that I couldn't keep him for longer." — Noah Rosenfield, CEO of 1Ton Games`,
         logline: `Refactored existing architecture (e.g. event systems, popups, analytics, & puzzle generation)
-and coded new features (e.g. “reveal” power, friend leaderboard, & tutorial system) for the word
-game to launch in May 2023 on both Android and iOS. 5K downloads in 1st month.`,
+            and coded new features (e.g. “reveal” power, friend leaderboard, & tutorial system) for the word
+            game to launch in May 2023 on both Android and iOS. 5K downloads in 1st month.`,
         role: 'Game Programmer (Freelance)',
         hoverText: 'March–August 2023',
         tools: ['Unity', 'C#', 'Git', 'Firestore', 'Bitbucket'],
