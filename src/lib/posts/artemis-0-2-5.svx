@@ -1,6 +1,14 @@
-# Artemis v0.2.5
+---
+title: Artemis v0.2.5
+blurb: Artemis Version 0.2.5 is out now!
+thumbnail: ./imgs/artermis-v0-2-5.jpg
+tags: ['Narrative Programming']
+tools: ['Unity', 'CSharp', 'Ink', 'Yarnspinnner']
+written: 2023-10-3
+layout: post
+---
 
-*Oct 3, 2023*
+> Posted originally on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7115150020546285568/)
 
 **Artemis Version 0.2.5 is out now!**
 
@@ -19,5 +27,3 @@ Artemis is an ongoing narrative programming tool by myself. For games where the 
 I'm very proud of the work I've done on this tool. Outside of the job search (if you're looking for a programmer, btw, I know a guy), my biggest goal right now is make Artemis something useful for other folks, letting them focus on design and writing while Artemis manages a good amount of the backend. I hope folks check it out, and may your aim be true! 🏹
 
 Check out [the repository](https://github.com/nicholas-hoy-champain/Artemis.git) and [user documentation](https://github.com/nicholas-hoy-champain/Artemis/blob/abf82be3b0750d2838887fab7b2f167cbeb8b95b/Artemis_User_Documentation_Version_0.2.5.pdf).
-
-> Posted originally on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7115150020546285568/)

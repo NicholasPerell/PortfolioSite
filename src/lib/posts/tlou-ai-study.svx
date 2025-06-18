@@ -1,6 +1,11 @@
-# Looking Into How the "Last of Us" AI Detected Players and Handled Losing Track of Them
-
-*Dec 16, 2020*
+---
+title: Looking Into How the "Last of Us" AI Detected Players and Handled Losing Track of Them
+blurb: Game AI Final
+thumbnail: https://i3.ytimg.com/vi/Os4JRftexC4/maxresdefault.jpg
+tags: ['Game AI']
+tools: ['Unity', 'CSharp']
+written: 2020-12-16
+---
 
 An important aspect to interesting enemy AI is the way in which enemies are determined to be aware of the player, usually by the use of senses. Just as important is how they react once they no longer have a sense of where the player is.
 
@@ -16,11 +21,11 @@ There are two senses that the demo simulates (and the resources mentioned about 
 
 Sight in many games is achieved by the use of *vision cones*. These work by performing a ray cast from the enemy’s location towards the player and testing if anything gets in the way. Raycasts are expensive, however, so the enemy first detects if the difference between the player position and enemy position is in a set distance and angle difference from the where the enemy faces.
 
-![](/imgs/tlou-ai-study/sight0_orig.png)
+![Sight0](/imgs/tlou-ai-study/sight0_orig.png)
 
 However, one issue with this system is that it’s hard to have a reasonable angle that works at all distances. If a player were to stand right to the side of the enemy, they wouldn’t be seen, but if the angle is too wide, an enemy will spot the player way off to the side from a far distance. In *TLOU*, the developers adopted a principle that “the angle of view for an NPC is inversely proportional to distance” to make a custom vision shape. If you look below, the added vision area allows the enemy to detect and raycast the player to the side of them. Naughty Dog’s vision shape was more complex than what’s in my tech demo (they never disclosed the specifics), but you can see there’s an improvement just by having this extra circle.
 
-![](/imgs/tlou-ai-study/sight1_orig.png)
+![Sight1](/imgs/tlou-ai-study/sight1_orig.png)
 
 ## Hearing
 
@@ -35,11 +40,11 @@ Both the volume level that is “loud enough” and “noticeable noise” are c
 
 Now that we’ve touched on how the enemy can *become aware* of the player, there’s a question of what the enemy should do if they’ve *lost that awareness*—how they should react. This may be a question of how you want your enemies to come off as. The infected in *TLOU* are supposed to feel erratic and inhuman, so Naughty Dog’s approach was to have the enemy look around erratically in a set space for a little before going back to wandering. The technical process is as follows:
 
-![](/imgs/tlou-ai-study/freak0_orig.png)
+![Freak0](/imgs/tlou-ai-study/freak0_orig.png)
 
 1. Spawns in a square grid around the enemy
 
-![](/imgs/tlou-ai-study/freak1_orig.png)
+![Freak1](/imgs/tlou-ai-study/freak1_orig.png)
 
 2. Tiles are marked as “seen” (represented by the black marks) out if they are
 
@@ -48,11 +53,11 @@ Now that we’ve touched on how the enemy can *become aware* of the player, ther
       <br>or
    3. are obscured from view by a wall (checked using raytracing).
 
-![](/imgs/tlou-ai-study/freak2_orig.png)
+![Freak2](/imgs/tlou-ai-study/freak2_orig.png)
 
 3. A new location/animation is picked. In *TLOU*, the end positions/rotations of a number of animations would be calculated, and from there a priority queue would be made taking into account how many “unseen” tiles the end point of the animation would be facing (and if the animation had already been played). I am not an animator, so instead my tech demo chooses a random “unseen” tile for the enemy to travel to.
 
-![](/imgs/tlou-ai-study/freak3_orig.png)
+![Freak3](/imgs/tlou-ai-study/freak3_orig.png)
 
 4. At the end of the animation/traversal, all of the “unseen” tiles in the enemy’s view at that moment are turned into “seen” tiles.
 
@@ -62,15 +67,15 @@ After that point, the infected enter a more neutral state, having lost its stimu
 
 # Exposure and Search Map
 
-![](/imgs/tlou-ai-study/search0_orig.png)
+![Search0](/imgs/tlou-ai-study/search0_orig.png)
 
 When going against human combatants, it would be expected that they would attempt to find the player once they’ve lost awareness. In *TLOU*, this is achieved with the use of an *exposure* and *search map*. An *exposure map* is a tile map over an entire level that updates every second to show what tiles of the level are exposed to the enemies (shown in red).
 
-![](/imgs/tlou-ai-study/search1_orig.png)
+![Search1](/imgs/tlou-ai-study/search1_orig.png)
 
 The *search map* keeps track of what are the most likely spots for the player to be in when the enemies are trying to find them. When the enemies are aware of the player, only a single tile of the map is marked: the player’s location (shown in green).
 
-![](/imgs/tlou-ai-study/search2_orig.png)
+![Search2](/imgs/tlou-ai-study/search2_orig.png)
 
 Once the enemies lose the player, they all enter a *search* behavior, and the *search map* will take from that green point (the last known location of the player) and eventually spread it out across the map—note the gradient of green to white. Each of these tiles have a `distanceFrom` value that states how many tiles removed it is from the original tile (the original’s value being zero).
 
