@@ -1,6 +1,11 @@
-# Obstacle Avoidance
-
-*2/2/2022*
+---
+title: Obstacle Avoidance
+blurb: How sphere casts and a wandering direction make for smart fishies.
+thumbnail: https://i3.ytimg.com/vi/iqnOg2LYJc0/maxresdefault.jpg
+tags: ['Game AI']
+tools: ['Unity', 'CSharp']
+written: 2022-2-2
+---
 
 <iframe width="1173" height="594" src="https://www.youtube.com/embed/iqnOg2LYJc0" title="Advanced AI   Object Avoidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

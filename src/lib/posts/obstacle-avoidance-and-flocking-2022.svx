@@ -1,6 +1,11 @@
-# Obstacle Avoidance & Flocking
-
-*2/17/2022*
+---
+title: Obstacle Avoidance & Flocking
+blurb: Now with octrees!
+thumbnail: https://i3.ytimg.com/vi/zaIwVjvwpX0/maxresdefault.jpg
+tags: ['Game AI']
+tools: ['Unity', 'CSharp']
+written: 2022-2-17
+---
 
 <iframe width="799" height="404" src="https://www.youtube.com/embed/zaIwVjvwpX0" title="Object Avoidance &amp; Flocking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
