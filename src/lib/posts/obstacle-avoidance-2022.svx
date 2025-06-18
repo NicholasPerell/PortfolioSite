@@ -1,6 +1,6 @@
 ---
 title: Obstacle Avoidance
-blurb: Had fun with this assignment.
+blurb: How sphere casts and a wandering direction make for smart fishies.
 thumbnail: https://i3.ytimg.com/vi/iqnOg2LYJc0/maxresdefault.jpg
 tags: ['Game AI']
 tools: ['Unity', 'CSharp']

@@ -1,6 +1,6 @@
 ---
 title: Obstacle Avoidance & Flocking
-blurb: Had fun with this assignment.
+blurb: Now with octrees!
 thumbnail: https://i3.ytimg.com/vi/zaIwVjvwpX0/maxresdefault.jpg
 tags: ['Game AI']
 tools: ['Unity', 'CSharp']
