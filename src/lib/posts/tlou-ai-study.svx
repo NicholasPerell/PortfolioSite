@@ -1,6 +1,6 @@
 ---
 title: Looking Into How the "Last of Us" AI Detected Players and Handled Losing Track of Them
-blurb: Game AI Final
+blurb: Game AI Final.
 thumbnail: https://i3.ytimg.com/vi/Os4JRftexC4/maxresdefault.jpg
 tags: ['Game AI']
 tools: ['Unity', 'CSharp']

@@ -10,7 +10,7 @@
     export let data: PageServerData;
     const {posts} = data;
 
-    let featurePosts = posts.filter(p => p.written).slice(0, 3);
+    let featurePosts = posts.filter(p => p.written).slice(0, 4);
     let featureWorks = works.slice(0, 4);
 
 </script>
@@ -54,6 +54,7 @@
             <p class="font-serif font-bold text-3xl text-black">Posts</p>
             <div class="h-0.5 w-7 bg-black"></div>
         </div>
+        <div class="w-full flex justify-center">
         <div class="w-full flex flex-row flex-nowrap gap-6">
             {#each featurePosts as post}
                 <BlogPostCard 
@@ -66,6 +67,7 @@
                     tools={post.tools}
                 />
             {/each}
+        </div>
         </div>
         <div class="w-full flex flex-row justify-end">
             <a class="text-right text-lg underline w-fit hover:no-underline text-neutral-700" href="/posts">
