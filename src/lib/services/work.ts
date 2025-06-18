@@ -6,6 +6,7 @@ export interface WorkCardData {
     hoverPreview: ImgAttributes;
     role: string;
     hoverText: string;
+    logline?: string;
     tools: string[];
     uri: string;
     //Add icons for tools the project utilized to entice people
@@ -22,6 +23,7 @@ export const works: WorkCardData[] = [
             src: './imgs/c4_BigFun.gif',
             alt: 'BIG FUN'
         },
+        logline: `"Chat with Nicholas Perell for an hour and you'll find he's a bright, dedicated, and empathetic team member willing to jump in head first to get the job done. After working with him ... my only regret is that I couldn't keep him for longer." — Noah Rosenfield, CEO of 1Ton Games`,
         role: 'Game Programmer (Freelance)',
         hoverText: 'March–August 2023',
         tools: ['Unity', 'C#', 'Git', 'Firestore', 'Bitbucket'],
