@@ -1,16 +1,13 @@
 <script lang="ts">
 	import BlogPostCard from "$lib/comps/BlogPostCard.svelte";
 	import ExperienceCard from "$lib/comps/ExperienceCard.svelte";
+	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
+	import ChevronDoubleRight from "$lib/icons/ChevronDoubleRight.svelte";
 
+    import { posts } from "$lib/services/posts";
     import { works } from "$lib/services/work";
 
-
-    import type { PageServerData } from './$types';
-
-    export let data: PageServerData;
-    const {posts} = data;
-
-    let featurePosts = posts.filter(p => p.written).slice(0, 4);
+    let featurePosts = posts.slice(0, 3);
     let featureWorks = works.slice(0, 4);
 
 </script>
@@ -54,20 +51,10 @@
             <p class="font-serif font-bold text-3xl text-black">Posts</p>
             <div class="h-0.5 w-7 bg-black"></div>
         </div>
-        <div class="w-full flex justify-center">
         <div class="w-full flex flex-row flex-nowrap gap-6">
             {#each featurePosts as post}
-                <BlogPostCard 
-                    slug={post.slug} 
-                    title={post.title}
-                    blurb={post.blurb}
-                    written={post.written}
-                    thumbnail={post.thumbnail}
-                    tags={post.tags}
-                    tools={post.tools}
-                />
+                <BlogPostCard props={post}/>
             {/each}
-        </div>
         </div>
         <div class="w-full flex flex-row justify-end">
             <a class="text-right text-lg underline w-fit hover:no-underline text-neutral-700" href="/posts">

@@ -1,9 +1,0 @@
----
-title: "Missing Those Places"
-blurb: "A little essay about identity, singing to Joel, Spidey, & not knowing when you'll be home."
-thumbnail: './imgs/aaron-home-pizza.jpg'
-tags: ['Creative Writing']
-tools: []
-written: 2026-1-1
----
-New York.

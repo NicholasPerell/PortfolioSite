@@ -1,11 +1,6 @@
----
-title: Flow Fields
-blurb: Had fun with this assignment.
-thumbnail: https://i3.ytimg.com/vi/I202RGtrSck/maxresdefault.jpg
-tags: ['Game AI']
-tools: ['Unity', 'CSharp']
-written: 2022-3-7
----
+# Flow Fields
+
+*3/7/2022*
 
 <iframe width="668" height="406" src="https://www.youtube.com/embed/I202RGtrSck" title="Advanced AI Assignment 3 : Flow Fields" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  
