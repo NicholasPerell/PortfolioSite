@@ -2,8 +2,8 @@
 title: "Side-Project Highlight: Player Controllers!"
 blurb: Inspired by Momodora.
 thumbnail: /imgs/side-proj-highlight-player-controllers/286084527_orig.png
-tags: ['Gameplay Programming']
-tools: ['Unity', 'CSharp']
+tags: ['Gameplay Programming', 'Case Study', 'Momodora']
+tools: ['Unity', 'C#']
 written: 2022-3-9
 ---
 

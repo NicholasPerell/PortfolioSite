@@ -2,15 +2,17 @@
 title: Looking Into How the "Last of Us" AI Detected Players and Handled Losing Track of Them
 blurb: Game AI Final.
 thumbnail: https://i3.ytimg.com/vi/Os4JRftexC4/maxresdefault.jpg
-tags: ['Game AI']
-tools: ['Unity', 'CSharp']
+tags: ['Game AI', 'Case Study', 'The Last Of Us']
+tools: ['Unity', 'C#']
 written: 2020-12-16
 ---
 
 An important aspect to interesting enemy AI is the way in which enemies are determined to be aware of the player, usually by the use of senses. Just as important is how they react once they no longer have a sense of where the player is.
 
 Researching into this, I found Mark Botta’s chapter “[Infected AI in *The Last of Us*](http://www.gameaipro.com/GameAIPro2/GameAIPro2_Chapter33_Infected_AI_in_The_Last_of_Us.pdf)” in *Game AI Pro 2*. It included much about how sight and hearing worked in the game, as well as how the infected AI would “freak out” once it lost track of where the player was. Looking more into *The Last of Us*’s approach to the topic, the chapter after about [Human Enemy AI](http://www.gameaipro.com/GameAIPro2/GameAIPro2_Chapter34_Human_Enemy_AI_in_The_Last_of_Us.pdf) by Travis McIntosh discusses how they would search for the player after losing them, with [his GDC talk about the topic](https://www.gdcvault.com/play/1020338/The-Last-of-Us-Human) contributing a lot more technical detail.
+
 ![Screencap of project in the Unity editor](/imgs/tlou-ai-study/pasted-image-0.png)
+
 These four things (sight, hearing, infected freakouts, and searching), are the main focus of the article. I worked in Unity to recreate these parts of *TLOU*’s AI, and this article will break down how each of these aspects work (or at least how I did it). The repository for my tech demo can be found [here](https://github.com/nicholas-hoy-champain/Game-AI-Final), but please note: although this successfully uses and demonstrates most of what this article discusses, none of this code should be ripped from directly for a game. Your time is better spent taking from how I’ve outlined the system to work in this post and applying it to better architecture.
 
 ## AI Awareness
@@ -81,7 +83,7 @@ Once the enemies lose the player, they all enter a *search* behavior, and the *s
 
 An important thing to note is that each time the exposure map is refreshed, any exposed tiles will be cleared off the search map—note the cleared tiles next to the enemy. They still contribute to the spread of the search map, but the AI considers that tile already *searched*. 
 
-<iframe width="668" height="406" src="https://www.youtube.com/embed/Os4JRftexC4" title="Game AI Search Map" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="aspect-[668/406]" src="https://www.youtube.com/embed/Os4JRftexC4" title="Game AI Search Map" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 To perform searching, the enemy AI’s will determine which *unsearched* tile to head towards. In my demo, I used a priority queue in which the priority was determined by the sum of the tile’s `distanceFrom` value and the AI’s distance from the tile itself. After reaching that point, a next point is calculated. The result is that AI walks down a hallway for some time, eventually turning around to check another one the player could have gone down. Over time, the AI will continue to spread out. It transitions from searching the immediate vicinity to eventually sweeping the entire area.
 

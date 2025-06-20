@@ -4,7 +4,7 @@ export enum Tools {
     'C#',
     'C++',
     'Ink',
-    'Yarnspinner',
+    'Yarn Spinner',
     'Google Cloud TTS',
     'Firestore',
     'Bitbucket',

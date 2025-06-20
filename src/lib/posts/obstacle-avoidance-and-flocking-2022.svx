@@ -3,11 +3,11 @@ title: Obstacle Avoidance & Flocking
 blurb: Now with octrees!
 thumbnail: https://i3.ytimg.com/vi/zaIwVjvwpX0/maxresdefault.jpg
 tags: ['Game AI']
-tools: ['Unity', 'CSharp']
+tools: ['Unity', 'C#']
 written: 2022-2-17
 ---
 
-<iframe width="799" height="404" src="https://www.youtube.com/embed/zaIwVjvwpX0" title="Object Avoidance &amp; Flocking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="aspect-[799/404]" src="https://www.youtube.com/embed/zaIwVjvwpX0" title="Object Avoidance &amp; Flocking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Building off of [this previous post](/posts/obstacle-avoidance-2022), I gave the AI flocking a behavior, utilizing separation, alignment, and cohesion forces. All of the flocking forces had their own radius to be affected by AI close by, and all of the steering behaviors had their own weights. This was important for fine tuning, like how the radius for separation is the smallest, but its weight is the strongest. It allowed all of the forces to blend appropriately,
 
