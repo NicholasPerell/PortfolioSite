@@ -25,15 +25,15 @@ layout: post
 
 As it's been over eight months (wow, really?) since I've last posted about the Unity package, I wanted to give everyone here an update.
 
-![Roomie Duel](/imgs/artemis-0-2-5/roomie-duel.jpg)
+![Roomie Duel](/imgs/posts/artemis-0-2-5/roomie-duel.jpg)
 
 Artemis is an ongoing narrative programming tool by myself. For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but instead about deciding what should be delivered.
 
-![Constellation](/imgs/artemis-0-2-5/constellation.jpg)
+![Constellation](/imgs/posts/artemis-0-2-5/constellation.jpg)
 
 I'm very proud of the work I've done on this tool. Outside of the job search (if you're looking for a programmer, btw, I know a guy), my biggest goal right now is make Artemis something useful for other folks, letting them focus on design and writing while Artemis manages a good amount of the backend. I hope folks check it out, and may your aim be true! 🏹
 
-![Rituals Screen Cap](/imgs/artemis-fade-thumbnail.png)
+![Rituals Screen Cap](/imgs/posts/artemis-fade-thumbnail.png)
 
 Check out [the repository](https://github.com/nicholas-hoy-champain/Artemis.git) and [user documentation](https://github.com/nicholas-hoy-champain/Artemis/blob/abf82be3b0750d2838887fab7b2f167cbeb8b95b/Artemis_User_Documentation_Version_0.2.5.pdf).
 

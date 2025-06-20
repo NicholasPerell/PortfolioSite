@@ -1,7 +1,7 @@
 ---
 title: "Side-Project Highlight: Player Controllers!"
 blurb: Inspired by Momodora.
-thumbnail: /imgs/side-proj-highlight-player-controllers/286084527_orig.png
+thumbnail: /imgs/posts/side-proj-highlight-player-controllers/286084527_orig.png
 tags: ['Gameplay Programming', 'Case Study', 'Momodora']
 tools: ['Unity', 'C#']
 written: 2022-3-9
@@ -11,7 +11,7 @@ Out of all the Quantic Foundry motivations, I'm most partial towards **challenge
 
 Many of my game projects highlight my ability to code for systems and AI, but I wanted to give myself some exercise in gameplay programming. So, I sat down, took notes on the states in *Momodora: Reverie Under the Moonlight*, and decided to take a crack at recreating some of its states. It's one of my favorite games, and for fun I'll play the game all the way through on Insane difficulty (where you die if you take a single hit of damage).
 
-![Momodora](/imgs/side-proj-highlight-player-controllers/286084527_orig.png)
+![Momodora](/imgs/posts/side-proj-highlight-player-controllers/286084527_orig.png)
 
 > The first boss fight from Momodora: Reverie Under the Moonlight. From the game's press kit on IGDB.com
 
