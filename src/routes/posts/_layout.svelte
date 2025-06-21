@@ -1,6 +1,5 @@
 <script lang="ts">
-  import ShareArticleRow from './ShareArticleRow.svelte';
-
+  	import ShareArticleRow from './ShareArticleRow.svelte';
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 
 	export let title;
@@ -8,12 +7,13 @@
 	export let tags: string[];
 	export let tools: string[];
 
+	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
 	let writtenArr = written.split('-').map((str) => parseInt(str));
 	let writtenDate = new Date(writtenArr[0], writtenArr[1] - 1, writtenArr[2]);
 	let writtenCopy = writtenDate.toLocaleDateString();
-
-	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
 </script>
+
 <div class="w-full p-6 flex justify-center text-black">
     <div class="max-w-screen-lg w-full grid grid-cols-[3fr,1fr] gap-y-2">
 		<h1 class="text-3xl font-bold lining-nums">{title}</h1>
@@ -29,7 +29,7 @@
 				<div class="flex items-start justify-enter gap-3 flex-wrap">
 					{#each tags as tag}
 						<p
-						class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-gray-100 dark:text-black"
+							class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-gray-100 dark:text-black"
 						>
 							{tag}
 						</p>
@@ -45,8 +45,11 @@
 				</div>
 			{/if}
 		</div>
-		<div class="mt-4 mb-4">
+		<div class="mt-6 mb-4 flex flex-row justify-between">
 			<ShareArticleRow {title} />
+			<a class="text-xl font-serif text-right underline w-fit hover:no-underline text-neutral-700" href="/posts">
+                More Posts
+            </a>
 		</div>
 	</div>
 </div>
@@ -97,15 +100,7 @@
 	}
 
 	:global(.article pre) {
-	}
-
-	:global(.article em) {
-	}
-
-	:global(.article strong) {
-	}
-
-	:global(.article strong > em) {
+		@apply rounded;
 	}
 
 	:global(.article pre > code) {
