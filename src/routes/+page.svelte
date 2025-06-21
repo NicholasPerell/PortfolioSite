@@ -28,7 +28,7 @@
                 <ToolIconImage length={40} tool={'TailwindCSS'} />
                 <ToolIconImage length={40} tool={'C++'} />
                 <ToolIconImage length={40} tool={'InDesign'} />
-                <ToolIconImage length={40} tool={'Yarnspinner'} />
+                <ToolIconImage length={40} tool={'Yarn Spinner'} />
                 <ToolIconImage length={40} tool={'Ink'} />
             </div> -->
             <div class="flex flex-nowrap gap-5 w-full justify-center grow items-center">
@@ -44,7 +44,7 @@
                 </a>
             </div>
         </div>
-        <img class="aspect-square w-full" src=".\imgs\ahoy-orig.jpg" alt="Nicholas Perell" />
+        <img class="aspect-square w-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
     </div>
 </div>
 <div class="w-full p-6 flex justify-center overflow-hidden">

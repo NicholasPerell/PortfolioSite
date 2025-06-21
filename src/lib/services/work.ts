@@ -43,7 +43,7 @@ export const works: WorkCardData[] = [
         role: 'Open-Source Narrative Tool for Unity',
         logline: 'For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but instead about deciding what should be delivered.',
         hoverText: '',
-        tools: ['Unity', 'C#', 'Git', 'Ink', 'Yarnspinner'],
+        tools: ['Unity', 'C#', 'Git', 'Ink', 'Yarn Spinner'],
         uri: 'artemis'
     },
     {
@@ -107,7 +107,7 @@ export const works: WorkCardData[] = [
         role: 'Product Owner & Lead Programmer',
         logline: '2D Metroidvania built in Unity where the player uses magic sand powers solve puzzles and fight enemies exploring the sunken depths of the past in search of a lost family heirloom.',
         hoverText: 'May–July 2022',
-        tools: ['Unity', 'C#', 'Git', 'Yarnspinner'],
+        tools: ['Unity', 'C#', 'Git', 'Yarn Spinner'],
         uri: 'high-tide'
     }
 ];

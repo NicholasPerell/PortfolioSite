@@ -3,11 +3,11 @@ title: Obstacle Avoidance
 blurb: How sphere casts and a wandering direction make for smart fishies.
 thumbnail: https://i3.ytimg.com/vi/iqnOg2LYJc0/maxresdefault.jpg
 tags: ['Game AI']
-tools: ['Unity', 'CSharp']
+tools: ['Unity', 'C#']
 written: 2022-2-2
 ---
 
-<iframe width="1173" height="594" src="https://www.youtube.com/embed/iqnOg2LYJc0" title="Advanced AI   Object Avoidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="aspect-[1173/594]" src="https://www.youtube.com/embed/iqnOg2LYJc0" title="Advanced AI   Object Avoidance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 When no obstacles or other AI are near, the AI steers in a wandering direction by seeking a point on a circle in front of it that changes by small random amounts. However, the AI uses sphere casts to determine if an obstacle is in its way. The AI determines if the obstacle is either a wall or a sphere using the physic layers in Unity, then uses the normal of the face or the center of the object to determine what way to steer away. To avoid issues with corners; the AI uses a sphere cast not just forward facing; but to its left, right, up, and down. To avoid the other AI, it uses separation forces.
 

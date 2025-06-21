@@ -3,11 +3,11 @@ title: Flow Fields
 blurb: Had fun with this assignment.
 thumbnail: https://i3.ytimg.com/vi/I202RGtrSck/maxresdefault.jpg
 tags: ['Game AI']
-tools: ['Unity', 'CSharp']
+tools: ['Unity', 'C#']
 written: 2022-3-7
 ---
 
-<iframe width="668" height="406" src="https://www.youtube.com/embed/I202RGtrSck" title="Advanced AI Assignment 3 : Flow Fields" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="aspect-[668/406]" src="https://www.youtube.com/embed/I202RGtrSck" title="Advanced AI Assignment 3 : Flow Fields" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  
 Had fun with this assignment. Flow fields are great for when they're a mass amount of entities, so I had another excuse to use the Fishie friends I've been using.
 

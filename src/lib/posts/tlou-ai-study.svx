@@ -2,15 +2,17 @@
 title: Looking Into How the "Last of Us" AI Detected Players and Handled Losing Track of Them
 blurb: Game AI Final.
 thumbnail: https://i3.ytimg.com/vi/Os4JRftexC4/maxresdefault.jpg
-tags: ['Game AI']
-tools: ['Unity', 'CSharp']
+tags: ['Game AI', 'Case Study', 'The Last Of Us']
+tools: ['Unity', 'C#']
 written: 2020-12-16
 ---
 
 An important aspect to interesting enemy AI is the way in which enemies are determined to be aware of the player, usually by the use of senses. Just as important is how they react once they no longer have a sense of where the player is.
 
 Researching into this, I found Mark Botta’s chapter “[Infected AI in *The Last of Us*](http://www.gameaipro.com/GameAIPro2/GameAIPro2_Chapter33_Infected_AI_in_The_Last_of_Us.pdf)” in *Game AI Pro 2*. It included much about how sight and hearing worked in the game, as well as how the infected AI would “freak out” once it lost track of where the player was. Looking more into *The Last of Us*’s approach to the topic, the chapter after about [Human Enemy AI](http://www.gameaipro.com/GameAIPro2/GameAIPro2_Chapter34_Human_Enemy_AI_in_The_Last_of_Us.pdf) by Travis McIntosh discusses how they would search for the player after losing them, with [his GDC talk about the topic](https://www.gdcvault.com/play/1020338/The-Last-of-Us-Human) contributing a lot more technical detail.
-![Screencap of project in the Unity editor](/imgs/tlou-ai-study/pasted-image-0.png)
+
+![Screencap of project in the Unity editor](/imgs/posts/tlou-ai-study/pasted-image-0.png)
+
 These four things (sight, hearing, infected freakouts, and searching), are the main focus of the article. I worked in Unity to recreate these parts of *TLOU*’s AI, and this article will break down how each of these aspects work (or at least how I did it). The repository for my tech demo can be found [here](https://github.com/nicholas-hoy-champain/Game-AI-Final), but please note: although this successfully uses and demonstrates most of what this article discusses, none of this code should be ripped from directly for a game. Your time is better spent taking from how I’ve outlined the system to work in this post and applying it to better architecture.
 
 ## AI Awareness
@@ -21,11 +23,11 @@ There are two senses that the demo simulates (and the resources mentioned about 
 
 Sight in many games is achieved by the use of *vision cones*. These work by performing a ray cast from the enemy’s location towards the player and testing if anything gets in the way. Raycasts are expensive, however, so the enemy first detects if the difference between the player position and enemy position is in a set distance and angle difference from the where the enemy faces.
 
-![Sight0](/imgs/tlou-ai-study/sight0_orig.png)
+![Sight0](/imgs/posts/tlou-ai-study/sight0_orig.png)
 
 However, one issue with this system is that it’s hard to have a reasonable angle that works at all distances. If a player were to stand right to the side of the enemy, they wouldn’t be seen, but if the angle is too wide, an enemy will spot the player way off to the side from a far distance. In *TLOU*, the developers adopted a principle that “the angle of view for an NPC is inversely proportional to distance” to make a custom vision shape. If you look below, the added vision area allows the enemy to detect and raycast the player to the side of them. Naughty Dog’s vision shape was more complex than what’s in my tech demo (they never disclosed the specifics), but you can see there’s an improvement just by having this extra circle.
 
-![Sight1](/imgs/tlou-ai-study/sight1_orig.png)
+![Sight1](/imgs/posts/tlou-ai-study/sight1_orig.png)
 
 ## Hearing
 
@@ -40,11 +42,11 @@ Both the volume level that is “loud enough” and “noticeable noise” are c
 
 Now that we’ve touched on how the enemy can *become aware* of the player, there’s a question of what the enemy should do if they’ve *lost that awareness*—how they should react. This may be a question of how you want your enemies to come off as. The infected in *TLOU* are supposed to feel erratic and inhuman, so Naughty Dog’s approach was to have the enemy look around erratically in a set space for a little before going back to wandering. The technical process is as follows:
 
-![Freak0](/imgs/tlou-ai-study/freak0_orig.png)
+![Freak0](/imgs/posts/tlou-ai-study/freak0_orig.png)
 
 1. Spawns in a square grid around the enemy
 
-![Freak1](/imgs/tlou-ai-study/freak1_orig.png)
+![Freak1](/imgs/posts/tlou-ai-study/freak1_orig.png)
 
 2. Tiles are marked as “seen” (represented by the black marks) out if they are
 
@@ -53,11 +55,11 @@ Now that we’ve touched on how the enemy can *become aware* of the player, ther
       <br>or
    3. are obscured from view by a wall (checked using raytracing).
 
-![Freak2](/imgs/tlou-ai-study/freak2_orig.png)
+![Freak2](/imgs/posts/tlou-ai-study/freak2_orig.png)
 
 3. A new location/animation is picked. In *TLOU*, the end positions/rotations of a number of animations would be calculated, and from there a priority queue would be made taking into account how many “unseen” tiles the end point of the animation would be facing (and if the animation had already been played). I am not an animator, so instead my tech demo chooses a random “unseen” tile for the enemy to travel to.
 
-![Freak3](/imgs/tlou-ai-study/freak3_orig.png)
+![Freak3](/imgs/posts/tlou-ai-study/freak3_orig.png)
 
 4. At the end of the animation/traversal, all of the “unseen” tiles in the enemy’s view at that moment are turned into “seen” tiles.
 
@@ -67,21 +69,21 @@ After that point, the infected enter a more neutral state, having lost its stimu
 
 # Exposure and Search Map
 
-![Search0](/imgs/tlou-ai-study/search0_orig.png)
+![Search0](/imgs/posts/tlou-ai-study/search0_orig.png)
 
 When going against human combatants, it would be expected that they would attempt to find the player once they’ve lost awareness. In *TLOU*, this is achieved with the use of an *exposure* and *search map*. An *exposure map* is a tile map over an entire level that updates every second to show what tiles of the level are exposed to the enemies (shown in red).
 
-![Search1](/imgs/tlou-ai-study/search1_orig.png)
+![Search1](/imgs/posts/tlou-ai-study/search1_orig.png)
 
 The *search map* keeps track of what are the most likely spots for the player to be in when the enemies are trying to find them. When the enemies are aware of the player, only a single tile of the map is marked: the player’s location (shown in green).
 
-![Search2](/imgs/tlou-ai-study/search2_orig.png)
+![Search2](/imgs/posts/tlou-ai-study/search2_orig.png)
 
 Once the enemies lose the player, they all enter a *search* behavior, and the *search map* will take from that green point (the last known location of the player) and eventually spread it out across the map—note the gradient of green to white. Each of these tiles have a `distanceFrom` value that states how many tiles removed it is from the original tile (the original’s value being zero).
 
 An important thing to note is that each time the exposure map is refreshed, any exposed tiles will be cleared off the search map—note the cleared tiles next to the enemy. They still contribute to the spread of the search map, but the AI considers that tile already *searched*. 
 
-<iframe width="668" height="406" src="https://www.youtube.com/embed/Os4JRftexC4" title="Game AI Search Map" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="aspect-[668/406]" src="https://www.youtube.com/embed/Os4JRftexC4" title="Game AI Search Map" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 To perform searching, the enemy AI’s will determine which *unsearched* tile to head towards. In my demo, I used a priority queue in which the priority was determined by the sum of the tile’s `distanceFrom` value and the AI’s distance from the tile itself. After reaching that point, a next point is calculated. The result is that AI walks down a hallway for some time, eventually turning around to check another one the player could have gone down. Over time, the AI will continue to spread out. It transitions from searching the immediate vicinity to eventually sweeping the entire area.
 
