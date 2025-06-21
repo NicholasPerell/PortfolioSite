@@ -63,13 +63,13 @@
 </script>
 
 {#if iconDict[tool]}
-<img
-	{src}
-	{alt}
-	style:width={`${length}px`}
-	style:height={`${length}px`}
-	class="object-contain object-center"
-/>
+	<img
+		{src}
+		{alt}
+		style:width={`${length}px`}
+		style:height={`${length}px`}
+		class="object-contain object-center"
+	/>
 {:else}
-<p class="bg-green-100 p-1 rounded">{tool}</p>
+	<p class="bg-green-100 p-1 rounded">{tool}</p>
 {/if}
