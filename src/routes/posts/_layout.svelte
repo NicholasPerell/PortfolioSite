@@ -45,7 +45,9 @@
 				</div>
 			{/if}
 		</div>
-		<ShareArticleRow {title} />
+		<div class="mt-4 mb-4">
+			<ShareArticleRow {title} />
+		</div>
 	</div>
 </div>
 
