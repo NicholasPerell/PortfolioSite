@@ -92,7 +92,7 @@
 	}
 
 	:global(.article blockquote) {
-		@apply border-l-gray-200 border-l-4 p-2 bg-gray-100
+		@apply border-l-gray-200 border-l-4 p-2 bg-gray-100;
 	}
 
 	:global(.article blockquote > p) {
