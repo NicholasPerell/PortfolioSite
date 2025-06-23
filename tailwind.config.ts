@@ -22,6 +22,9 @@ export default {
 					'edge': '#FF9550',
 					'letter': '#323232',
 				}
+			},
+			fontFamily: {
+				'adda': `'Avenir', 'Avenir Next', 'Comfortaa', sans-serif;`
 			}
 		}
 	},
