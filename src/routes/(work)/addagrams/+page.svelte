@@ -39,3 +39,8 @@
         </div>
      </div>
 </div>
+
+<div>
+    "Chat with Nicholas Perell for an hour and you'll find he's a bright, dedicated, and empathetic team member willing to jump in head first to get the job done. After working with him ... my only regret is that I couldn't keep him for longer. You'd be wise to scoop him up."
+   ~ Noah Rosenfield, CEO of 1Ton Games
+</div>
