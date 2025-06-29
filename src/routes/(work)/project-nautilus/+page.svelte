@@ -92,5 +92,28 @@
 		</div>
 
 		<div class="my-1 h-px w-full bg-black"></div>
-	</div>
+
+        <div class="text-lg font-bold">
+            Development of Project Nautilus
+        </div>
+
+        <p>
+            Initially, Project Nautilus was my senior capstone project in fall 2021, with a team of 9 and myself as the game's AI programmer. The game was made in Unity. I researched then implemented Warframe's usage of sparse voxel octrees for our game’s AI to navigate 3D underwater space, and set up customizable subtitle UI for the game to make the narrative more accessible. I also used my experience writing and running the college's literary magazine to both flesh out the world in documentation then network to find a narrative writer to join our team.
+        </p>
+        <p>
+            We pitched for our game to be green lit and continue development in the 2022 spring semester, which you can watch us present below.
+        </p>
+
+        <iframe class="aspect-[928/552] w-full" src="https://www.youtube.com/embed/P5C7UkeZAKM" title="ProjectNautilus 2021 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	
+        <div>We successfully presented, and were green lit to keep developing. In the spring, our team was 24 strong. As technical and narrative director, I worked with 4 programmers, 3 narrative writers, and 1 copy editor for that duration of the project. I kicked off the research for our game's back end, which led to optimizations using multi-scene loading and LODs. I ran writer's rooms involving Design and Narrative to create the story, then programmed and implemented our entire narrative pipeline.</div>
+
+        <div>For some insight into how we at Isthmus Studios approached development with narrative included as its own discipline, check out the microtalk I gave at The Loaf in March 2022.</div>
+    
+        <iframe class="aspect-[928/552] w-full" src="https://www.youtube.com/embed/iQEwtDx63fw" title="Narrative Inspirations for Project Nautilus — Microtalk @ The Loaf, March 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div>The game was finished in May 2022 for the Game Studio's Senior Showcase. I was one of the three people asked to present and discuss the game while it was played. Watch Project Nautilus's part in the Senior Show here!</div>
+
+        <iframe class="aspect-[1024/575] w-full" title="Project Nautilus Game Studio Senior Show Segment" src="https://player.vimeo.com/video/709690636?h=3b5a760967&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=143m19s" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
 </div>
