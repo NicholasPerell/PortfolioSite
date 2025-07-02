@@ -2,6 +2,8 @@
 	import Prism from 'svelte-prism';
 	import 'prismjs/components/prism-csharp.min.js';
 	import HeadTitle from '$lib/comps/HeadTitle.svelte';
+	import ImgListSplit from '$lib/comps/ImgListSplit.svelte';
+	import SectionHeader from '$lib/comps/SectionHeader.svelte';
 </script>
 
 <HeadTitle name="Project Nautilus" />
@@ -39,62 +41,26 @@
 			title="Steam Embed"
 		></iframe>
 
-		<div class="grid w-full grid-cols-2 gap-5 leading-7">
-			<img src="\imgs\pn-first-angler.jpg" alt="Project Nautilus" />
-			<div class="flex w-full flex-col gap-0">
-				<p class="text-lg font-bold">Features</p>
-				<ul class="list-disc pl-5">
-					<li>Work terminal UI, immersing the player in the role of a drone operator.</li>
-					<li>
-						Environmental factors such as light and temperature affect the behavior of enemies and
-						the player’s drone.
-					</li>
-					<li>
-						Complex narrative communicated through in-game systems such as an AI narrator and a mock
-						email inbox.
-					</li>
-					<li>Underwater cave system with multiple layers to explore through.</li>
-				</ul>
-			</div>
-		</div>
-		<div class="grid w-full grid-cols-2 gap-5 leading-7">
-			<div class="flex w-full flex-col gap-0">
-				<p class="text-lg font-bold">Contributions</p>
-				<ul class="list-disc pl-5">
-					<li>
-						Programmed Sparse Voxel Octrees for our game’s enemy AI to navigate 3D underwater space.
-					</li>
-					<li>Designed, programmed, and implemented the game’s narrative pipeline.</li>
-					<li>
-						Created customizable subtitle UI for the game to make the narrative more accessible.
-					</li>
-					<li>
-						Worked with clarity of vision to bridge the gaps for all the team’s disciplines
-						throughout development.
-					</li>
-					<li>
-						Coordinated and stitched together <a
-							href="https://youtu.be/mJUcYHv2lTo"
-							class="text-gray-900 underline hover:text-gray-800 hover:no-underline active:text-gray-700"
-							>the game’s ending sequence</a
-						>, working with teammates across all disciplines.
-					</li>
-					<li>
-						Directed the programmers and outlined the requirements for the game’s backend to support
-						the world’s size.
-					</li>
-					<li>
-						Ran writer’s rooms of writers and designers to structure the narrative arc, did
-						developmental editing, and project managed the writing team.
-					</li>
-				</ul>
-			</div>
-			<img src="\imgs\pn-god-thing.png" alt="Project Nautilus" />
-		</div>
+		<ImgListSplit src="\imgs\pn-first-angler.jpg" alt="Project Nautilus" imgRight={false} header="Features" items={[
+			'Work terminal UI, immersing the player in the role of a drone operator.',
+			'Environmental factors such as light and temperature affect the behavior of enemies and the player’s drone.',
+			'Complex narrative communicated through in-game systems such as an AI narrator and a mock email inbox.',
+			'Underwater cave system with multiple layers to explore through.',
+		]}/>
+
+		<ImgListSplit src="\imgs\pn-god-thing.png" alt="Project Nautilus" imgRight={true} header="Contributions" items={[
+			'Programmed Sparse Voxel Octrees for our game’s enemy AI to navigate 3D underwater space.',
+			'Designed, programmed, and implemented the game’s narrative pipeline.',
+			'Created customizable subtitle UI for the game to make the narrative more accessible.',
+			'Worked with clarity of vision to bridge the gaps for all the team’s disciplines throughout development.',
+			'Coordinated and stitched together <a href="https://youtu.be/mJUcYHv2lTo" class="text-gray-900 underline hover:text-gray-800 hover:no-underline active:text-gray-700">the game’s ending sequence</a>, working with teammates across all disciplines.',
+			'Directed the programmers and outlined the requirements for the game’s backend to support the world’s size.',
+			'Ran writer’s rooms of writers and designers to structure the narrative arc, did developmental editing, and project managed the writing team.',
+		]}/>
 
 		<div class="my-1 h-px w-full bg-black"></div>
 
-        <div class="text-lg font-bold">
+        <div class="text-xl font-bold">
             Development of Project Nautilus
         </div>
 
@@ -118,8 +84,8 @@
         <iframe class="aspect-[1024/575] w-full" title="Project Nautilus Game Studio Senior Show Segment" src="https://player.vimeo.com/video/709690636?h=3b5a760967&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=143m19s" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 		<div class="my-1 h-px w-full bg-black"></div>
-		<div class="text-lg font-bold">Technical Information</div>
-		<div>Sparse Voxel Octree & Pathfinding</div>
+		<SectionHeader header="Technical Information"/>
+		<SectionHeader header="Sparse Voxel Octree & Pathfinding" />
 		<div>SVODataSets.cs</div>
 		<Prism language="csharp" source=
 	{`using System;
@@ -1924,7 +1890,8 @@ public class PathfinderFrameByFrameDrawer : MonoBehaviour
         return result;
     }
 }`}/>
-	<div>Narrative System</div>
+	<SectionHeader header="Narrative System" />
+
 	<div>If you're interested in the narrative programming I did for Project Nautilus, I encourage you check out my page on Artemis! After working on the narrative implementation and systems for the game, I realized more could be done with it to empower writers and designers. I turned it into its own, ongoing narrative programming project.</div>
 
     </div>
