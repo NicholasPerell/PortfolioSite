@@ -16,9 +16,9 @@
 	</div>
 </div>
 
-<div class="flex w-full justify-center bg-gray-100 p-6 text-black">
-	<div class="flex w-full max-w-screen-lg flex-col gap-5">
-		<div class="grid w-full grid-cols-2 gap-5 leading-7">
+<div class="flex w-full justify-center bg-gray-100 p-6 dark:bg-pn-green-5 dark:text-pn-green-1 text-black dark:font-mono">
+	<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
+		<div class="flex flex-col md:grid w-full grid-cols-2 gap-3 md:gap-5 leading-7">
 			<p>
 				<i>Project Nautilus</i> is a first-person, exploration game set in the not-so-distant future.
 				Remote operate a drone to explore this newly discovered cave system. Use tools to break away
