@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Prism from 'svelte-prism';
 	import 'prismjs/components/prism-csharp.min.js';
+	import HeadTitle from '$lib/comps/HeadTitle.svelte';
 </script>
 
-<svelte:head>
-	<title>Project Nautilus</title>
-</svelte:head>
+<HeadTitle name="Project Nautilus" />
 
 <div
 	class="flex justify-center bg-[#02001A] bg-[url(/imgs/pn-trailer-title-backdrop.gif)] bg-cover bg-center bg-no-repeat"
