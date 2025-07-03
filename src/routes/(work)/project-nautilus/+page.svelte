@@ -4,6 +4,7 @@
 	import HeadTitle from '$lib/comps/HeadTitle.svelte';
 	import ImgListSplit from '$lib/comps/ImgListSplit.svelte';
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
+	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
 </script>
 
 <HeadTitle name="Project Nautilus" />
@@ -29,7 +30,15 @@
 				<p>Team Size: 24</p>
 				<p>Scale: Small Game</p>
 				<p>Development Period: August 2021–May 2022</p>
-				<p>Tools Used: Unity, Git, C#, Ink, Google Cloud Text-to-Speech</p>
+				<p>Tools Used: </p>
+                <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
+                    {#each ['Unity', 'Git', 'C#', 'Ink', 'Google Cloud TTS'] as tool}
+                    <div class="w-full flex flex-col items-center justify-start gap-1">  
+                        <ToolIconImage {tool} />  
+                    <p class="text-center leading-normal">{tool}</p>
+                    </div>
+                    {/each}
+                </div>
 			</div>
 		</div>
 
@@ -58,7 +67,7 @@
 			'Ran writer’s rooms of writers and designers to structure the narrative arc, did developmental editing, and project managed the writing team.',
 		]}/>
 
-		<div class="my-1 h-px w-full bg-black"></div>
+		<div class="my-1 h-px w-full bg-black dark:bg-pn-green-1"></div>
 
         <div class="text-xl font-bold">
             Development of Project Nautilus
@@ -83,9 +92,10 @@
 
         <iframe class="aspect-[1024/575] w-full" title="Project Nautilus Game Studio Senior Show Segment" src="https://player.vimeo.com/video/709690636?h=3b5a760967&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=143m19s" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-		<div class="my-1 h-px w-full bg-black"></div>
+		<div class="my-1 h-px w-full bg-black dark:bg-pn-green-1"></div>
 		<SectionHeader header="Technical Information"/>
 		<SectionHeader header="Sparse Voxel Octree & Pathfinding" />
+        <img class="w-full" src="./imgs/pn-fade-thumbnail.png" alt="Project Nautilus SVO Gizmos">
 		<div>SVODataSets.cs</div>
 		<Prism language="csharp" source=
 	{`using System;
