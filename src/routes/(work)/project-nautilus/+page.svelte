@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Prism from 'svelte-prism';
-	import 'prismjs/components/prism-csharp.min.js';
-	import HeadTitle from '$lib/comps/HeadTitle.svelte';
+	import CodeSample from '$lib/comps/CodeSample.svelte';
+    import HeadTitle from '$lib/comps/HeadTitle.svelte';
 	import ImgListSplit from '$lib/comps/ImgListSplit.svelte';
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
@@ -97,7 +96,7 @@
 		<SectionHeader header="Sparse Voxel Octree & Pathfinding" />
         <img class="w-full" src="./imgs/pn-fade-thumbnail.png" alt="Project Nautilus SVO Gizmos">
 		<div>SVODataSets.cs</div>
-		<Prism language="csharp" source=
+		<CodeSample language="csharp" source=
 	{`using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -612,9 +611,9 @@ public struct SVOSystem
 
         return rtn;
     }
-}`}/>
+}`}></CodeSample>
 		<div>SparseVoxelOctree.cs</div>
-		<Prism language="csharp" source=
+		<CodeSample language="csharp" source=
 	{`using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -1204,10 +1203,10 @@ public class SparseVoxelOctree : MonoBehaviour
         layersUsed = dataFile.data.mLayersUsed;
         Debug.Log("Loaded SVO");
     }
-}`}/>
+}`}></CodeSample>
 
 		<div>PathfinderFrameByFrameDrawer.cs</div>
-		<Prism language="csharp" source=
+		<CodeSample language="csharp" source=
 	{`using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -1899,7 +1898,7 @@ public class PathfinderFrameByFrameDrawer : MonoBehaviour
 
         return result;
     }
-}`}/>
+}`}></CodeSample>
 	<SectionHeader header="Narrative System" />
 
 	<div>If you're interested in the narrative programming I did for Project Nautilus, I encourage you check out my page on Artemis! After working on the narrative implementation and systems for the game, I realized more could be done with it to empower writers and designers. I turned it into its own, ongoing narrative programming project.</div>
