@@ -3,6 +3,7 @@
     import HeadTitle from '$lib/comps/HeadTitle.svelte';
 	import ImgListSplit from '$lib/comps/ImgListSplit.svelte';
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
+	import SectionSecondHeader from '$lib/comps/SectionSecondHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
 </script>
 
@@ -68,9 +69,7 @@
 
 		<div class="my-1 h-px w-full bg-black dark:bg-pn-green-1"></div>
 
-        <div class="text-xl font-bold">
-            Development of Project Nautilus
-        </div>
+        <SectionHeader header="Development of Project Nautilus"/>
 
         <p>
             Initially, Project Nautilus was my senior capstone project in fall 2021, with a team of 9 and myself as the game's AI programmer. The game was made in Unity. I researched then implemented Warframe's usage of sparse voxel octrees for our game’s AI to navigate 3D underwater space, and set up customizable subtitle UI for the game to make the narrative more accessible. I also used my experience writing and running the college's literary magazine to both flesh out the world in documentation then network to find a narrative writer to join our team.
@@ -93,7 +92,7 @@
 
 		<div class="my-1 h-px w-full bg-black dark:bg-pn-green-1"></div>
 		<SectionHeader header="Technical Information"/>
-		<SectionHeader header="Sparse Voxel Octree & Pathfinding" />
+		<SectionSecondHeader header="Sparse Voxel Octree & Pathfinding" />
         <img class="w-full" src="./imgs/pn-fade-thumbnail.png" alt="Project Nautilus SVO Gizmos">
 		<div>SVODataSets.cs</div>
 		<CodeSample language="csharp" source=
@@ -1899,7 +1898,7 @@ public class PathfinderFrameByFrameDrawer : MonoBehaviour
         return result;
     }
 }`}></CodeSample>
-	<SectionHeader header="Narrative System" />
+	<SectionSecondHeader header="Narrative System" />
 
 	<div>If you're interested in the narrative programming I did for Project Nautilus, I encourage you check out my page on Artemis! After working on the narrative implementation and systems for the game, I realized more could be done with it to empower writers and designers. I turned it into its own, ongoing narrative programming project.</div>
 
