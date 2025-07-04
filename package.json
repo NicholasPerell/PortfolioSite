@@ -12,6 +12,9 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
 	},
+	"engines": {
+		"node": "20"
+	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
