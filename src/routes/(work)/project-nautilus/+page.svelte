@@ -5,6 +5,7 @@
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
 	import SectionSecondHeader from '$lib/comps/SectionSecondHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
+	import { ALink, Formattable } from '$lib/services/datatypes';
 </script>
 
 <HeadTitle name="Project Nautilus" />
@@ -62,7 +63,7 @@
 			'Designed, programmed, and implemented the game’s narrative pipeline.',
 			'Created customizable subtitle UI for the game to make the narrative more accessible.',
 			'Worked with clarity of vision to bridge the gaps for all the team’s disciplines throughout development.',
-			'Coordinated and stitched together <a href="https://youtu.be/mJUcYHv2lTo" class="text-gray-900 underline hover:text-gray-800 hover:no-underline active:text-gray-700">the game’s ending sequence</a>, working with teammates across all disciplines.',
+			new Formattable('Coordinated and stitched together %s, working with teammates across all disciplines.',[new ALink('the game’s ending sequence', 'dark:text-pn-yellow-1 dark:hover:text-pn-yellow-2 dark:active:text-pn-red text-gray-900 underline hover:text-gray-800 hover:no-underline active:text-gray-700', 'https://youtu.be/mJUcYHv2lTo', '_blank')]),
 			'Directed the programmers and outlined the requirements for the game’s backend to support the world’s size.',
 			'Ran writer’s rooms of writers and designers to structure the narrative arc, did developmental editing, and project managed the writing team.',
 		]}/>

@@ -1,10 +1,11 @@
 <script lang="ts">
-	import type { ImgAttributes } from '$lib/services/datatypes';
+	import { Formattable, type ImgAttributes } from '$lib/services/datatypes';
+	import Formatter from './Formatter.svelte';
 	import SectionSecondHeader from './SectionSecondHeader.svelte';
 
 	interface ImgListSplitData extends ImgAttributes {
 		header: string;
-		items: string[];
+		items: Array<string | Formattable>;
 		imgRight: boolean;
 	}
 
@@ -17,7 +18,11 @@
 		<SectionSecondHeader header={data.header} />
 		<ul class="list-disc pl-8">
 			{#each data.items as item}
-				<li>{item}</li>
+				{#if item instanceof Formattable}
+					<Formatter data={item}/>
+				{:else}
+					<li>{item}</li>
+				{/if}
 			{/each}
 		</ul>
 	</div>
