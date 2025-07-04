@@ -78,6 +78,23 @@
             'Leaderboard for the dailies and see players\' customized avatars.',
 			'Multiple difficulty levels keep pace with your progress.',
 		]}/>
+
+		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="Project Nautilus" imgRight={true} header="Contributions" items={[
+            'Created data structures for the tutorial step\'s affects and requirements to close down on iteration times instead of hardcoding the orders.',
+			'Added the ability to end the game at round 5 and to consider the rounds after to be "Bonus Rounds."',
+            'Remote Config for Ad graceperiods and chances pre and post game.',
+            'Programmed game\'s Reveal power-up.',
+            'Halved file sizes and decreased read time of puzzle data by converting from JSON to binary.',
+            'Created an algorithm to traverse the data set to generate a solvable puzzle when players pick classic mode.',
+            'Designed the messages players shared when posting their results playing the daily or classic puzzles.',
+            'Integrated packages for In-App Purchases.',
+            'Rebuilt the pop up system to use a stack so popups wouldn\'t overlap or break an information flow.',
+            'Deeplinks for possible friendlies leaderboard & friending.',
+            'Upgraded the codebase\'s reporting/requesting. Implemented and taught the client about C#\'s built-in event syntax for reporting. Adapted the service locator and command design patterns for where there was requesting (i.e. pop-ups and analytics).',
+            'Added juice and animation curves to help with the game feel.',
+            'Subbed in to run the game\'s booth for a small part of PlayNYC in August 2023.'
+        ]}/>
+
 		<div class="my-1 h-0.5 w-full bg-black dark:bg-white"></div>
 
         <SectionHeader header="Development of Addagrams"/>
