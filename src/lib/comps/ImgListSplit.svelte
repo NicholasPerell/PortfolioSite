@@ -13,7 +13,11 @@
 </script>
 
 <div class="flex w-full grid-cols-2 flex-col gap-3 leading-7 md:gap-5 lg:grid">
-	<img src={data.src} alt={data.alt} class:lg:order-last={data.imgRight} />
+	{#if data.src.endsWith('.mp4')}
+		<video id={data.alt} class:lg:order-last={data.imgRight} src={data.src} autoplay loop muted playsinline controlslist="nodownload"></video>
+	{:else}
+		<img src={data.src} alt={data.alt} class:lg:order-last={data.imgRight} />
+	{/if}
 	<div class="mb-2 flex w-full flex-col gap-0 lg:mb-0">
 		<SectionSecondHeader header={data.header} />
 		<ul class="list-disc pl-8">

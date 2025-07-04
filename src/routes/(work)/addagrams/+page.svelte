@@ -73,6 +73,11 @@
             </a>
         </div>
 
+		<ImgListSplit src="\vids\Adda-Gameplay-Extended-50.mp4" alt="Addagrams Gameplay Preview" imgRight={false} header="Features" items={[
+			'Procedurally generated puzzle library.',
+            'Leaderboard for the dailies and see players\' customized avatars.',
+			'Multiple difficulty levels keep pace with your progress.',
+		]}/>
 		<div class="my-1 h-0.5 w-full bg-black dark:bg-white"></div>
 
         <SectionHeader header="Development of Addagrams"/>
