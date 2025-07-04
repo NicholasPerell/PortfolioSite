@@ -36,9 +36,17 @@
 			src: './imgs/firestore.svg',
 			alt: 'Firestore'
 		},
+		['Firebase']: {
+			src: './imgs/firebase.svg',
+			alt: 'Firebase'
+		},
 		['Bitbucket']: {
 			src: 'https://dam-cdn.atl.orangelogic.com/AssetLink/np0j8d765ebc4a778s3tdr6bc7avc301/fl_keep_metadata/logo-light_Bitbucket_mark-tile_inverse_RGB.svg',
 			alt: 'Bitbucket'
+		},
+		['Atlassian']: {
+			src: './imgs/atlassian.svg',
+			alt: 'Atlassian'
 		},
 		['TypeScript']: {
 			src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png',
