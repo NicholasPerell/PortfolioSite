@@ -67,10 +67,10 @@
 		</div>
 
         <div class="flex flex-wrap md:flex-nowrap gap-5 md:gap-10 p-5 items-center justify-center w-full">
-            <a href="add" class="m-px flex items-center justify-center md:w-full">
+            <a href="https://play.google.com/store/apps/details?id=com.nosenfield.addagrams" class="m-px flex items-center justify-center md:w-full" target="_blank">
                 <img src="./imgs/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get It On Google Play">
             </a>
-            <a href="add" class="h-[82px] md:h-full flex items-center justify-center md:w-full">
+            <a href="https://apps.apple.com/us/app/addagrams-word-puzzle-games/id1426783573" class="h-[82px] md:h-full flex items-center justify-center md:w-full" target="_blank">
                 <img class="h-full" src="./imgs/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Get It On Google Play">
             </a>
         </div>
