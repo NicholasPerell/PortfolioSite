@@ -1221,9 +1221,7 @@ using UnityEngine;
 
 // script below created by Nicholas Perell, standard copyright and usage applies.
 public struct PathPoint
-
 {
-
     public SVOLink cameFrom;
 
     public SVOLink nodeLink;
@@ -1235,40 +1233,25 @@ public struct PathPoint
     public float fcost { get { return gcost + hcost; } }
 
     public PathPoint(SVOLink link)
-
     {
-
         cameFrom = new SVOLink();
-
         cameFrom.Invalidate();
-
         nodeLink = link;
-
         gcost = 0;
-
         hcost = 0;
-
     }
 
     public PathPoint(SVOLink link, SVOLink previous)
-
     {
-
         cameFrom = previous;
-
         nodeLink = link;
-
         gcost = 0;
-
         hcost = 0;
-
     }
-
 }
 
 [System.Serializable]
 public class PriorityQueue<Value>
-
 {
     [SerializeField]
     private bool mRecencyBias;
@@ -1276,7 +1259,6 @@ public class PriorityQueue<Value>
     [System.Serializable]
     private struct PairingVP
     {
-
         [SerializeField]
         private Value mValue;
 
@@ -1284,53 +1266,34 @@ public class PriorityQueue<Value>
         private float mPriority;
 
         public PairingVP(Value v, float p)
-
         {
-
             this.mValue = v;
-
             this.mPriority = p;
-
         }
 
         public Value GetValue()
-
         {
-
             return mValue;
-
         }
 
         public static bool operator <(PairingVP a, PairingVP b)
-
         {
-
             return a.mPriority < b.mPriority;
-
         }
 
         public static bool operator >(PairingVP a, PairingVP b)
-
         {
-
             return a.mPriority > b.mPriority;
-
         }
 
         public static bool operator ==(PairingVP a, PairingVP b)
-
         {
-
             return a.mPriority == b.mPriority;
-
         }
 
         public static bool operator !=(PairingVP a, PairingVP b)
-
         {
-
             return a.mPriority != b.mPriority;
-
         }
     }
 
@@ -1350,85 +1313,54 @@ public class PriorityQueue<Value>
     }
 
     public bool Enqueue(Value v, float p)
-
     {
-
         PairingVP pair = new PairingVP(v, p);
 
         if (mList.Exists(x => x.GetValue().Equals(v)))
-
         {
-
             PairingVP temp = mList.Find(x => x.GetValue().Equals(v));
 
             if (temp > pair)
-
             {
-
                 mList.Remove(temp);
-
             }
-
             else
-
             {
-
                 return false;
-
             }
-
         }
 
         int index = mList.Count;
 
         while (index > 0 && mList[index - 1] > pair)
-
         {
-
             index--;
-
         }
+
         while (mRecencyBias && index > 0 && mList[index - 1] == pair)
-
         {
-
             index--;
-
         }
 
         mList.Insert(index, pair);
-
         return true;
-
     }
 
     public Value Dequeue()
-
     {
-
         if (mList.Count == 0)
-
             return default(Value);
 
         Value rtn = mList[0].GetValue();
-
         mList.RemoveAt(0);
-
         return rtn;
-
     }
 
     public bool IsEmpty()
-
     {
-
         return mList.Count == 0;
-
     }
-
 }
-
-
 
 public class PathfinderFrameByFrameDrawer : MonoBehaviour
 {
