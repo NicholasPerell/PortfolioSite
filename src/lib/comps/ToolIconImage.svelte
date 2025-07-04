@@ -69,6 +69,7 @@
 		style:width={`${length}px`}
 		style:height={`${length}px`}
 		class="object-contain object-center"
+		class:dark:invert={tool === 'Unity'}
 	/>
 {:else}
 	<p class="bg-green-100 p-1 rounded">{tool}</p>

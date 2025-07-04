@@ -2,7 +2,7 @@
 	import '../app.css';
 	let { children } = $props();
 </script>
-<div class="w-full h-full p-4 flex flex-row flex-nowrap bg-artemis-card items-center justify-center gap-12">
+<div class="w-full h-full p-4 flex flex-row flex-nowrap bg-artemis-card items-center justify-center gap-12 overflow-hidden">
 	<a class="text-xl font-semibold text-white align-middle" href="/work">Experience</a>
 	<a class="text-xl font-semibold text-white align-middle" href="/resume">Resume</a>
 	<a class="flex flex-row flex-nowrap items-center gap-5" href="/">
