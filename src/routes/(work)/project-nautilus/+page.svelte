@@ -22,7 +22,7 @@
 	<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
 		<div class="flex flex-col md:grid w-full grid-cols-2 gap-3 md:gap-5 leading-7">
 			<p>
-				<i>Project Nautilus</i> is a first-person, exploration game set in the not-so-distant future.
+				<span class="italic">Project Nautilus</span> is a first-person, exploration game set in the not-so-distant future.
 				Remote operate a drone to explore this newly discovered cave system. Use tools to break away
 				obstacles and propel your way down to find what lies below these long forgotten depths below.
 			</p>
@@ -63,7 +63,15 @@
 			'Designed, programmed, and implemented the game’s narrative pipeline.',
 			'Created customizable subtitle UI for the game to make the narrative more accessible.',
 			'Worked with clarity of vision to bridge the gaps for all the team’s disciplines throughout development.',
-			new Formattable('Coordinated and stitched together %s, working with teammates across all disciplines.',[new ALink('the game’s ending sequence', 'dark:text-pn-yellow-1 dark:hover:text-pn-yellow-2 dark:active:text-pn-red text-gray-900 underline hover:text-gray-800 hover:no-underline active:text-gray-700', 'https://youtu.be/mJUcYHv2lTo', '_blank')]),
+			new Formattable(
+                'Coordinated and stitched together %s, working with teammates across all disciplines.',
+                [new ALink(
+                    'the game’s ending sequence', 
+                    'dark:text-pn-yellow-1 dark:hover:text-pn-yellow-2 dark:active:text-pn-red text-gray-900 underline hover:text-gray-800 hover:no-underline active:text-gray-700', 
+                    'https://youtu.be/mJUcYHv2lTo', 
+                    '_blank'
+                )]
+            ),
 			'Directed the programmers and outlined the requirements for the game’s backend to support the world’s size.',
 			'Ran writer’s rooms of writers and designers to structure the narrative arc, did developmental editing, and project managed the writing team.',
 		]}/>
@@ -72,12 +80,12 @@
 
         <SectionHeader header="Development of Project Nautilus"/>
 
-        <p>
-            Initially, Project Nautilus was my senior capstone project in fall 2021, with a team of 9 and myself as the game's AI programmer. The game was made in Unity. I researched then implemented Warframe's usage of sparse voxel octrees for our game’s AI to navigate 3D underwater space, and set up customizable subtitle UI for the game to make the narrative more accessible. I also used my experience writing and running the college's literary magazine to both flesh out the world in documentation then network to find a narrative writer to join our team.
-        </p>
-        <p>
+        <div>
+            Initially, <span class="italic">Project Nautilus</span> was my senior capstone project in fall 2021, with a team of 9 and myself as the game's AI programmer. The game was made in Unity. I researched then implemented <span class="italic">Warframe</span>'s usage of sparse voxel octrees for our game’s AI to navigate 3D underwater space, and set up customizable subtitle UI for the game to make the narrative more accessible. I also used my experience writing and running the college's literary magazine to both flesh out the world in documentation then network to find a narrative writer to join our team.
+        </div>
+        <div>
             We pitched for our game to be green lit and continue development in the 2022 spring semester, which you can watch us present below.
-        </p>
+        </div>
 
         <iframe class="aspect-[928/552] w-full" src="https://www.youtube.com/embed/P5C7UkeZAKM" title="ProjectNautilus 2021 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 	
@@ -87,7 +95,7 @@
     
         <iframe class="aspect-[928/552] w-full" src="https://www.youtube.com/embed/iQEwtDx63fw" title="Narrative Inspirations for Project Nautilus — Microtalk @ The Loaf, March 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-        <div>The game was finished in May 2022 for the Game Studio's Senior Showcase. I was one of the three people asked to present and discuss the game while it was played. Watch Project Nautilus's part in the Senior Show here!</div>
+        <div>The game was finished in May 2022 for the Game Studio's Senior Showcase. I was one of the three people asked to present and discuss the game while it was played. Watch <span class="italic">Project Nautilus</span>'s part in the Senior Show here!</div>
 
         <iframe class="aspect-[1024/575] w-full" title="Project Nautilus Game Studio Senior Show Segment" src="https://player.vimeo.com/video/709690636?h=3b5a760967&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479#t=143m19s" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
