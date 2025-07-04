@@ -27,4 +27,4 @@
     });
 </script>
 
-<pre class={`language-${language}`}><code class={`language-${language}`}>{@html output}</code></pre>
+<pre class={`language-${language} max-h-[90vh] overflow-hidden`}><code class={`language-${language}`}>{@html output}</code></pre>
