@@ -1,28 +1,30 @@
 <script lang="ts">
-	// import { onMount } from 'svelte';
-	// import Prism from 'svelte-prism';
-	// import 'prismjs/components/prism-csharp.min.js';
+    import { browser } from '$app/environment';
+	import Prism from 'prismjs';
+	import 'prismjs/components/prism-csharp.min.js';
 
-	let { language, source } = $props();
+    let { language, source } = $props();
 
-	// let ready = false;
+    const escapeHtml = (unsafe: string) => {
+        return unsafe
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    };
 
-	// onMount(async () => {
-	// 	// Dynamically import Prism on the client
-	// 	const Prism = await import('prismjs');
-	// 	window.Prism = Prism;
+    let output = $state(escapeHtml(source));
 
-	// 	// Load languages if needed
-	// 	await import('prismjs/components/prism-javascript');
-
-	// 	ready = true;
-	// });
+    $effect(() => {
+        if (browser && source && language) {
+            try {
+                output = Prism.highlight(source, Prism.languages[language], language);
+            } catch (err) {
+                output = escapeHtml(source);
+            }
+        }
+    });
 </script>
 
-<!-- <Prism {language} {source}></Prism> -->
-
-<pre>
-{language}
-
-<code>{source}</code>
-</pre>
+<pre class={`language-${language}`}><code class={`language-${language}`}>{@html output}</code></pre>

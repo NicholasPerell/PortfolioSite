@@ -12,9 +12,6 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
 	},
-	"engines": {
-		"node": "20"
-	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
@@ -33,6 +30,7 @@
 		"vite": "^5.0.3"
 	},
 	"dependencies": {
-		"svelte-prism": "^1.1.6"
+		"@types/prismjs": "^1.26.5",
+		"prismjs": "^1.30.0"
 	}
 }
