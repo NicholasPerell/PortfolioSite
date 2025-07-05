@@ -74,9 +74,12 @@
         </div>
 
 		<ImgListSplit src="\vids\Adda-Gameplay-Extended-50.mp4" alt="Addagrams Gameplay Preview" imgRight={false} header="Features" items={[
-			'Procedurally generated puzzle library.',
-            'Leaderboard for the dailies and see players\' customized avatars.',
-			'Multiple difficulty levels keep pace with your progress.',
+			'Word tile gameplay that allows the player to solve anagrams with their own vocabulary.',
+            'Procedurally generated puzzle library.',
+            'Powerups to give hints help players spot word pairs.',
+            'Customizable avatar tiles to represent oneself.',
+            'Leaderboard where players can show off their smarts and personality, and pin favorites/friends to the top to compare faster.',
+            'Multiple difficulty levels keep pace with your progress.'
 		]}/>
 
 		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="Project Nautilus" imgRight={true} header="Contributions" items={[
