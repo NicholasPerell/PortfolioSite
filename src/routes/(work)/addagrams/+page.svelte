@@ -129,9 +129,31 @@
         </div>
 
         <div>
-            I was contracted by 1Ton Games to get the game to a releasable state. I refactored existing architecture, and implemented new features
-            in collaboration with Design. <span class="italic">Addagrams</span> launched May 2023 on both Android and iOS, garnering 5K downloads
-            in the 1st month.
+            To not prevent burying the lead: I was contracted by 1Ton Games to get the game ready for release. I refactored existing architecture,
+            and implemented new features in collaboration with Design. <span class="italic">Addagrams</span> launched May 2023 on both Android and
+            iOS, garnering 5K downloads in the 1st month.
+        </div>
+        <div>
+            Noah and I first met at my first
+            <a href="https://jesshaskins.notion.site/NYC-Indie-Games-2b3dacbfc2aa438f96e8fb8ec9f2e6e7" target="_blank" class="underline hover:no-underline">NYC Indie Games Socials</a>
+            back in 2023. We hit it off pretty well and we enjoyed hearing eachothers' little "war stories" and lessons from past endevors in game
+            development. It turned out Noah's latest endevor at the time, <span class="italic">Addagrams</span>, had been cooking for a while. The
+            game loop was figured out, and the demo I and others played at the social was awesome. There was just a lot to the "meta game" on the 
+            phone in terms of menus, popups, game modes, and IAPs that he was still struggling to get over the hill of.
+        </div>
+        <div>
+            We kept in touch and reconviened the once-a-month at the socials to ask how projects were going on both our ends. I guess I was personable
+            enough, because (to my delight and fortune) Noah took a chance on me; contracted me to work with him from the programming end so he
+            could focus more on the design.
+        </div>
+        <div>
+            Our first sizeable undertaking was the game's tutorial. Noah had ideas for how to improve the tutorial significantly, but he wanted an 
+            approach to avoid any sort of almost-copy scripts for tutorial-versions of the gameplay systems.
+        </div>
+        <div class="text-center italic">Mocks ups Noah provided:</div>
+        <div class="flex flex-wrap">
+            <img src="\imgs\adda-tutorial-mockup-p1.png" alt="Tutorial flow annotated mockup part 1."/>
+            <img src="\imgs\adda-tutorial-mockup-p2.png" alt="Tutorial flow annotated mockup part 2."/>
         </div>
     </div>
 </div>
