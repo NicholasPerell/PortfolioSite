@@ -82,7 +82,7 @@
             'Multiple difficulty levels keep pace with players\' progress.'
 		]}/>
 
-		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="Project Nautilus" imgRight={true} header="Contributions" items={[
+		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="Game Summary Image" imgRight={true} header="Contributions" items={[
             'Rearchitected the tutorial system and instructions to close down on iteration time.',
             'Remote Config for Ad graceperiods and chances pre and post game.',
             'Halved file sizes and decreased read time of puzzle data by converting from JSON to binary.',
@@ -163,9 +163,9 @@
             after round five by framing the four afterwards as bonus.
         </div>
         <div class="flex flex-nowrap">
-            <img class="w-full" src="\imgs\addagrams-round-5-offramp.png" alt="Tutorial flow annotated mockup part 2."/>
-            <img class="w-full" src="\imgs\addagrams-new-letter.png" alt="Tutorial flow annotated mockup part 1."/>
-            <img class="w-full" src="\imgs\addagrams-reveal-choose.png" alt="Tutorial flow annotated mockup part 2."/>
+            <img class="w-full" src="\imgs\addagrams-round-5-offramp.png" alt="Puzzle won. Score: 45/45. Perfection! Show Game Summary or Play Bonus Rounds?"/>
+            <img class="w-full" src="\imgs\addagrams-new-letter.png" alt="New Letter: D."/>
+            <img class="w-full" src="\imgs\addagrams-reveal-choose.png" alt="Tap a rack to reveal a word. Tap the button again to cancel."/>
         </div>
         <div>
             I integrated packages and APIs to achieve the "meta game" features. For having a classic mode for the users to play a game of
@@ -174,9 +174,9 @@
             puzzle when players pick classic mode.
         </div>
         <div class="flex flex-nowrap">
-            <img class="w-full" src="\imgs\addagrams-share-text.png" alt="Tutorial flow annotated mockup part 2."/>
-            <img class="w-full" src="\imgs\addagrams-upgrades.png" alt="Tutorial flow annotated mockup part 2."/>
-            <img class="w-full" src="\imgs\addagrams-classics-menu.png" alt="Tutorial flow annotated mockup part 1."/>
+            <img class="w-full" src="\imgs\addagrams-share-text.png" alt="Sharing text."/>
+            <img class="w-full" src="\imgs\addagrams-upgrades.png" alt="Upgrades. No Ads. All Puzzles."/>
+            <img class="w-full" src="\imgs\addagrams-classics-menu.png" alt="Classic Mode. Choose a difficulty."/>
         </div>
         <div>
             After the launch in May, I worked on some further refactoring so Noah could possibly use some of these systems in future mobile games.
