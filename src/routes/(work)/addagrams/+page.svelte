@@ -79,7 +79,7 @@
             'Powerups to give hints help players spot word pairs.',
             'Customizable avatar tiles to represent oneself.',
             'Leaderboard where players can show off their smarts and personality, and pin favorites/friends to the top to compare faster.',
-            'Multiple difficulty levels keep pace with your progress.'
+            'Multiple difficulty levels keep pace with players\' progress.'
 		]}/>
 
 		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="Project Nautilus" imgRight={true} header="Contributions" items={[
