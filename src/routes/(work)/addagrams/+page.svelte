@@ -128,7 +128,7 @@
         </div>
         <div>
             Noah and I first met at my first
-            <a href="https://jesshaskins.notion.site/NYC-Indie-Games-2b3dacbfc2aa438f96e8fb8ec9f2e6e7" target="_blank" class="underline hover:no-underline">NYC Indie Games Social</a>
+            <a href="https://jesshaskins.notion.site/NYC-Indie-Games-2b3dacbfc2aa438f96e8fb8ec9f2e6e7" target="_blank" class="underline hover:no-underline text-stone-900 hover:text-stone-800 active:text-stone-700 dark:text-gray-200 dark:hover:text-gray-300 dark:active:text-gray-400">NYC Indie Games Social</a>
             back in 2023. We hit it off pretty well and we enjoyed hearing eachothers' little "war stories" and lessons from past endevors in game
             development. It turned out Noah's latest endevor at the time, <span class="italic">Addagrams</span>, had been cooking for a while. The
             game loop was figured out, and the demo I and others played at the social was awesome. There was just a lot to the "meta game" on the 
