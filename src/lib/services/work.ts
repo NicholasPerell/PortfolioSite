@@ -27,7 +27,7 @@ export const works: WorkCardData[] = [
             game to launch in May 2023 on both Android and iOS. 5K downloads in 1st month.`,
         role: 'Game Programmer (Freelance)',
         hoverText: 'March–August 2023',
-        tools: ['Unity', 'C#', 'Git', 'Firestore', 'Bitbucket'],
+        tools: ['C#', 'Unity', 'Git', 'Firestore', 'Atlassian'],
         uri: 'addagrams'
     },
     {

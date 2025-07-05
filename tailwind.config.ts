@@ -24,7 +24,18 @@ export default {
 				},
 				'copy': {
 					DEFAULT: 'var(--np-copy-text-color)'
+				},
+				'adda': {
+					'backdrop': '#1895B2',
+					'rack': '#5EB5C9',
+					'rackline': '#A3D5E0',
+					'tile': '#FFC96E',
+					'edge': '#FF9550',
+					'letter': '#323232',
 				}
+			},
+			fontFamily: {
+				'adda': `'Avenir', 'Avenir Next', 'Comfortaa', sans-serif;`
 			}
 		}
 	},

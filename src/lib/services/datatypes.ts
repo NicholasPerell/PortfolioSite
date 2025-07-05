@@ -7,7 +7,9 @@ export enum Tools {
     'Yarn Spinner',
     'Google Cloud TTS',
     'Firestore',
+    'Firebase',
     'Bitbucket',
+    'Atlassian',
     'TypeScript',
 }
 
