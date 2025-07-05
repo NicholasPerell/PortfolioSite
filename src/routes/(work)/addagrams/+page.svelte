@@ -90,7 +90,7 @@
             'Halved file sizes and decreased read time of puzzle data by converting from JSON to binary.',
             'Created an algorithm to traverse the data set to generate a solvable puzzle when players pick classic mode.',
             'Designed the messages players shared when posting their results playing the daily or classic puzzles.',
-            'Integrated packages for In-App Purchases.',
+            'Integrated packages for In-App Purchases and sharing.',
             'Rebuilt the pop up system to use a stack so popups wouldn\'t overlap or break an information flow.',
             'Deeplinks for possible friendlies leaderboard & friending.',
             'Upgraded the codebase\'s reporting/requesting. Implemented and taught the client about C#\'s built-in event syntax for reporting. Adapted the service locator and command design patterns for where there was requesting (i.e. pop-ups and analytics).',
