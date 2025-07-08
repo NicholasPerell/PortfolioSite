@@ -2,6 +2,7 @@
 	import CodeSample from "$lib/comps/CodeSample.svelte";
 import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
 	import SectionHeader from "$lib/comps/SectionHeader.svelte";
+	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 </script>
 
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
@@ -15,6 +16,27 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
 <FullBodyBg>
     <div class="flex justify-center p-6">
     <div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
+<div class="flex flex-col md:grid w-full grid-cols-2 gap-3 md:gap-5 leading-7">
+			<p>
+                For games where the order of who you talk to or what you do is variable, <span class="italic">Artemis</span> accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like <span class="italic">Ink</span> or <span class="italic">Yarn Spinner</span>, but instead about deciding what should be delivered.
+			</p>
+			<div class="flex w-full flex-col gap-0">
+				<p class="italic">Developer</p>
+				<p>Team Size: Primarily Solo</p>
+				<p>Scale: Unity Package/Tool</p>
+				<p>Development Period: Since May 2022</p>
+				<p>Tools Used: </p>
+                <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
+                    {#each ['C#', 'Unity', 'Git', 'Ink', 'Yarn Spinner'] as tool}
+                    <div class="w-full flex flex-col items-center justify-start gap-1">  
+                        <ToolIconImage {tool} />  
+                    <p class="text-center leading-normal">{tool}</p>
+                    </div>
+                    {/each}
+                </div>
+			</div>
+		</div>
+
         <div class="flex flex-col justify-center items-center gap-3 md:gap-5 w-full">
 
 <div id="929394437811801072" style="width: fit; overflow-y: hidden;" class="wcustomhtml"><iframe id="ghcard-nicholas-hoy-champain-1" frameborder="0" scrolling="0" src="//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=NicholasPerell&amp;identity=ghcard-nicholas-hoy-champain-1&amp;repo=Artemis" width="400" height="152"></iframe>
