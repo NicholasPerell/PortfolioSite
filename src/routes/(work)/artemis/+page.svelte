@@ -45,6 +45,10 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
 <p><i>May your aim be true.</i></p>
 </div>
 
+		<div class="my-1 h-0.5 w-full bg-black dark:bg-white"></div>
+
+<SectionHeader header="A more in-depth exploration of Artemis"></SectionHeader>
+
 <p>
     Artemis is an ongoing narrative programming project by myself. After working on the narrative implementation on the game
     <a class="" href="/project-nautilus">Project Nautilus</a>, I wanted to turn the system I made into something more robust that other
@@ -59,10 +63,6 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
     nearly as much written content as Hades; Project Nautilus used a priority stack for there to be recency bias (which Artemis allows
     you to choose between), and Artemis also takes inspiration from Left 4 Dead 2's Dynamic Dialog.
 </p>
-<p>
-    Check out the repository and read the documentation <a class=""  target="_blank" href="https://github.com/nicholas-hoy-champain/artemis">here</a>!
-</p>
-<SectionHeader header="A more in-depth exploration of Artemis"></SectionHeader>
 
 <img src="/imgs/artemis-fade-thumbnail.png" alt="" >
 
@@ -89,6 +89,9 @@ I’m currently working on an example game utilizing version 0.2.5 in the ritual
 <p>
 In the works...
 </p>
+
+		<div class="my-1 h-0.5 w-full bg-black dark:bg-white"></div>
+
 
 <SectionHeader header="Technical information"></SectionHeader>
 
