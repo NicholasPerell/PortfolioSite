@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeSample from "$lib/comps/CodeSample.svelte";
 import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
+	import SectionHeader from "$lib/comps/SectionHeader.svelte";
 </script>
 
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
@@ -29,11 +30,9 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
     As discussed in this microtalk @ The Loaf, Project Nautilus took heavy inspiration from Hades's priority queues and Firewatch's Delilah brain. However, not every game has nearly as much written content as Hades; Project Nautilus used a priority stack for there to be recency bias (which Artemis allows you to choose between), and Artemis also takes inspiration from Left 4 Dead 2's Dynamic Dialog.
 </p>
 <p>
-    Check out the repository and read the documentation here!
+    Check out the repository and read the documentation <a class=""  target="_blank" href="https://github.com/nicholas-hoy-champain/artemis">here</a>!
 </p>
-<p>
-    A more in-depth exploration of Artemis
-</p>
+<SectionHeader header="A more in-depth exploration of Artemis"></SectionHeader>
 
 <img src="/imgs/artemis-fade-thumbnail.png" alt="" >
 
@@ -61,9 +60,7 @@ I’m currently working on an example game utilizing version 0.2.5 in the ritual
 In the works...
 </p>
 
-<p>
-Technical information
-</p>
+<SectionHeader header="Technical information"></SectionHeader>
 
 <p>
 Example custom Fletcher for debug messages.
