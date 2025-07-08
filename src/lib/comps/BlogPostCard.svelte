@@ -31,13 +31,13 @@
 			}}
 		/>
 		<div class="flex w-full flex-col gap-0.5 pt-2">
-			<p class="font-serif text-lg font-bold lining-nums group-hover:underline">{props.title}</p>
-			<p class="mb-1 text-ellipsis font-serif text-base">
+			<p class="font-serif text-lg font-bold lining-nums group-hover:underline text-black dark:text-white">{props.title}</p>
+			<p class="mb-1 text-ellipsis font-serif text-base text-black dark:text-white">
 				{props.blurb}
 			</p>
 			{#if props.tags && props.tags.length}
 				<p
-					class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-gray-100 dark:text-black"
+					class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-neutral-600 dark:text-black"
 				>
 					{props.tags[0]}
 				</p>

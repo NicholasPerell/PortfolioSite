@@ -4,12 +4,11 @@
 	import ImgListSplit from "$lib/comps/ImgListSplit.svelte";
 	import SectionHeader from "$lib/comps/SectionHeader.svelte";
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
-	import { ALink, Formattable } from "$lib/services/datatypes";
 </script>
 
 <HeadTitle name="Addagrams" />
 
-<div class="bg-adda-backdrop w-full flex items-center justify-center ">
+<div class="bg-adda-backdrop w-full flex items-center justify-center">
      <div class="flex items-center justify-center max-w-screen-lg py-40">
         <div class="border-adda-rackline bg-adda-rack h-48 border-y-8 border-r-8 p-2 first:border-l-8 first:rounded-l-2xl last:rounded-r-2xl">
             <AddagramsTile text="A" />
@@ -41,7 +40,7 @@
      </div>
 </div>
 
-<div class="flex w-full justify-center bg-gray-100 p-6 dark:bg-stone-900 dark:text-white text-black">
+<div class="flex w-full justify-center bg-white p-6 dark:bg-black dark:text-white text-black">
 	<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
 		<div class="flex flex-col md:grid w-full grid-cols-2 gap-3 md:gap-5 leading-7">
 			<p>

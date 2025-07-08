@@ -1,6 +1,7 @@
 <script lang="ts">
   	import ShareArticleRow from './ShareArticleRow.svelte';
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
+	import FullBodyBg from '$lib/comps/FullBodyBg.svelte';
 
 	export let title;
 	export let written: string;
@@ -14,45 +15,47 @@
 	let writtenCopy = writtenDate.toLocaleDateString();
 </script>
 
-<div class="w-full p-6 flex justify-center text-black">
-    <div class="max-w-screen-lg w-full grid grid-cols-[3fr,1fr] gap-y-2">
-		<h1 class="text-3xl font-bold lining-nums">{title}</h1>
-		<ShareArticleRow {title} />
-		<p class="text-neutral-700">Written {writtenCopy}</p>
-		<div></div>
-		<div class="article">
-			<slot />
-		</div>
-		<div class="pl-5 pt-3 flex flex-col gap-3">
-			{#if !!tags && tags.length > 0}
-				<p class="font-bold text-xl">Tags</p>
-				<div class="flex items-start justify-enter gap-3 flex-wrap">
-					{#each tags as tag}
-						<p
-							class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-gray-100 dark:text-black"
-						>
-							{tag}
-						</p>
-					{/each}
-				</div>
-			{/if}
-			{#if !!tools && tools.length > 0}
-				<p class="font-bold text-xl">Tools</p>
-				<div class="flex items-center justify-start gap-2 flex-wrap">
-					{#each tools as tool}
-						<ToolIconImage length={40} tool={tool} />
-					{/each}
-				</div>
-			{/if}
-		</div>
-		<div class="mt-6 mb-4 flex flex-row justify-between">
+<FullBodyBg> 
+	<div class="w-full p-6 flex justify-center text-black dark:text-white dark:bg-black">
+		<div class="max-w-screen-lg w-full grid grid-cols-[3fr,1fr] gap-y-2">
+			<h1 class="text-3xl font-bold lining-nums">{title}</h1>
 			<ShareArticleRow {title} />
-			<a class="text-xl font-serif text-right underline w-fit hover:no-underline text-neutral-700" href="/posts">
-                More Posts
-            </a>
+			<p class="text-neutral-700 dark:text-gray-300">Written {writtenCopy}</p>
+			<div></div>
+			<div class="article">
+				<slot />
+			</div>
+			<div class="pl-5 pt-3 flex flex-col gap-3">
+				{#if !!tags && tags.length > 0}
+					<p class="font-bold text-xl">Tags</p>
+					<div class="flex items-start justify-enter gap-3 flex-wrap">
+						{#each tags as tag}
+							<p
+								class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-neutral-600 dark:text-black"
+							>
+								{tag}
+							</p>
+						{/each}
+					</div>
+				{/if}
+				{#if !!tools && tools.length > 0}
+					<p class="font-bold text-xl">Tools</p>
+					<div class="flex items-center justify-start gap-2 flex-wrap">
+						{#each tools as tool}
+							<ToolIconImage length={40} tool={tool} />
+						{/each}
+					</div>
+				{/if}
+			</div>
+			<div class="mt-6 mb-4 flex flex-row justify-between">
+				<ShareArticleRow {title} />
+				<a class="text-xl font-serif text-right underline w-fit hover:no-underline text-neutral-700 dark:text-gray-300" href="/posts">
+					More Posts
+				</a>
+			</div>
 		</div>
 	</div>
-</div>
+</FullBodyBg>
 
 <style>
 	.article {
@@ -92,7 +95,7 @@
 	}
 
 	:global(.article blockquote) {
-		@apply border-l-gray-200 border-l-4 p-2 bg-gray-100;
+		@apply border-l-gray-200 border-l-4 p-2 bg-gray-100 dark:bg-neutral-900 dark:border-l-neutral-800;
 	}
 
 	:global(.article blockquote > p) {
