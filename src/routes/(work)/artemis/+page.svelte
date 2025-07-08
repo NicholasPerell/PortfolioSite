@@ -24,10 +24,18 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
 </div>
 
 <p>
-    Artemis is an ongoing narrative programming project by myself. After working on the narrative implementation on the game Project Nautilus, I wanted to turn the system I made into something more robust that other developers could use. For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but instead about deciding what should be delivered.
+    Artemis is an ongoing narrative programming project by myself. After working on the narrative implementation on the game
+    <a class="" href="/project-nautilus">Project Nautilus</a>, I wanted to turn the system I made into something more robust that other
+    developers could use. For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world 
+    state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but
+    instead about deciding what should be delivered.
 </p>
 <p>
-    As discussed in this microtalk @ The Loaf, Project Nautilus took heavy inspiration from Hades's priority queues and Firewatch's Delilah brain. However, not every game has nearly as much written content as Hades; Project Nautilus used a priority stack for there to be recency bias (which Artemis allows you to choose between), and Artemis also takes inspiration from Left 4 Dead 2's Dynamic Dialog.
+    As discussed in
+    <a class="" href="vhttps://www.youtube.com/watch?v=iQEwtDx63fw" target="_blank">this microtalk @ The Loaf</a>,
+    Project Nautilus took heavy inspiration from Hades's priority queues and Firewatch's Delilah brain. However, not every game has
+    nearly as much written content as Hades; Project Nautilus used a priority stack for there to be recency bias (which Artemis allows
+    you to choose between), and Artemis also takes inspiration from Left 4 Dead 2's Dynamic Dialog.
 </p>
 <p>
     Check out the repository and read the documentation <a class=""  target="_blank" href="https://github.com/nicholas-hoy-champain/artemis">here</a>!
