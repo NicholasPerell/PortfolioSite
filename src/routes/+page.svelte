@@ -30,6 +30,12 @@
                 >
                     Resume
                 </a>
+                <a href="https://github.com/NicholasPerell"
+                    class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
             </div>
         </div>
         <img class="aspect-square w-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
@@ -96,6 +102,12 @@
                 class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
             >
                 Resume
+            </a>
+            <a href="https://github.com/NicholasPerell"
+                class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
+                target="_blank"
+            >
+                GitHub
             </a>
         </div>
     </div>
