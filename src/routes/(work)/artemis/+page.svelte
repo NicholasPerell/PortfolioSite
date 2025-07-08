@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeSample from "$lib/comps/CodeSample.svelte";
 import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
+	import ImgListSplit from "$lib/comps/ImgListSplit.svelte";
 	import SectionHeader from "$lib/comps/SectionHeader.svelte";
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 </script>
@@ -41,8 +42,23 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
                 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script></div>
                 <p><i>May your aim be true.</i></p>
             </div>
+            <ImgListSplit src="/imgs/artemis-fade-thumbnail.png" alt="Rituals prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it." imgRight={false} header="Features" items={[
+                'Nine unique scriptable objects responsible for flags, narrative logic, and asset creation.',
+                'Goddess singleton to track internal symbols and IDs.',
+                'User documentation.'
+            ]}/>
+            <ImgListSplit src="\imgs\artemis-constellation-editor.png" alt="Game Summary Image" imgRight={true} header="Contributions" items={[
+                'Implemented code samples, enumerator script compilation, saving/loading capabilities, custom editors',
+                'Saving & Loading using the Constellation asset',
+                'Code samples for getting Artemis to work in tandem with the popular narrative tools, Ink and Yarn Spinner!',
+                'Wrote extensive user documentation that now also dives into and explains the use of Artemis in the code samples.',
+                'Designed then laid out custom editors for each of the assets.',
+                'Template classes for Fletcher and Bow to be more versatile and give developers freedom to choose what the narrative data being delivered is and how.',
+                'Programmed enum compiler for internal symbols & ids in place of strings.',
+                'Added an self-indenting debugging system for Archer decision making.'
+            ]}/>
             <div class="my-1 h-0.5 w-full bg-black dark:bg-white"></div>
-            <SectionHeader header="A more in-depth exploration of Artemis"></SectionHeader>
+            <SectionHeader header="Development of Artemis"></SectionHeader>
             <p>
                 Artemis is an ongoing narrative programming project by myself. After working on the narrative implementation on the game
                 <a class="" href="/project-nautilus">Project Nautilus</a>, I wanted to turn the system I made into something more robust that other
@@ -57,7 +73,6 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
                 nearly as much written content as Hades; Project Nautilus used a priority stack for there to be recency bias (which Artemis allows
                 you to choose between), and Artemis also takes inspiration from Left 4 Dead 2's Dynamic Dialog.
             </p>
-            <img src="/imgs/artemis-fade-thumbnail.png" alt="" >
             <p>On the main branch of the public repo is version 0.2.5. The way it all interconnects is as follows:</p>
             <p>
                 The logic of Artemis is handled by Archers, who decide what "arrow" (narrative data point) to deliver to her bow. Archers will send items with a higher priority closer to the front. It also allows the option for “recency bias,” where instead of putting the newest X-priority item behind the X-priority items that are already there, it can put that item in front. It can also pick the equal priority arrows at random. Depending on the genre of a game, that can be an important distinction, and it can be changed at will by the narrative designers in the custom editors. The priority value of an arrow can also be determined by other means than a flat number, like the number of flags it needs to be met.
