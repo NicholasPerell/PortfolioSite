@@ -9,7 +9,7 @@
 
 <div
 	bind:this={pageBody}
-	class="flex h-full w-full shrink-0 grow flex-col bg-white dark:bg-black"
+	class="flex h-full w-full shrink-0 grow flex-col bg-white dark:bg-black text-black dark:text-white"
 	style:min-height={`${pageBodyMinHeight}px`}
 >
 	{@render children?.()}
