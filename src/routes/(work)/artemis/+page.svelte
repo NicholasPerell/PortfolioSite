@@ -1,8 +1,7 @@
 <script lang="ts">
-	import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
+	import CodeSample from "$lib/comps/CodeSample.svelte";
+import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
 </script>
-
-<FullBodyBg>
 
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
     <div class="max-w-screen-lg w-full p-16 items-center flex flex-col gap-5">
@@ -10,6 +9,11 @@
         <p class="text-white font-bold text-2xl">An Ongoing Narrative Programming Project</p>
     </div>
 </div>
+
+
+<FullBodyBg>
+    <div class="flex justify-center p-6">
+    <div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
 
 <div id="929394437811801072" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe id="ghcard-nicholas-hoy-champain-1" frameborder="0" scrolling="0" src="//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=NicholasPerell&amp;identity=ghcard-nicholas-hoy-champain-1&amp;repo=Artemis" width="400" height="152"></iframe>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script></div>
@@ -20,14 +24,11 @@
     Artemis is an ongoing narrative programming project by myself. After working on the narrative implementation on the game Project Nautilus, I wanted to turn the system I made into something more robust that other developers could use. For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but instead about deciding what should be delivered.
 </p>
 <p>
-
     As discussed in this microtalk @ The Loaf, Project Nautilus took heavy inspiration from Hades's priority queues and Firewatch's Delilah brain. However, not every game has nearly as much written content as Hades; Project Nautilus used a priority stack for there to be recency bias (which Artemis allows you to choose between), and Artemis also takes inspiration from Left 4 Dead 2's Dynamic Dialog.
 </p>
 <p>
-
     Check out the repository and read the documentation here!
 </p>
-
 <p>
     A more in-depth exploration of Artemis
 </p>
@@ -77,8 +78,8 @@ The sorted dictionaries in version 0.2 mean we can simply skip anything that's a
 <p>
 Linear Search
 </p>
-<code>
-<!-- public bool LinearSearch(K key, ref int startAt, out V foundValue)
+<CodeSample language="csharp" source={
+`public bool LinearSearch(K key, ref int startAt, out V foundValue)
 {
   foundValue = default(V);
   bool result = false;
@@ -116,8 +117,8 @@ Linear Search
   }
 
   return result;
-} -->
-</code>
+}`
+}></CodeSample>
 
 <p>
 The reason why some of the structures used (i.e. tuple, sorted list, priority queue, and sorted dictionary) are custom-written is for two reasons:
@@ -141,7 +142,9 @@ The reason why some of the structures used (i.e. tuple, sorted list, priority qu
 <p>
     Criterion Constructor
 </p>
-    <!--public Criterion(FlagID _stateChecked, CriterionComparisonType _comparisonType, float a, float b = 0)
+
+<CodeSample language="csharp" source={
+`public Criterion(FlagID _stateChecked, CriterionComparisonType _comparisonType, float a, float b = 0)
 {
     flagIDChecked = _stateChecked;
     comparisonType = _comparisonType;
@@ -188,7 +191,8 @@ The reason why some of the structures used (i.e. tuple, sorted list, priority qu
             rhs = b + float.Epsilon;
             break;
     }
-}-->
+}`
+}></CodeSample>
 
 <p>
 The flag's IDs are a recompiling enum instead of strings! Internal symbols will save space and process much smoother, and other parts of the system are planned to use internal symbols through similar means. You can see this in the Goddess, which tracks what flags are being used or not. Flags that are created/deleted are added/removed from the newly written FlagID.cs file, and then that enum script is recompiled.
@@ -198,7 +202,8 @@ The flag's IDs are a recompiling enum instead of strings! Internal symbols will 
 Internal String Compiler
 </p>
 
-<!--using System;
+<CodeSample language="csharp" source={
+`using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -483,6 +488,8 @@ namespace Perell.Artemis
             return enumType;
         }
     }
-}-->
-
+}`
+}></CodeSample>
+    </div>
+    </div>
 </FullBodyBg>
