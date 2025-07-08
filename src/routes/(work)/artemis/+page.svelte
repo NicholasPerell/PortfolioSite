@@ -14,11 +14,13 @@ import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
 <FullBodyBg>
     <div class="flex justify-center p-6">
     <div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
+        <div class="flex flex-col justify-center items-center gap-3 md:gap-5 w-full">
 
-<div id="929394437811801072" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe id="ghcard-nicholas-hoy-champain-1" frameborder="0" scrolling="0" src="//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=NicholasPerell&amp;identity=ghcard-nicholas-hoy-champain-1&amp;repo=Artemis" width="400" height="152"></iframe>
+<div id="929394437811801072" style="width: fit; overflow-y: hidden;" class="wcustomhtml"><iframe id="ghcard-nicholas-hoy-champain-1" frameborder="0" scrolling="0" src="//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=NicholasPerell&amp;identity=ghcard-nicholas-hoy-champain-1&amp;repo=Artemis" width="400" height="152"></iframe>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script></div>
 
 <p><i>May your aim be true.</i></p>
+</div>
 
 <p>
     Artemis is an ongoing narrative programming project by myself. After working on the narrative implementation on the game Project Nautilus, I wanted to turn the system I made into something more robust that other developers could use. For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but instead about deciding what should be delivered.
