@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="w-full flex flex-row justify-center">
-            <a class="text-center text-xl font-bold underline w-fit hover:no-underline text-neutral-700 dark:text-gray-300" href="/work">
+            <a class="text-center text-xl underline w-fit hover:no-underline text-neutral-700 dark:text-gray-300" href="/work">
                 See More →
             </a>
         </div>
