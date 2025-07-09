@@ -25,7 +25,7 @@ import ToolIconImage from './ToolIconImage.svelte';
 			{props.hoverText ? props.hoverText : '_'}
 		</p>
 	</div>
-	<div class=" flex w-full items-center justify-center gap-3">
+	<div class="hidden md:flex w-full items-center justify-center gap-3">
 		{#each props.tools as tool}
 			<ToolIconImage length={40} {tool} />
 		{/each}

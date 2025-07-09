@@ -29,7 +29,7 @@
 
 <FullBodyBg>
 	<div class="flex justify-center p-6">
-		<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
+		<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-4">
 			<div class="font-bold text-4xl">Experience</div>
 			<div class="flex gap-1">
 				<div class="flex w-full flex-row flex-wrap gap-2">
@@ -65,7 +65,6 @@
 					{/each}
 				</select>
 			</div>
-
 			{#each worksShown as work, i}
 				{#if i > 0}
 					<div class="bg-black dark:bg-white w-full h-0.5"></div>
