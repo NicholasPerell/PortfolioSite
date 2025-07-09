@@ -16,7 +16,7 @@
 </script>
 
 <FullBodyBg> 
-	<div class="w-full p-6 flex justify-center text-black dark:text-white dark:bg-black">
+	<div class="w-full p-6 flex justify-center">
 		<div class="max-w-screen-lg w-full grid grid-cols-[3fr,1fr] gap-y-2">
 			<h1 class="text-3xl font-bold lining-nums">{title}</h1>
 			<ShareArticleRow {title} />
