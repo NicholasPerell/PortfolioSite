@@ -11,7 +11,7 @@
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
     <div class="max-w-screen-lg w-full p-16 items-center flex flex-col gap-5">
         <img src="\imgs\artemis-title.png" alt="Archer Icon and Moon Icon on the left and right of the name Artemis">
-        <p class="text-white font-bold text-2xl">An Ongoing Narrative Programming Project</p>
+        <p class="text-white font-bold text-2xl">A Narrative Tool for Unity</p>
     </div>
 </div>
 
@@ -77,7 +77,7 @@
                 you to choose between), and <span class="italic">Artemis</span> also takes inspiration from <span class="italic">Left 4 Dead 2</span>'s Dynamic Dialog.
             </p>
             <p>
-                On the main branch of the public repo is version 0.2.5. The way it all interconnects is as follows:
+                On the main branch of the <LinkSpan href="https://github.com/nicholas-hoy-champain/Artemis">public repo</LinkSpan> is version 0.2.5. The way it all interconnects is as follows:
             </p>
             <p class="italic p-4 opacity-80">
                 &OpenCurlyDoubleQuote;The <span class="italic">fletcher</span> makes and stockpiles the <span class="italic">arrows</span>, and the <span class="italic">archer</span> decides which arrow to shoot. The archer can get more arrows from (or throw away some in) a <span class="italic">bundle</span>, and she uses her <span class="italic">bow</span> to fire them.&CloseCurlyDoubleQuote;
