@@ -58,7 +58,7 @@
             <div class="h-0.5 w-7 bg-black dark:bg-white"></div>
         </div>
         <div class="w-full flex justify-center">
-            <div class="w-full flex flex-row flex-nowrap gap-3 lg:gap-6">
+            <div class="w-full flex flex-col sm:flex-row flex-nowrap gap-6 sm:gap-3 lg:gap-6">
                 {#each featurePosts as post, i}
                     <div 
                         class="w-full"
