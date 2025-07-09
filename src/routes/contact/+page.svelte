@@ -4,7 +4,7 @@
 </script>
 
 <img 
-	class="w-full object-cover aspect-[3/1]"
+	class="w-full object-cover aspect-[7/1]"
 	src="/imgs/nick/green-light-2021.jpg"
 	alt="Nick in businesswear with his teammates from the first half of development on Project Nautilus."
 	/>
