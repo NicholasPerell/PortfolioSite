@@ -1,4 +1,4 @@
-import type { ImgAttributes } from "./datatypes";
+import { type Tools, type ImgAttributes } from "./datatypes";
 
 export interface WorkCardData {
     title: string;
@@ -7,7 +7,7 @@ export interface WorkCardData {
     role: string;
     hoverText: string;
     logline?: string;
-    tools: string[];
+    tools: Tools[];
     uri: string;
 }
 

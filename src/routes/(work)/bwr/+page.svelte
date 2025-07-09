@@ -1,12 +1,14 @@
 <script lang="ts">
 	import CodeSample from '$lib/comps/CodeSample.svelte';
-	import LinkSpan from '$lib/comps/LinkSpan.svelte';
 	import FullBodyBg from '$lib/comps/FullBodyBg.svelte';
 	import ImgListSplit from '$lib/comps/ImgListSplit.svelte';
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
 	import SectionSecondHeader from '$lib/comps/SectionSecondHeader.svelte';
 	import HeadTitle from '$lib/comps/HeadTitle.svelte';
+	import { type Tools } from '$lib/services/datatypes';
+	
+	const tools: Tools[] = ['C#', 'Unity', 'Git'];
 </script>
 
 <HeadTitle name="Black White Red" />
@@ -36,9 +38,9 @@
 					<p>Development Period: June 2022–August 2022</p>
 					<p>Tools Used:</p>
 					<div class="flex w-full flex-row gap-0.5 pt-3 md:pt-5">
-						{#each ['C#', 'Unity', 'Git'] as tool}
+						{#each tools as tool}
 							<div class="flex w-full flex-col items-center justify-start gap-1">
-								<ToolIconImage {tool} />
+								<ToolIconImage length={40} {tool} />
 								<p class="text-center leading-normal">{tool}</p>
 							</div>
 						{/each}
@@ -46,23 +48,16 @@
 				</div>
 			</div>
 
-			<div
-				id="727349919224428840"
-				align="center"
-				style="width: 100%; overflow-y: hidden;"
-				class="wcustomhtml"
-			>
-				<iframe
-					title="BWR Itch.io"
-					src="https://itch.io/embed/1636972?bg_color=222222&amp;fg_color=eeeeee&amp;link_color=c00f0f&amp;border_color=363636"
-					width="100%"
-					height="167"
-					frameborder="0"
-					><a href="https://larnio.itch.io/blackwhitered"
-						>Black White Red by Larnio, NicholasPerell</a
-					></iframe
-				>
-			</div>
+            <iframe
+                title="BWR Itch.io"
+                src="https://itch.io/embed/1636972?bg_color=222222&amp;fg_color=eeeeee&amp;link_color=c00f0f&amp;border_color=363636"
+                width="100%"
+                height="167"
+                frameborder="0"
+                ><a href="https://larnio.itch.io/blackwhitered"
+                    >Black White Red by Larnio, NicholasPerell</a
+                ></iframe
+            >
 
 			<ImgListSplit
 				src="/imgs/bwr-start-screen.png"

@@ -5,6 +5,9 @@
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
 	import HeadTitle from '$lib/comps/HeadTitle.svelte';
+	import { type Tools } from '$lib/services/datatypes';
+	
+	const tools: Tools[] = ['C#', 'Unity', 'Git'];
 </script>
 
 <HeadTitle name="Lenora Fedora" />
@@ -37,9 +40,9 @@
 					<p>Development Period: January 2021–May 2021</p>
 					<p>Tools Used:</p>
 					<div class="flex w-full flex-row gap-0.5 pt-3 md:pt-5">
-						{#each ['C#', 'Unity', 'Git'] as tool}
+						{#each tools as tool}
 							<div class="flex w-full flex-col items-center justify-start gap-1">
-								<ToolIconImage {tool} />
+								<ToolIconImage length={40} {tool} />
 								<p class="text-center leading-normal">{tool}</p>
 							</div>
 						{/each}
