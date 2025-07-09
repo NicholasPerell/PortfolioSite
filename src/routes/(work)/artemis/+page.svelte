@@ -6,7 +6,10 @@
 	import SectionHeader from "$lib/comps/SectionHeader.svelte";
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 	import SectionSecondHeader from "$lib/comps/SectionSecondHeader.svelte";
+	import HeadTitle from "$lib/comps/HeadTitle.svelte";
 </script>
+
+<HeadTitle name="Artemis" />
 
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
     <div class="max-w-screen-lg w-full p-16 items-center flex flex-col gap-5">
