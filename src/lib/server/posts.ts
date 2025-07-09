@@ -28,6 +28,7 @@ export const posts = Object.entries(
     })
     // sort by date
     .sort((a, b) => new Date(b.written).getTime() - new Date(a.written).getTime())
+    .filter(p => new Date(p.written).getTime() <= Date.now())
     // add references to the next/previous post
     // .map((post, index, allPosts) => ({
     //     ...post,
