@@ -6,7 +6,7 @@
 </script>
 
 <div class="mx-1 flex w-full">
-    <Link href={props.uri} cls="group relative aspect-[4/3] h-full shrink-0 overflow-hidden">
+    <Link href={props.uri} cls="group relative sm:aspect-[4/3] max-sm:w-1/2 h-full sm:shrink-0 overflow-hidden">
 		<img
 			class="absolute h-full w-full object-cover object-center"
 			src={props.thumbnail.src}
@@ -18,10 +18,10 @@
 			alt={props.hoverPreview.alt}
 		/>
     </Link>
-	<div class="flex w-full flex-col items-start justify-start py-1 pl-4">
-		<Link href={props.uri} cls="whitespace-nowrap text-2xl">{props.title}</Link>
-		<p class="whitespace-nowrap text-xl italic">{props.role}</p>
-		<p class="whitespace-nowrap text-lg" class:opacity-0={!props.hoverText}>
+	<div class="flex w-full max-sm:h-fit flex-col items-start justify-start py-1 pl-4">
+		<Link href={props.uri} cls="sm:whitespace-nowrap text-2xl">{props.title}</Link>
+		<p class="sm:whitespace-nowrap text-xl italic">{props.role}</p>
+		<p class="sm:whitespace-nowrap text-lg" class:opacity-0={!props.hoverText}>
 			{props.hoverText ? props.hoverText : '_'}
 		</p>
 	</div>
