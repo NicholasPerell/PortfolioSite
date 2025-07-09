@@ -34,16 +34,17 @@
     <div class="max-w-screen-lg w-full">
         <div class="flex flex-col gap-5">
         <div class="flex gap-5">
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-4 sm:gap-2">
             <p class="text-lg font-semibold"><span class="hover:text-xl hover:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
-            <p class="text-justify md:text-start">
+            <img class="block self-center sm:hidden aspect-square w-2/3 h-2/3" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
+            <p class="text-start sm:text-justify md:text-start">
                 I'm a game programmer & software engineer who excels in communication, technical research, and planning. I collaborate intentionally
                 with my clients to give users an experience that communicates a sense of care was put behind it. Focus on (behavioral) AI, systems,
                 narrative, UI, & gameplay programming. Well-versed in narrative structure, management, and writing.
             </p>
             {@render callToAction('hidden lg:flex')}
         </div>
-        <img class="block aspect-square max-w-[33%] md:max-w-full md:w-full h-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
+        <img class="hidden sm:block aspect-square max-w-[33%] md:max-w-full md:w-full h-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
         </div>
             {@render callToAction('flex lg:hidden')}
         </div>
