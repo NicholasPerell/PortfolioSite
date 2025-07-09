@@ -1,16 +1,17 @@
 <script lang="ts">
 	import ExperienceItem from "$lib/comps/ExperienceItem.svelte";
 	import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
+	import type { Tools } from "$lib/services/datatypes";
     import { works } from "$lib/services/work";
 
 	const tools = works.flatMap(w => w.tools).filter((tool, i, arr) => arr.indexOf(tool) === i).sort();
-	let include : string[] = $state([]);
-	let exclude : string[] = $state([]);
-	let free : string[] = $derived(tools.filter(t => !include.includes(t) && !exclude.includes(t)));
+	let include : Tools[] = $state([]);
+	let exclude : Tools[] = $state([]);
+	let free : Tools[] = $derived(tools.filter(t => !include.includes(t) && !exclude.includes(t)));
 	let worksShown = $derived(works.filter(w => include.every(t => w.tools.includes(t)) && !exclude.some(t => w.tools.includes(t))));
 
-	let toInclude : string = $state('');
-	let toExclude : string = $state('');
+	let toInclude : Tools | '' = $state('');
+	let toExclude : Tools | '' = $state('');
 
 	$effect(() => {
 		if (toInclude !== '') {

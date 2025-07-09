@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { ImgAttributes } from '$lib/services/datatypes';
+	import { type ImgAttributes, type Tools } from '$lib/services/datatypes';
 
-	let { length = 40, tool = $bindable('Unity') } = $props();
+	let { length = 40, tool = $bindable('Unity') } : { length:number; tool: Tools } = $props();
 
 	const iconDict: { [name: string]: ImgAttributes } = {
 		['Unity']: {

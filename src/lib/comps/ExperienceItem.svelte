@@ -1,6 +1,6 @@
 <script>
 	import Link from './Link.svelte';
-import ToolIconImage from './ToolIconImage.svelte';
+    import ToolIconImage from './ToolIconImage.svelte';
 
 	let { props } = $props();
 </script>

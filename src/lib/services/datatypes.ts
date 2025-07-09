@@ -1,17 +1,16 @@
-export enum Tools {
-    'Unity',
-    'Git',
-    'C#',
-    'C++',
-    'Ink',
-    'Yarn Spinner',
-    'Google Cloud TTS',
-    'Firestore',
-    'Firebase',
-    'Bitbucket',
-    'Atlassian',
-    'TypeScript',
-}
+export type Tools =
+    'Unity' |
+    'Git' |
+    'C#' |
+    'C++' |
+    'Ink' |
+    'Yarn Spinner' |
+    'Google Cloud TTS' |
+    'Firestore' |
+    'Firebase' |
+    'Bitbucket' |
+    'Atlassian' |
+    'TypeScript';
 
 export interface ImgAttributes {
     src: string;
