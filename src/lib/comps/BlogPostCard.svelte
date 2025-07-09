@@ -31,7 +31,7 @@
 			}}
 		/>
 		<div class="flex w-full flex-col gap-0.5 pt-2">
-			<p class="font-serif text-lg font-bold lining-nums group-hover:underline text-black dark:text-white">{props.title}</p>
+			<p class="font-serif md:text-lg font-bold lining-nums group-hover:underline text-black dark:text-white">{props.title}</p>
 			<p class="mb-1 text-ellipsis font-serif text-base text-black dark:text-white">
 				{props.blurb}
 			</p>
