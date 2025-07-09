@@ -5,6 +5,6 @@
 
 <FullBodyBg>
 	<div class="text-center text-lg text-black dark:text-white">
-		{page.error.message}
+		{page.error?.message ?? 'Error'}
 	</div>
 </FullBodyBg>
