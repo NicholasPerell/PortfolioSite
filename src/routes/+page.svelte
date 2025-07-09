@@ -14,7 +14,7 @@
     let featureWorks = works.slice(0, 4);
 
 </script>
-<div class="w-full bg-gray-100 dark:bg-black p-6 flex justify-center text-black dark:text-white">
+<div class="w-full bg-gray-100 dark:bg-neutral-950 p-6 flex justify-center text-black dark:text-white">
     <div class="max-w-screen-lg w-full flex gap-5">
         <div class="flex flex-col gap-2">
             <p class="text-lg font-semibold"><span class="hover:text-xl hover:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
@@ -41,7 +41,7 @@
         <img class="aspect-square w-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
     </div>
 </div>
-<div class="w-full p-6 flex justify-center overflow-hidden bg-white dark:bg-neutral-950">
+<div class="w-full p-6 flex justify-center overflow-hidden bg-white dark:bg-black">
     <div class="max-w-screen-lg w-full flex flex-col gap-5">
         <div class="flex flex-row flex-nowrap gap-2 items-center">
             <div class="h-0.5 w-7 bg-black dark:bg-white"></div>
@@ -70,7 +70,7 @@
         </div>
     </div>
 </div>
-<div class="w-full bg-gray-100 p-6 flex justify-center dark:bg-black text-black dark:text-white">
+<div class="w-full bg-gray-100 p-6 flex justify-center dark:bg-neutral-950 text-black dark:text-white">
     <div class="max-w-screen-lg w-full flex flex-col gap-8">
         <p class="font-bold text-3xl text-black dark:text-white">
             Experience
@@ -89,7 +89,7 @@
         </div>
     </div>
 </div>
-<div class="w-full bg-gray-200 dark:bg-neutral-950 p-8 flex justify-center">
+<div class="w-full bg-gray-200 dark:bg-black p-8 flex justify-center">
     <div class="max-w-screen-lg w-full flex flex-col gap-6">
         <p class="font-bold text-2xl text-center text-black dark:text-white">Let's Work Together</p>
         <div class="flex flex-nowrap gap-5 w-full justify-center">
