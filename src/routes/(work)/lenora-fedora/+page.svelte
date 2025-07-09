@@ -10,7 +10,7 @@
 <HeadTitle name="Lenora Fedora" />
 
 <div
-	class="flex justify-center bg-[url(/imgs/lenora-fedora-fade-thumbnail.png)] bg-cover bg-center bg-top bg-no-repeat"
+	class="flex justify-center bg-[url(/imgs/lenora-fedora-fade-thumbnail.png)] bg-cover bg-top bg-no-repeat"
 >
 	<div class="flex w-full max-w-screen-lg flex-col items-center gap-5 py-16">
 		<img
