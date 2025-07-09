@@ -1,8 +1,5 @@
-// import pMap from "p-map"
-// import { basename } from "path";
 import { error } from '@sveltejs/kit';
 import { convertDate } from '$lib/utils';
-import type { PageServerLoad } from './$types';
 
 interface PostMetadata {
 	date: string;
@@ -11,7 +8,7 @@ interface PostMetadata {
 
 interface PostModule {
 	metadata: PostMetadata;
-	default?: any; // SVX/Markdown component (not used here)
+	default?: any;
 }
 
 export async function get() {

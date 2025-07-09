@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ImgAttributes, Tools } from '$lib/services/datatypes';
+	import type { ImgAttributes } from '$lib/services/datatypes';
 
 	let { length = 40, tool = 'Unity' } = $props();
 

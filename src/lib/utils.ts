@@ -1,4 +1,3 @@
-
 export const convertDate = (published: string): string => {
     const months: string[] = [
         'Jan',

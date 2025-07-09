@@ -1,19 +1,14 @@
 <script lang="ts">
 	import BlogPostCard from "$lib/comps/BlogPostCard.svelte";
 	import ExperienceCard from "$lib/comps/ExperienceCard.svelte";
-
     import { works } from "$lib/services/work";
-
-
     import type { PageServerData } from './$types';
-
     export let data: PageServerData;
     const {posts} = data;
-
     let featurePosts = posts.filter(p => p.written).slice(0, 4);
     let featureWorks = works.slice(0, 4);
-
 </script>
+
 <div class="w-full bg-gray-100 dark:bg-neutral-950 p-6 flex justify-center text-black dark:text-white">
     <div class="max-w-screen-lg w-full flex gap-5">
         <div class="flex flex-col gap-2">

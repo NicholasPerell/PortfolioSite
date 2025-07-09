@@ -1,11 +1,9 @@
 <script lang="ts">
-	import CodeSample from '$lib/comps/CodeSample.svelte';
 	import LinkSpan from '$lib/comps/LinkSpan.svelte';
 	import FullBodyBg from '$lib/comps/FullBodyBg.svelte';
 	import ImgListSplit from '$lib/comps/ImgListSplit.svelte';
 	import SectionHeader from '$lib/comps/SectionHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
-	import SectionSecondHeader from '$lib/comps/SectionSecondHeader.svelte';
 	import HeadTitle from '$lib/comps/HeadTitle.svelte';
 </script>
 
