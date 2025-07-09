@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BlogPostCard from "$lib/comps/BlogPostCard.svelte";
 	import ExperienceCard from "$lib/comps/ExperienceCard.svelte";
+	import Link from "$lib/comps/Link.svelte";
     import { works } from "$lib/services/work";
     import type { PageServerData } from './$types';
     export let data: PageServerData;
@@ -9,31 +10,39 @@
     let featureWorks = works.slice(0, 4);
 </script>
 
+{#snippet callToAction(cls?: string)}
+    <div class={'flex flex-nowrap gap-5 w-full justify-center grow items-center ' + cls}>
+        <Link href="/contact"
+            cls="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
+        >
+            Contact
+        </Link>
+        <Link href="/resume"
+            cls="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
+        >
+            Resume
+        </Link>
+        <Link href="https://github.com/NicholasPerell"
+            cls="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
+        >
+            GitHub
+        </Link>
+    </div>
+{/snippet}
+
 <div class="w-full bg-gray-100 dark:bg-neutral-950 p-6 flex justify-center text-black dark:text-white">
-    <div class="max-w-screen-lg w-full flex gap-5">
+    <div class="max-w-screen-lg w-full">
+        <div class="flex flex-col gap-5">
+        <div class="flex gap-5">
         <div class="flex flex-col gap-2">
             <p class="text-lg font-semibold"><span class="hover:text-xl hover:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
             <p>I'm a game programmer & software engineer who excels in communication, technical research, and planning. I collaborate intentionally with my clients to give users an experience that communicates a sense of care was put behind it. Focus on (behavioral) AI, systems, narrative, UI, & gameplay programming. Well-versed in narrative structure, management, and writing.</p>
-            <div class="flex flex-nowrap gap-5 w-full justify-center grow items-center">
-                <a href="/contact"
-                    class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
-                >
-                    Contact
-                </a>
-                <a href="/resume"
-                    class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
-                >
-                    Resume
-                </a>
-                <a href="https://github.com/NicholasPerell"
-                    class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
-                    target="_blank"
-                >
-                    GitHub
-                </a>
-            </div>
+            {@render callToAction('hidden lg:flex')}
         </div>
-        <img class="aspect-square w-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
+        <img class="block aspect-square w-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
+        </div>
+            {@render callToAction('flex lg:hidden')}
+        </div>
     </div>
 </div>
 <div class="w-full p-6 flex justify-center overflow-hidden bg-white dark:bg-black">
@@ -87,23 +96,6 @@
 <div class="w-full bg-gray-200 dark:bg-black p-8 flex justify-center">
     <div class="max-w-screen-lg w-full flex flex-col gap-6">
         <p class="font-bold text-2xl text-center text-black dark:text-white">Let's Work Together</p>
-        <div class="flex flex-nowrap gap-5 w-full justify-center">
-            <a href="/contact"
-                class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
-            >
-                Contact
-            </a>
-            <a href="/resume"
-                class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
-            >
-                Resume
-            </a>
-            <a href="https://github.com/NicholasPerell"
-                class="text-white text-xl font-semibold bg-[#543219] dark:bg-[#382110] py-2 px-3"
-                target="_blank"
-            >
-                GitHub
-            </a>
-        </div>
+        {@render callToAction()}
     </div>
 </div>
