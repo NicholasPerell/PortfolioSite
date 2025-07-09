@@ -64,7 +64,7 @@
                         class:hidden={i > 1}
                         class:block={i <= 1}
                         class:sm:block={i > 1 && i <= 2}
-                        class:lg:block={i > 2 && i <= 3}
+                        class:lg:block={i > 2}
                     >
                         <BlogPostCard 
                             slug={post.slug} 
