@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ImgAttributes } from '$lib/services/datatypes';
 
-	let { length = 40, tool = 'Unity' } = $props();
+	let { length = 40, tool = $bindable('Unity') } = $props();
 
 	const iconDict: { [name: string]: ImgAttributes } = {
 		['Unity']: {
@@ -66,8 +66,8 @@
 		}
 	};
 
-	let src = iconDict[tool]?.src;
-	let alt = iconDict[tool]?.alt;
+	let src = $derived(iconDict[tool]?.src);
+	let alt = $derived(iconDict[tool]?.alt);
 </script>
 
 {#if iconDict[tool]}
