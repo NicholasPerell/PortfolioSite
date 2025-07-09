@@ -1,11 +1,12 @@
 <script>
-	import ToolIconImage from './ToolIconImage.svelte';
+	import Link from './Link.svelte';
+import ToolIconImage from './ToolIconImage.svelte';
 
 	let { props } = $props();
 </script>
 
 <div class="mx-1 flex w-full">
-	<div class="group relative aspect-[4/3] h-full shrink-0 overflow-hidden">
+    <Link href={props.uri} cls="group relative aspect-[4/3] h-full shrink-0 overflow-hidden">
 		<img
 			class="absolute h-full w-full object-cover object-center"
 			src={props.thumbnail.src}
@@ -16,9 +17,9 @@
 			src={props.hoverPreview.src}
 			alt={props.hoverPreview.alt}
 		/>
-	</div>
+    </Link>
 	<div class="flex w-full flex-col items-start justify-start py-1 pl-4">
-		<p class="whitespace-nowrap text-2xl">{props.title}</p>
+		<Link href={props.uri} cls="whitespace-nowrap text-2xl">{props.title}</Link>
 		<p class="whitespace-nowrap text-xl italic">{props.role}</p>
 		<p class="whitespace-nowrap text-lg" class:opacity-0={!props.hoverText}>
 			{props.hoverText ? props.hoverText : '_'}
