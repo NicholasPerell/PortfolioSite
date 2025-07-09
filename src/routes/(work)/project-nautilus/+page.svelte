@@ -6,6 +6,9 @@
 	import SectionSecondHeader from '$lib/comps/SectionSecondHeader.svelte';
 	import ToolIconImage from '$lib/comps/ToolIconImage.svelte';
 	import { ALink, Formattable } from '$lib/services/datatypes';
+	import { type Tools } from '$lib/services/datatypes';
+	
+	const tools: Tools[] = ['Unity', 'Git', 'C#', 'Ink', 'Google Cloud TTS'];
 </script>
 
 <HeadTitle name="Project Nautilus" />
@@ -33,9 +36,9 @@
 				<p>Development Period: August 2021–May 2022</p>
 				<p>Tools Used: </p>
                 <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
-                    {#each ['Unity', 'Git', 'C#', 'Ink', 'Google Cloud TTS'] as tool}
+                    {#each tools as tool}
                     <div class="w-full flex flex-col items-center justify-start gap-1">  
-                        <ToolIconImage {tool} />  
+                        <ToolIconImage length={40} {tool} />  
                     <p class="text-center leading-normal">{tool}</p>
                     </div>
                     {/each}

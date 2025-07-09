@@ -4,6 +4,9 @@
 	import ImgListSplit from "$lib/comps/ImgListSplit.svelte";
 	import SectionHeader from "$lib/comps/SectionHeader.svelte";
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
+	import { type Tools } from '$lib/services/datatypes';
+	
+	const tools: Tools[] = ['C#', 'Unity', 'Git', 'Firebase', 'Atlassian'];
 </script>
 
 <HeadTitle name="Addagrams" />
@@ -53,9 +56,9 @@
 				<p>Development Period: March 2023–August 2023</p>
 				<p>Tools Used: </p>
                 <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
-                    {#each ['C#', 'Unity', 'Git', 'Firebase', 'Atlassian'] as tool}
+                    {#each tools as tool}
                     <div class="w-full flex flex-col items-center justify-start gap-1">  
-                        <ToolIconImage {tool} />  
+                        <ToolIconImage length={40} {tool} />  
                     <p class="text-center leading-normal">{tool}</p>
                     </div>
                     {/each}

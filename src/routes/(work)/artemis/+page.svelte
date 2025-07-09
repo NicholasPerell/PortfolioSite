@@ -7,6 +7,9 @@
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 	import SectionSecondHeader from "$lib/comps/SectionSecondHeader.svelte";
 	import HeadTitle from "$lib/comps/HeadTitle.svelte";
+	import { type Tools } from '$lib/services/datatypes';
+	
+	const tools: Tools[] = ['C#', 'Unity', 'Git', 'Ink', 'Yarn Spinner'];
 </script>
 
 <HeadTitle name="Artemis" />
@@ -33,9 +36,9 @@
                     <p>Development Period: Since May 2022</p>
                     <p>Tools Used: </p>
                     <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
-                        {#each ['C#', 'Unity', 'Git', 'Ink', 'Yarn Spinner'] as tool}
+                        {#each tools as tool}
                         <div class="w-full flex flex-col items-center justify-start gap-1">  
-                            <ToolIconImage {tool} />  
+                            <ToolIconImage length={40} {tool} />  
                         <p class="text-center leading-normal">{tool}</p>
                         </div>
                         {/each}
