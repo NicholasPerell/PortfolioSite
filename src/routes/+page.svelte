@@ -53,19 +53,27 @@
             <div class="h-0.5 w-7 bg-black dark:bg-white"></div>
         </div>
         <div class="w-full flex justify-center">
-        <div class="w-full flex flex-row flex-nowrap gap-6">
-            {#each featurePosts as post}
-                <BlogPostCard 
-                    slug={post.slug} 
-                    title={post.title}
-                    blurb={post.blurb}
-                    written={post.written}
-                    thumbnail={post.thumbnail}
-                    tags={post.tags}
-                    tools={post.tools}
-                />
-            {/each}
-        </div>
+            <div class="w-full flex flex-row flex-nowrap gap-3 lg:gap-6">
+                {#each featurePosts as post, i}
+                    <div 
+                        class="w-full"
+                        class:hidden={i > 1}
+                        class:block={i <= 1}
+                        class:sm:block={i > 1 && i <= 2}
+                        class:lg:block={i > 2 && i <= 3}
+                    >
+                        <BlogPostCard 
+                            slug={post.slug} 
+                            title={post.title}
+                            blurb={post.blurb}
+                            written={post.written}
+                            thumbnail={post.thumbnail}
+                            tags={post.tags}
+                            tools={post.tools}
+                        />
+                    </div>
+                {/each}
+            </div>
         </div>
         <div class="w-full flex flex-row justify-end">
             <a class="text-right text-lg underline w-fit hover:no-underline text-neutral-700 dark:text-gray-300" href="/posts">
