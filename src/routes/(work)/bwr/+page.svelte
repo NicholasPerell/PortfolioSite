@@ -12,10 +12,10 @@
 <HeadTitle name="Black White Red" />
 
 <div
-	class="flex justify-center bg-[url(/imgs/bwr-beta-fields.png)] bg-contain bg-center bg-no-repeat"
+	class="flex justify-center bg-[url(/imgs/bwr-beta-fields.png)] bg-cover bg-center bg-no-repeat"
 >
-	<div class="flex w-full max-w-screen-lg flex-col items-center gap-5 p-16">
-		<p class="text-2xl font-bold text-red-800">Black White Red</p>
+	<div class="flex w-full max-w-screen-lg flex-col items-center gap-5 p-32">
+		<p class="text-6xl font-bold text-red-800">Black White Red</p>
 	</div>
 </div>
 
