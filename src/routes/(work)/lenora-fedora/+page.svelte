@@ -105,7 +105,6 @@
 
 			<iframe
 				class="aspect-[928/552] w-full"
-				height="552"
 				src="https://www.youtube.com/embed/JlEORrPx7CE"
 				title="Lenora Fedora Trailer"
 				frameborder="0"
