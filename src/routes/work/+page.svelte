@@ -32,19 +32,19 @@
 	<div class="flex justify-center p-6">
 		<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-4">
 			<div class="font-bold text-4xl">Experience</div>
-			<div class="flex gap-1">
-				<div class="flex w-full flex-row flex-wrap gap-2">
+			<div class="flex flex-wrap gap-1 gap-y-2">
+				<div class="flex grow flex-row flex-wrap gap-2 order-last sm:order-first">
 					{#each include as included }
-					<div class="rounded shadow-sm shadow-black dark:shadow-white px-2 py-0.5 flex items-center gap-1">
-						<div class="text-green-500">{included}</div>
-						<button class="p-0.5" onclick={() => include = include.filter(t => t !== included)}>x</button>
-					</div>
+						<div class="rounded shadow-sm min-w-16 shadow-black dark:shadow-white px-2 py-0.5 flex items-center gap-1">
+							<div class="text-green-500 w-full text-center">{included}</div>
+							<button class="p-0.5 align-middle" onclick={() => include = include.filter(t => t !== included)}>x</button>
+						</div>
 					{/each}
 					{#each exclude as excluded }
-					<div class="rounded shadow-sm min-w-16 shadow-black dark:shadow-white px-2 py-0.5 flex items-center gap-1">
-						<div class="text-red-500 w-full text-center">{excluded}</div>
-						<button class="p-0.5 align-middle" onclick={() => exclude = exclude.filter(t => t !== excluded)}>x</button>
-					</div>
+						<div class="rounded shadow-sm min-w-16 shadow-black dark:shadow-white px-2 py-0.5 flex items-center gap-1">
+							<div class="text-red-500 line-through w-full text-center">{excluded}</div>
+							<button class="p-0.5 align-middle" onclick={() => exclude = exclude.filter(t => t !== excluded)}>x</button>
+						</div>
 					{/each}
 				</div>
 				<select 
