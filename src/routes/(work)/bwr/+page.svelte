@@ -16,8 +16,9 @@
 <div
 	class="flex justify-center bg-[url(/imgs/bwr-beta-fields.png)] bg-cover bg-center bg-no-repeat"
 >
-	<div class="flex w-full max-w-screen-lg flex-col items-center gap-5 p-32">
-		<p class="text-6xl font-bold text-red-800">Black White Red</p>
+	<div class="relative flex w-full max-w-screen-lg flex-col items-center py-20 lg:p-32">
+		<p class="text-4xl lg:text-6xl font-bold blur-sm opacity-20 rounded-full" aria-hidden="true"><span class="text-black">Black</span> <span class="text-white">White</span> <span class="text-red-800">Red</span></p>
+		<p class="absolute text-4xl lg:text-6xl font-bold"><span class="text-black">Black</span> <span class="text-white">White</span> <span class="text-red-800">Red</span></p>
 	</div>
 </div>
 
@@ -35,7 +36,7 @@
 					<p class="italic">Product Owner & Systems Programmer</p>
 					<p>Team Size: 8</p>
 					<p>Scale: Tech Demo</p>
-					<p>Development Period: June 2022–August 2022</p>
+					<p>Development Period: June–August 2022</p>
 					<p>Tools Used:</p>
 					<div class="flex w-full flex-row gap-0.5 pt-3 md:pt-5">
 						{#each tools as tool}

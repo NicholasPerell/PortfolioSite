@@ -17,15 +17,16 @@
 
 <FullBodyBg> 
 	<div class="w-full p-6 flex justify-center">
-		<div class="max-w-screen-lg w-full grid grid-cols-[3fr,1fr] gap-y-2">
+		<div class="max-w-screen-lg w-full flex flex-col md:grid grid-cols-[3fr,1fr] gap-y-2">
 			<h1 class="text-3xl font-bold lining-nums">{title}</h1>
+			<p class="text-neutral-700 dark:text-gray-300 block md:hidden">Written {writtenCopy}</p>
 			<ShareArticleRow {title} />
-			<p class="text-neutral-700 dark:text-gray-300">Written {writtenCopy}</p>
+			<p class="text-neutral-700 dark:text-gray-300 hidden md:block">Written {writtenCopy}</p>
 			<div></div>
 			<div class="article">
 				<slot />
 			</div>
-			<div class="pl-5 pt-3 flex flex-col gap-3">
+			<div class="md:pl-5 pt-3 flex max-md:items-start md:flex-col gap-3">
 				{#if !!tags && tags.length > 0}
 					<p class="font-bold text-xl">Tags</p>
 					<div class="flex items-start justify-enter gap-3 flex-wrap">
@@ -47,7 +48,7 @@
 					</div>
 				{/if}
 			</div>
-			<div class="mt-6 mb-4 flex flex-row justify-between">
+			<div class="md:mt-6 md:mb-4 flex flex-row justify-between">
 				<ShareArticleRow {title} />
 				<a class="text-xl font-serif text-right underline w-fit hover:no-underline text-neutral-700 dark:text-gray-300" href="/posts">
 					More Posts
