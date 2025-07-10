@@ -6,13 +6,25 @@
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 	import { type Tools } from '$lib/services/datatypes';
 	
+    const width = 1664;
+    const px = 50;
+    const py = 160;
 	const tools: Tools[] = ['C#', 'Unity', 'Git', 'Firebase', 'Atlassian'];
+
+    let screenWidth :number = $state(0);
 </script>
+
+<svelte:window bind:innerWidth={screenWidth} />
 
 <HeadTitle name="Addagrams" />
 
 <div class="bg-adda-backdrop w-full flex items-center justify-center">
-     <div class="flex items-center justify-center max-w-screen-lg py-40">
+     <div class="flex items-center justify-center max-w-screen-lg h-fit"
+     style:scale={`${Math.min(screenWidth/(width + px * 2),1) * 100}%`}
+     style:padding-top={`${Math.min(screenWidth/(width + px * 2),1) * py}px`}
+     style:padding-bottom={`${Math.min(screenWidth/(width + px * 2),1) * py}px`}
+     style:rotate={`${Math.max(0,1.0/3.0 - screenWidth/(width + px * 2)) * -90}deg`}
+     >
         <div class="border-adda-rackline bg-adda-rack h-48 border-y-8 border-r-8 p-2 first:border-l-8 first:rounded-l-2xl last:rounded-r-2xl">
             <AddagramsTile text="A" />
         </div>
@@ -47,7 +59,8 @@
 	<div class="flex w-full max-w-screen-lg flex-col gap-3 md:gap-5">
 		<div class="flex flex-col md:grid w-full grid-cols-2 gap-3 md:gap-5 leading-7">
 			<p>
-				<span class="italic">Addagrams</span> is a tile-based word game on mobile focused on giving players the creative freedom to rearrange the letters into the words they can come up with in their own vocabulary.
+				<span class="italic">Addagrams</span> is a tile-based word game on mobile focused on giving players the creative freedom to rearrange
+                the letters into the words they can come up with in their own vocabulary.
 			</p>
 			<div class="flex w-full flex-col gap-0">
 				<p class="italic">Game Programmer</p>
