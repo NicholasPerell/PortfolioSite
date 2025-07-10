@@ -35,7 +35,7 @@
 					<p class="italic">Product Owner & Lead Programmer</p>
 					<p>Team Size: 9</p>
 					<p>Scale: Demo</p>
-					<p>Development Period: May 2021–July 2021</p>
+					<p>Development Period: May–July 2021</p>
 					<p>Tools Used:</p>
 					<div class="flex w-full flex-row gap-0.5 pt-3 md:pt-5">
 						{#each tools as tool}
