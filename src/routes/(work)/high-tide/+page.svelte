@@ -12,9 +12,9 @@
 <HeadTitle name="High Tide" />
 
 <div
-	class="flex justify-center bg-[url(/imgs/high-tide-above-water-setting.png)] bg-cover bg-no-repeat"
+	class="flex justify-center bg-[url(/imgs/high-tide-above-water-setting.png)] bg-cover bg-[50%_20%] lg:bg-[50%_30%] bg-no-repeat"
 >
-	<div class="flex w-2/3 md:w-full max-w-screen-lg flex-col items-center gap-5 py-8 md:py-16">
+	<div class="flex w-2/3 md:w-full max-w-screen-lg flex-col items-center gap-5 pr-5 my-8 md:py-16">
 		<img
 			src="\imgs\high-tide-title.png"
 			alt="Archer Icon and Moon Icon on the left and right of the name Artemis"
