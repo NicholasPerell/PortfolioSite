@@ -70,7 +70,7 @@
 
 			<ImgListSplit
 				src="/imgs/lenora-fedora-lockpicking.png"
-				alt="Rituals prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it."
+				alt="Lenora lockpicking to free her friend from a cage."
 				imgRight={false}
 				header="Features"
 				items={[
@@ -83,7 +83,7 @@
 			/>
 			<ImgListSplit
 				src="\imgs\lenora-fedora-tall-one-ai-gizmos.png"
-				alt="Game Summary Image"
+				alt="In-editor screenshot of the Tall One using his AI. Yellow lines to indicate his vision cones and spheres. Green line to say the height the vision is cast from (his eyes) when he's not already chasing Lenora. Red lines for where to cast when Lenora is being chased (the feet and Lenora's y-level)."
 				imgRight={true}
 				header="Contributions"
 				items={[
