@@ -35,7 +35,7 @@
         <div class="flex flex-col gap-5">
         <div class="flex gap-5">
         <div class="flex flex-col gap-4 sm:gap-2">
-            <p class="text-lg font-semibold"><span class="hover:text-xl hover:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
+            <p class="text-lg font-semibold"><span class="hover:text-xl active:text-xl hover:font-bold active:font-bold duration-300">Ahoy!</span> My name is Nicholas Perell.</p>
             <img class="block self-center sm:hidden aspect-square w-2/3 h-2/3" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
             <p class="text-start sm:text-justify md:text-start">
                 I'm a game programmer & software engineer who excels in communication, technical research, and planning. I collaborate intentionally
