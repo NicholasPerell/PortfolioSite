@@ -62,7 +62,7 @@
 
 			<ImgListSplit
 				src="/imgs/bwr-start-screen.png"
-				alt="Rituals prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it."
+				alt="Start menu showing player avatar shifting shades between the different teams. Buttons read play, change name, options, credits, and quit."
 				imgRight={false}
 				header="Features"
 				items={[
@@ -75,7 +75,7 @@
 			/>
 			<ImgListSplit
 				src="\imgs\bwr-white-home-base.png"
-				alt="Game Summary Image"
+				alt="Home base for the white team. Stairs on the side go up to an upper level with a glowing portal/doorway. Between the stairs is a red, blood, waterfall fountain."
 				imgRight={true}
 				header="Contributions"
 				items={[
