@@ -21,7 +21,7 @@
 <HeadTitle name="Addagrams" />
 
 <div class="bg-adda-backdrop w-full flex items-center justify-center">
-     <div class="flex items-center justify-center max-w-screen-lg h-fit"
+     <div aria-hidden="true" class="flex items-center justify-center max-w-screen-lg h-fit"
         style:scale={`${portionCapped * 100}%`}
         style:padding-top={`${portionCapped * portionCapped * py}px`}
         style:padding-bottom={`${portionCapped * portionCapped * py}px`}
@@ -55,6 +55,7 @@
             <AddagramsTile text="S" />
         </div>
      </div>
+     <div class="sr-only">Addagrams</div>
 </div>
 
 <div class="flex w-full justify-center bg-white p-6 dark:bg-black dark:text-white text-black">
