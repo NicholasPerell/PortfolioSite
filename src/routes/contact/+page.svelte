@@ -1,7 +1,10 @@
 <script lang="ts">
 	import FullBodyBg from "$lib/comps/FullBodyBg.svelte";
+	import HeadTitle from "$lib/comps/HeadTitle.svelte";
 	import Link from "$lib/comps/Link.svelte";
 </script>
+
+<HeadTitle name="Contact" />
 
 <img 
 	class="w-full object-cover aspect-[7/1]"
