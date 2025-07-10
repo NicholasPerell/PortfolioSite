@@ -15,7 +15,7 @@
 <HeadTitle name="Artemis" />
 
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
-    <div class="max-w-screen-lg w-full p-16 items-center flex flex-col gap-5">
+    <div class="max-w-screen-lg w-full p-8 md:p-16 items-center flex flex-col gap-5">
         <img src="\imgs\artemis-title.png" alt="Archer Icon and Moon Icon on the left and right of the name Artemis">
         <p class="text-white font-bold text-2xl">A Narrative Tool for Unity</p>
     </div>
@@ -35,7 +35,7 @@
                     <p>Scale: Unity Package/Tool</p>
                     <p>Development Period: Since May 2022</p>
                     <p>Tools Used: </p>
-                    <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
+                    <div class="w-full flex flex-row gap-0.5 pt-8 sm:pt-3 md:pt-5">
                         {#each tools as tool}
                         <div class="w-full flex flex-col items-center justify-start gap-1">  
                             <ToolIconImage length={40} {tool} />  
@@ -46,8 +46,8 @@
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center gap-3 md:gap-5 w-full">
-                <div id="929394437811801072" style="width: fit; overflow-y: hidden;" class="wcustomhtml"><iframe title="Artemis GH Card" id="ghcard-nicholas-hoy-champain-1" frameborder="0" scrolling="0" src="//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=NicholasPerell&amp;identity=ghcard-nicholas-hoy-champain-1&amp;repo=Artemis" width="400" height="152"></iframe>
-                <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script></div>
+                <iframe class="w-full sm:w-auto" title="Artemis GH Card" id="ghcard-nicholas-hoy-champain-1" frameborder="0" scrolling="0" src="//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=NicholasPerell&amp;identity=ghcard-nicholas-hoy-champain-1&amp;repo=Artemis" width="400" height="152"></iframe>
+                <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
                 <p><i>May your aim be true.</i></p>
             </div>
             <ImgListSplit src="/imgs/artemis-fade-thumbnail.png" alt="Rituals prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it." imgRight={false} header="Features" items={[
