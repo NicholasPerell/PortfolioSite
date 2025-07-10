@@ -15,7 +15,7 @@
 <div
 	class="flex justify-center bg-[url(/imgs/lenora-fedora-fade-thumbnail.png)] bg-cover bg-top bg-no-repeat"
 >
-	<div class="flex w-full max-w-screen-lg flex-col items-center gap-5 md:py-16">
+	<div class="flex w-full max-w-screen-lg flex-col items-center py-5 md:py-16">
 		<img
 			src="\imgs\lenora-fedora-title.png"
 			alt="Archer Icon and Moon Icon on the left and right of the name Artemis"
