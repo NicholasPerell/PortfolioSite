@@ -23,7 +23,7 @@
      style:scale={`${Math.min(screenWidth/(width + px * 2),1) * 100}%`}
      style:padding-top={`${Math.min(screenWidth/(width + px * 2),1) * py}px`}
      style:padding-bottom={`${Math.min(screenWidth/(width + px * 2),1) * py}px`}
-     style:rotate={`${Math.max(0,1.0/3.0 - screenWidth/(width + px * 2)) * -90}deg`}
+     style:rotate={`${Math.max(0,1.0/3.0 - screenWidth/(width + px * 2)) * -180}deg`}
      >
         <div class="border-adda-rackline bg-adda-rack h-48 border-y-8 border-r-8 p-2 first:border-l-8 first:rounded-l-2xl last:rounded-r-2xl">
             <AddagramsTile text="A" />
@@ -66,9 +66,9 @@
 				<p class="italic">Game Programmer</p>
 				<p>Team Size: 2</p>
 				<p>Scale: Mobile Game</p>
-				<p>Development Period: March 2023–August 2023</p>
+				<p>Development Period: March–August 2023</p>
 				<p>Tools Used: </p>
-                <div class="w-full flex flex-row gap-0.5 pt-3 md:pt-5">
+                <div class="w-full flex flex-row gap-0.5 pt-8 sm:pt-3 md:pt-5">
                     {#each tools as tool}
                     <div class="w-full flex flex-col items-center justify-start gap-1">  
                         <ToolIconImage length={40} {tool} />  
