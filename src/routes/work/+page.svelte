@@ -36,13 +36,13 @@
 				<div class="flex grow flex-row flex-wrap gap-2 order-last sm:order-first">
 					{#each include as included }
 						<div class="rounded shadow-sm min-w-16 shadow-black dark:shadow-white px-2 py-0.5 flex items-center gap-1">
-							<div class="text-green-500 w-full text-center">{included}</div>
+							<div class="text-green-500 w-full text-center"><span class="sr-only">include </span>{included}</div>
 							<button class="p-0.5 align-middle" onclick={() => include = include.filter(t => t !== included)}>x</button>
 						</div>
 					{/each}
 					{#each exclude as excluded }
 						<div class="rounded shadow-sm min-w-16 shadow-black dark:shadow-white px-2 py-0.5 flex items-center gap-1">
-							<div class="text-red-500 line-through w-full text-center">{excluded}</div>
+							<div class="text-red-500 line-through w-full text-center"><span class="sr-only">exclude </span>{excluded}</div>
 							<button class="p-0.5 align-middle" onclick={() => exclude = exclude.filter(t => t !== excluded)}>x</button>
 						</div>
 					{/each}
@@ -50,6 +50,7 @@
 				<select 
 					class="bg-white dark:bg-black border border-black/50  dark:border-white/50 p-1 rounded"
 					bind:value={toInclude}
+					aria-label="Add Include"
 					>
 					<option value="">Include...</option>
 					{#each free as freed }
@@ -59,6 +60,7 @@
 				<select 
 					class="bg-white dark:bg-black border border-black/50  dark:border-white/50 p-1 rounded"
 					bind:value={toExclude}
+					aria-label="Add Exclude"
 					>
 					<option value="">Exclude...</option>
 					{#each free as freed }

@@ -21,7 +21,7 @@
 	<div class="flex w-full max-sm:h-fit flex-col items-start justify-start py-1 pl-4">
 		<Link href={props.uri} cls="sm:whitespace-nowrap text-2xl">{props.title}</Link>
 		<p class="sm:whitespace-nowrap text-xl italic">{props.role}</p>
-		<p class="sm:whitespace-nowrap text-lg" class:opacity-0={!props.hoverText}>
+		<p class="sm:whitespace-nowrap text-lg" class:opacity-0={!props.hoverText} aria-hidden={!props.hoverText}>
 			{props.hoverText ? props.hoverText : '_'}
 		</p>
 	</div>
