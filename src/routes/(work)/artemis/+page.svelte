@@ -15,7 +15,7 @@
 <HeadTitle name="Artemis" />
 
 <div class="bg-[url(/imgs/card-banner.jpg)] bg-contain bg-no-repeat bg-[#375634] bg-center flex justify-center">
-    <div class="max-w-screen-lg w-full p-8 md:p-16 items-center flex flex-col gap-5">
+    <div class="max-w-screen-lg w-full p-8 md:p-16 items-center flex flex-col gap-1 sm:gap-5">
         <img src="\imgs\artemis-title.png" alt="Archer Icon and Moon Icon on the left and right of the name Artemis">
         <p class="text-white font-bold text-2xl">A Narrative Tool for Unity</p>
     </div>
