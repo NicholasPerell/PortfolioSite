@@ -23,6 +23,7 @@
                         blurb={post.blurb}
                         written={post.written}
                         thumbnail={post.thumbnail}
+                        alt={post.alt}
                         tags={post.tags ?? []}
                         tools={post.tools ?? []}
                     />
