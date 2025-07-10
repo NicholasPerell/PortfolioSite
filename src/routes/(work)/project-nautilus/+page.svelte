@@ -16,7 +16,7 @@
 <div
 	class="flex justify-center bg-[#02001A] bg-[url(/imgs/pn-trailer-title-backdrop.gif)] bg-cover bg-center bg-no-repeat"
 >
-	<div class="flex w-full max-w-screen-lg flex-col items-center gap-5 p-16">
+	<div class="flex w-2/3 sm:w-full h-full max-w-screen-lg flex-col items-center gap-5 py-8 sm:p-16">
 		<img src="\imgs\pn-title.png" alt="Project Nautilus" />
 	</div>
 </div>
