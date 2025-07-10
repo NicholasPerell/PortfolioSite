@@ -93,7 +93,7 @@
             Experience
         </p>
         <div class="max-w-screen-lg w-full flex items-center">
-            <div class="flex flex-col w-full gap-2 mx-4">
+            <div class="flex flex-col w-full gap-2 sm:mx-4">
                 {#each featureWorks as work}
                     <ExperienceCard props={work}/>
                 {/each}
