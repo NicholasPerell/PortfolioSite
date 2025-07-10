@@ -50,14 +50,14 @@
                 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
                 <p><i>May your aim be true.</i></p>
             </div>
-            <ImgListSplit src="/imgs/artemis-fade-thumbnail.png" alt="Rituals prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it." imgRight={false} header="Features" items={[
+            <ImgListSplit src="/imgs/artemis-fade-thumbnail.png" alt="Game prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it." imgRight={false} header="Features" items={[
                 'Unique scriptable objects responsible for flags, narrative logic, and asset creation.',
                 'Customizable Archers that will determine which narrative beat it has access to (AKA Arrow) is highest priority and most relevant.',
                 'Saving & Loading using the Constellation asset.',
                 'Goddess singleton to track internal symbols and IDs.',
                 'User documentation.'
             ]}/>
-            <ImgListSplit src="\imgs\artemis-constellation-editor.png" alt="Game Summary Image" imgRight={true} header="Contributions" items={[
+            <ImgListSplit src="\imgs\artemis-constellation-editor.png" alt="Inspector for Constellation objects. This one is named Ursus. It has data for different flags that store data like WHO and GAME_STARTED. It has which archers it wants to save the state of. At the bottom there are options to name a save file, save the data to persistent memory, to load it from persistent memory, to save the data as a binary game asset, or to load the data in from a binary game asset." imgRight={true} header="Contributions" items={[
                 'Implemented code samples, enumerator script compilation, saving/loading capabilities, custom editors',
                 'Code samples for getting Artemis to work in tandem with popular narrative tools.',
                 'Wrote extensive user documentation that also dives into and explains some samples.',
@@ -100,7 +100,7 @@
 	    	<div class="my-1 h-0.5 w-full bg-black dark:bg-white"></div>
             <SectionHeader header="Technical information"></SectionHeader>
             <SectionSecondHeader header="Debug Console Sample" />
-            <img src="/imgs/artemis-example-csv-top.png" alt="ID Priority Values Flags"/>
+            <img src="/imgs/artemis-example-csv-top.png" alt="Spreadsheet that would be parsed by the debug console sample for Artemis. ID, Priority, Values, Flags, How to handle busy, Debug messsage, Log type (Info/Warning/Error), Time in seconds."/>
             <p>
                 <LinkSpan href={'https://github.com/NicholasPerell/Artemis/tree/v0.2.5/Samples~/Debug%20Console/Scripts/Fletcher%20%26%20Bow'}>Example custom Fletcher & Bow for debug messages in the editor console.</LinkSpan>
             </p>
