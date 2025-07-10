@@ -54,14 +54,14 @@
 			title="Steam Embed"
 		></iframe>
 
-		<ImgListSplit src="\imgs\pn-first-angler.jpg" alt="Project Nautilus" imgRight={false} header="Features" items={[
+		<ImgListSplit src="\imgs\pn-first-angler.jpg" alt="Drone coming across a scary angler fish in an underwater cave. Drone HUD/OS details the pitch of the drone, the tempature, the damage level, and other useful stats for navigating. Subtitles show your AI manager saying &quot;This creature has no intention of harming the drone. It would be in your best interests to disregard this aquatic lifeform and continue your assigned task.&quot;" imgRight={false} header="Features" items={[
 			'Work terminal UI, immersing the player in the role of a drone operator.',
 			'Environmental factors such as light and temperature affect the behavior of enemies and the player’s drone.',
 			'Complex narrative communicated through in-game systems such as an AI narrator and a mock email inbox.',
 			'Underwater cave system with multiple layers to explore through.',
 		]}/>
 
-		<ImgListSplit src="\imgs\pn-god-thing.png" alt="Project Nautilus" imgRight={true} header="Contributions" items={[
+		<ImgListSplit src="\imgs\pn-god-thing.png" alt="Drone has come across an unknowable being. Subtitles read &quot;Unknown: You have been measured.&quot;" imgRight={true} header="Contributions" items={[
 			'Programmed Sparse Voxel Octrees for our game’s enemy AI to navigate 3D underwater space.',
 			'Designed, programmed, and implemented the game’s narrative pipeline.',
 			'Created customizable subtitle UI for the game to make the narrative more accessible.',
@@ -105,7 +105,7 @@
 		<div class="my-1 h-px w-full bg-black dark:bg-pn-green-1"></div>
 		<SectionHeader header="Technical Information"/>
 		<SectionSecondHeader header="Sparse Voxel Octree & Pathfinding" />
-        <img class="w-full" src="./imgs/pn-fade-thumbnail.png" alt="Project Nautilus SVO Gizmos">
+        <img class="w-full" src="./imgs/pn-fade-thumbnail.png" alt="Sparse Voxel Octree used for 3D Pathfinding the underwater caves.">
 		<div>SVODataSets.cs</div>
 		<CodeSample language="csharp" source=
 	{`using System;

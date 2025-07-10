@@ -8,6 +8,7 @@ export interface Post {
     blurb: string;
     written: string;
     thumbnail: string;
+    alt: string;
     tags: string[];
     tools: string[];
 }

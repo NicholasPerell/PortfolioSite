@@ -2,6 +2,7 @@
   	import ShareArticleRow from './ShareArticleRow.svelte';
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 	import FullBodyBg from '$lib/comps/FullBodyBg.svelte';
+	import HeadTitle from '$lib/comps/HeadTitle.svelte';
 
 	export let title;
 	export let written: string;
@@ -14,6 +15,8 @@
 	let writtenDate = new Date(writtenArr[0], writtenArr[1] - 1, writtenArr[2]);
 	let writtenCopy = writtenDate.toLocaleDateString();
 </script>
+
+<HeadTitle name={'Post — ' + title} />
 
 <FullBodyBg> 
 	<div class="w-full p-6 flex justify-center">
@@ -32,7 +35,7 @@
 					<div class="flex items-start justify-enter gap-3 flex-wrap">
 						{#each tags as tag}
 							<p
-								class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-neutral-600 dark:text-black"
+								class="w-fit rounded-full bg-neutral-800 px-2 py-0.5 text-xs text-white dark:bg-gray-200 dark:text-black"
 							>
 								{tag}
 							</p>

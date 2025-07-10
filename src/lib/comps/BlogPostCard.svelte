@@ -7,6 +7,7 @@
 		blurb: string;
 		written: Date;
 		thumbnail: string;
+		alt: string;
 		tags: string[];
 		tools: string[];
 		slug: string;
@@ -24,7 +25,7 @@
 	<a href={`/posts/${props.slug}`}>
 		<img
 			src={props.thumbnail}
-			alt={props.thumbnail}
+			alt={props.alt}
 			class="w-full aspect-[7/5] object-cover object-center"
 			onload={() => {
 				offset.set(0);
@@ -37,7 +38,7 @@
 			</p>
 			{#if props.tags && props.tags.length}
 				<p
-					class="w-fit rounded-full bg-gray-400 px-2 py-0.5 text-xs text-white dark:bg-neutral-600 dark:text-black"
+					class="w-fit rounded-full bg-neutral-800 px-2 py-0.5 text-xs text-white dark:bg-gray-200 dark:text-black"
 				>
 					{props.tags[0]}
 				</p>

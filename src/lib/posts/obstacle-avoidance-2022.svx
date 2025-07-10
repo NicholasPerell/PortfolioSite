@@ -2,6 +2,7 @@
 title: Obstacle Avoidance
 blurb: How sphere casts and a wandering direction make for smart fishies.
 thumbnail: https://i3.ytimg.com/vi/iqnOg2LYJc0/maxresdefault.jpg
+alt: Fishie swimming about with gizmos pointing out from its forward and non-back sides to indicate the sphere casting of obstacles.
 tags: ['Game AI']
 tools: ['Unity', 'C#']
 written: 2022-2-2

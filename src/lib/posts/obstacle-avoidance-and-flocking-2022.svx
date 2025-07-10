@@ -2,6 +2,7 @@
 title: Obstacle Avoidance & Flocking
 blurb: Now with octrees!
 thumbnail: https://i3.ytimg.com/vi/zaIwVjvwpX0/maxresdefault.jpg
+alt: School of fishies with obstacle avoidance, octree, and boid gizmos
 tags: ['Game AI']
 tools: ['Unity', 'C#']
 written: 2022-2-17

@@ -2,6 +2,7 @@
 title: Artemis v0.2.5
 blurb: Artemis Version 0.2.5 is out now!
 thumbnail: ./imgs/artermis-v0-2-5.jpg
+alt: Artemis V0.2.5!
 tags: ['Narrative Programming']
 tools: ['Unity', 'C#', 'Git', 'Ink', 'Yarn Spinner']
 written: 2023-10-3
@@ -9,7 +10,7 @@ layout: post
 ---
 <div class="*:object-cover *:w-full">
 
-![Out Now!](/imgs/artermis-v0-2-5.jpg)
+![Artemis v0.2.5 Out Now!](/imgs/artermis-v0-2-5.jpg)
 
 </div>
 

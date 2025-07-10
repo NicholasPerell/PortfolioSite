@@ -21,7 +21,7 @@
 <HeadTitle name="Addagrams" />
 
 <div class="bg-adda-backdrop w-full flex items-center justify-center">
-     <div class="flex items-center justify-center max-w-screen-lg h-fit"
+     <div aria-hidden="true" class="flex items-center justify-center max-w-screen-lg h-fit"
         style:scale={`${portionCapped * 100}%`}
         style:padding-top={`${portionCapped * portionCapped * py}px`}
         style:padding-bottom={`${portionCapped * portionCapped * py}px`}
@@ -55,6 +55,7 @@
             <AddagramsTile text="S" />
         </div>
      </div>
+     <div class="sr-only">Addagrams</div>
 </div>
 
 <div class="flex w-full justify-center bg-white p-6 dark:bg-black dark:text-white text-black">
@@ -86,7 +87,7 @@
                 <img src="./imgs/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get It On Google Play">
             </a>
             <a href="https://apps.apple.com/us/app/addagrams-word-puzzle-games/id1426783573" class="h-[82px] md:h-full flex items-center justify-center md:w-full" target="_blank">
-                <img class="h-full" src="./imgs/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Get It On Google Play">
+                <img class="h-full" src="./imgs/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store">
             </a>
         </div>
 
@@ -99,7 +100,7 @@
             'Multiple difficulty levels keep pace with players\' progress.'
 		]}/>
 
-		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="Game Summary Image" imgRight={true} header="Contributions" items={[
+		<ImgListSplit src="\imgs\a3_GameSummary.jpg" alt="End-of-game Summary Image. Shows the score of 99 and the time of 9:49. Shows the word pairs played each round. Player statistics under that. At the bottom there is two tiles as buttons. A tile with a plus symbol to play another game of class addagrams. A tile with a closed-mouth emoticon smile that is to share your game with others. When clicked, the smile becomes an open-mouth one." imgRight={true} header="Contributions" items={[
             'Rearchitected the tutorial system and instructions to close down on iteration time.',
             'Remote Config for Ad graceperiods and chances pre and post game.',
             'Halved file sizes and decreased read time of puzzle data by converting from JSON to binary.',
@@ -163,7 +164,7 @@
         </div>
         <div class="text-center italic">Mocks ups Noah provided:</div>
         <div class="flex flex-wrap">
-            <img src="\imgs\adda-tutorial-mockup-p1.png" alt="Tutorial flow annotated mockup steps 1 through 5."/>
+            <img src="\imgs\adda-tutorial-mockup-p1.png" alt="Tutorial flow's annotated mockup, steps 1 through 5."/>
         </div>
         <div>
             Looking through his mockups for the new iteration and discussing with him some future tweaks we could forsee, I broke all the parts down

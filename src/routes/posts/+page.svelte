@@ -1,14 +1,17 @@
 <script lang="ts">
 	import BlogPostCard from '$lib/comps/BlogPostCard.svelte';
 	import FullBodyBg from '$lib/comps/FullBodyBg.svelte';
+	import HeadTitle from '$lib/comps/HeadTitle.svelte';
     import type { PageServerData } from './$types';
 
     let page:  PageServerData = $props();
     const { posts } = page.data;
 </script>
 
+<HeadTitle name="Posts" />
+
 <FullBodyBg>
-    <div class="h-full w-full max-w-[100vw] overflow-hidden">
+    <div class="h-full w-full max-w-[100vw] overflow-hidden flex justify-center">
         <div class="w-fit max-w-screen-lg flex flex-col self-center content-center">
             <div class="flex flex-row flex-nowrap gap-2 items-center px-2 pt-4 pb-6">
                 <div class="h-0.5 w-7 bg-black dark:bg-white"></div>
@@ -23,6 +26,7 @@
                         blurb={post.blurb}
                         written={post.written}
                         thumbnail={post.thumbnail}
+                        alt={post.alt}
                         tags={post.tags ?? []}
                         tools={post.tools ?? []}
                     />

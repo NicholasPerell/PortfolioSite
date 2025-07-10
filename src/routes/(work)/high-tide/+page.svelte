@@ -60,7 +60,7 @@
 
 			<ImgListSplit
 				src="/imgs/high-tide-shield-and-parkour.png"
-				alt="Rituals prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it."
+				alt="Player character leaping over some spikes while using a shield made up of telepathically controlled sand to protect against some toxic, green liquid from pouring on them from above."
 				imgRight={false}
 				header="Features"
 				items={[
@@ -72,7 +72,7 @@
 			/>
 			<ImgListSplit
 				src="\imgs\high-tide-truth-of-this-world.png"
-				alt="Game Summary Image"
+				alt="Floating vial of sand tells the player &quot;Let us show you the truth of this world.&quot;"
 				imgRight={true}
 				header="Contributions"
 				items={[
