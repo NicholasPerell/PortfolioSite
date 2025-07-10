@@ -2,6 +2,7 @@
 title: "Missing Those Places"
 blurb: "A little essay about identity, singing to Joel, Spidey, & not knowing when you'll be home."
 thumbnail: './imgs/aaron-home-pizza.jpg'
+alt: Pizza slice my friend, Aaron Pastor, sent me to indicate he had finally arrived back home in down-state New York.
 tags: ['Creative Writing']
 tools: []
 written: 2026-1-1

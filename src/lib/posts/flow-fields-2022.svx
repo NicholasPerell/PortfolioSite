@@ -2,6 +2,7 @@
 title: Flow Fields
 blurb: Had fun with this assignment.
 thumbnail: https://i3.ytimg.com/vi/I202RGtrSck/maxresdefault.jpg
+alt: Flowfield with fishies moving around on the game screen. Scene screen shows the same with an overlay of gizmos howing how the vectors are pointing depending on the user.
 tags: ['Game AI']
 tools: ['Unity', 'C#']
 written: 2022-3-7

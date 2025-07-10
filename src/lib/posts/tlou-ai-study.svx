@@ -2,6 +2,7 @@
 title: Looking Into How the "Last of Us" AI Detected Players and Handled Losing Track of Them
 blurb: Game AI Final.
 thumbnail: https://i3.ytimg.com/vi/Os4JRftexC4/maxresdefault.jpg
+alt: Enemy with vision cone using a searchmap to scout out the level now that they've lost track of the player.
 tags: ['Game AI', 'Case Study', 'The Last Of Us']
 tools: ['Unity', 'C#']
 written: 2020-12-16
