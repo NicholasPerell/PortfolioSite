@@ -20,7 +20,7 @@ export const works: WorkCardData[] = [
         },
         hoverPreview: {
             src: './imgs/c4_BigFun.gif',
-            alt: 'BIG FUN'
+            alt: 'Gameplay of Addagrams where someone has spelt BIG FUN.'
         },
         logline: `Refactored existing architecture (e.g. event systems, popups, analytics, & puzzle generation)
             and coded new features (e.g. “reveal” power, friend leaderboard, & tutorial system) for the word
@@ -38,7 +38,7 @@ export const works: WorkCardData[] = [
         },
         hoverPreview: {
             src: './imgs/artemis-fade-thumbnail.png',
-            alt: 'Addagrams'
+            alt: 'Game prototype with a fletcher showing the different dialogue arrows that store their lines, flag changes, and the archers that will require changes to be made to it.'
         },
         role: 'Open-Source Narrative Tool for Unity',
         logline: 'For games where the order of who you talk to or what you do is variable, Artemis accesses rules and world state data to give the most appropriate and important delivery. It’s not about the means of delivery, like Ink or Yarn Spinner, but instead about deciding what should be delivered.',
@@ -50,11 +50,11 @@ export const works: WorkCardData[] = [
         title: 'Project Nautilus',
         thumbnail: {
             src: '/imgs/pn-thumbnail.png',
-            alt: 'Addagrams'
+            alt: 'Project Nautilus'
         },
         hoverPreview: {
             src: '/imgs/pn-fade-thumbnail.png',
-            alt: 'Addagrams'
+            alt: 'Sparse Voxel Octree used for 3D Pathfinding the underwater caves.'
         },
         role: 'Technical & Narrative Director',
         logline: 'First-person, exploration-based game built in Unity where the player takes the role of a remote drone operator working for Isthmus, a mega corporation, piloting into the unknown depths below.',
@@ -86,7 +86,7 @@ export const works: WorkCardData[] = [
         },
         hoverPreview: {
             src: '/imgs/bwr-fade-thumbnail.png',
-            alt: 'The Tall One looks around with Lenora hidding inside her hat to not be spotted.'
+            alt: 'First-person persepective shot of gameplay with player wielding a sword.'
         },
         role: 'Product Owner & Systems Programmer',
         logline: 'First-person, action-based, 5v5 PvP game. Get across the map to capture enemy portals in order to score points, all while your abilities change as you traverse to different sections of the map. Defend, fight, evade, and capture.',
@@ -102,7 +102,7 @@ export const works: WorkCardData[] = [
         },
         hoverPreview: {
             src: '/imgs/high-tide-fade-thumbnail.jpg',
-            alt: 'The Tall One looks around with Lenora hidding inside her hat to not be spotted.'
+            alt: 'Collage showing Atlas, the main character of High Tide; a partially submerged house interior; and a preview of the sunken light house\'s interior.'
         },
         role: 'Product Owner & Lead Programmer',
         logline: '2D Metroidvania built in Unity where the player uses magic sand powers solve puzzles and fight enemies exploring the sunken depths of the past in search of a lost family heirloom.',
