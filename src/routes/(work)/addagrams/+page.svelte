@@ -9,9 +9,11 @@
     const width = 1664;
     const px = 50;
     const py = 160;
+    const idealWidth = width + px * 2;
 	const tools: Tools[] = ['C#', 'Unity', 'Git', 'Firebase', 'Atlassian'];
 
     let screenWidth :number = $state(0);
+    let portionCapped = $derived(Math.min(screenWidth/idealWidth,1));
 </script>
 
 <svelte:window bind:innerWidth={screenWidth} />
@@ -20,10 +22,10 @@
 
 <div class="bg-adda-backdrop w-full flex items-center justify-center">
      <div class="flex items-center justify-center max-w-screen-lg h-fit"
-     style:scale={`${Math.min(screenWidth/(width + px * 2),1) * 100}%`}
-     style:padding-top={`${Math.min(screenWidth/(width + px * 2),1) * py}px`}
-     style:padding-bottom={`${Math.min(screenWidth/(width + px * 2),1) * py}px`}
-     style:rotate={`${Math.max(0,1.0/3.0 - screenWidth/(width + px * 2)) * -180}deg`}
+        style:scale={`${portionCapped * 100}%`}
+        style:padding-top={`${portionCapped * portionCapped * py}px`}
+        style:padding-bottom={`${portionCapped * portionCapped * py}px`}
+        style:rotate={`${Math.max(0,1/3 - screenWidth/idealWidth) * -180}deg`}
      >
         <div class="border-adda-rackline bg-adda-rack h-48 border-y-8 border-r-8 p-2 first:border-l-8 first:rounded-l-2xl last:rounded-r-2xl">
             <AddagramsTile text="A" />
