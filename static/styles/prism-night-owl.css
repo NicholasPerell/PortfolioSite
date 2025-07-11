@@ -1,3 +1,22 @@
+/* Pre-license addition made by Nicholas Perell */
+
+@media (width >=768px) {
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+		line-height: 1.5;
+		font-size: 1em;
+	}
+}
+
+@media (width < 768px) {
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+		line-height: calc(1.25 / 0.875);
+		font-size: 0.875em;
+	}
+}
 /**
  * MIT License
  * Copyright (c) 2018 Sarah Drasner
@@ -15,8 +34,8 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	line-height: 1.5;
-	font-size: 1em;
+	/* line-height: 1.5;
+		font-size: 1em; */
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
