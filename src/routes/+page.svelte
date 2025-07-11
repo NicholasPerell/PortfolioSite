@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BlogPostCard from "$lib/comps/BlogPostCard.svelte";
 	import ExperienceCard from "$lib/comps/ExperienceCard.svelte";
+	import HeadTitle from "$lib/comps/HeadTitle.svelte";
 	import Link from "$lib/comps/Link.svelte";
     import { works } from "$lib/services/work";
     import type { PageServerData } from './$types';
@@ -9,6 +10,8 @@
     let featurePosts = posts.filter(p => p.written).slice(0, 4);
     let featureWorks = works.slice(0, 4);
 </script>
+
+<HeadTitle name="Nicholas Perell" />
 
 {#snippet callToAction(cls?: string)}
     <div class={'flex flex-nowrap gap-5 w-full justify-center grow items-center ' + cls}>
