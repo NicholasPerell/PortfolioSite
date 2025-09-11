@@ -1,6 +1,12 @@
 <script lang="ts">
 	export let title;
-	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+	import { browser } from '$app/environment';
+
+	let isFirefox = false;
+	
+	if (browser) {
+		isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+	}
 </script>
 
 <div class="flex items-center justify-center gap-1">

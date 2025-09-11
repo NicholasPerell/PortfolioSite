@@ -3,13 +3,12 @@
 	import ToolIconImage from "$lib/comps/ToolIconImage.svelte";
 	import FullBodyBg from '$lib/comps/FullBodyBg.svelte';
 	import HeadTitle from '$lib/comps/HeadTitle.svelte';
+	import type { Tools } from '$lib/services/datatypes';
 
 	export let title;
 	export let written: string;
 	export let tags: string[];
-	export let tools: string[];
-
-	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+	export let tools: Tools[];
 
 	let writtenArr = written.split('-').map((str) => parseInt(str));
 	let writtenDate = new Date(writtenArr[0], writtenArr[1] - 1, writtenArr[2]);
