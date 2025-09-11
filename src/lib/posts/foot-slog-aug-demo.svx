@@ -200,7 +200,7 @@ public class FaceAndShoot : EnemyState
     {
         if (!_enemy.CanRaycastHeadToPlayer())
         {
-            _enemy.ChangeState(Create<Persue>());
+            _enemy.ChangeState(Create<Pursue>());
             return;
         }
 
