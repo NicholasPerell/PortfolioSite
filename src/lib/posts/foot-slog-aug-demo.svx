@@ -1,0 +1,278 @@
+---
+title: FOOTSLOG
+blurb: You will be made perfect soon enough.
+thumbnail: ./imgs/posts/foot-slog-aug-demo/itch-thumbnail.png
+alt: FOOTSLOG. Subject 25 is ripping wires from the floor below him with one hand and holding his shotgun in the other.
+tags: ['Demo', 'FOOTSLOG']
+tools: ['Unity', 'C#', 'Git', 'Ink']
+written: 2025-9-11
+layout: post
+---
+<div class="*:object-fill *:w-full">
+
+![FOOTSLOG](/imgs/posts/foot-slog-aug-demo/title-red.png)
+
+</div>
+
+*FOOTSLOG* is a first-person boomer shooter with a unique interactive reloading mechanic: moving your mouse in circle to spin and rechamber the shotgun. You control Subject 25, a victim of a past tragedy who registered to join Revolution, an experimental military program headed by a man named Dr. Ouroboros. Shortly after joining, Subject 25 would learn the true horrific nature of Dr. Ouroboros's experiments and become trapped in an endless cycle of pain. It's time to break that cycle.
+
+![Point of view of Subject 25, shooting enemies and spinning his shotgun to reload.](/imgs/posts/foot-slog-aug-demo/reload.gif)
+
+This past month, I worked on a team of five developers on ***FOOTSLOG***. The vertical slice is up on itch.io for Windows.
+
+<iframe src="https://itch.io/embed/3773139" width="100%" height="167" frameborder="0"><a href="https://playfree-labs.itch.io/footslog">FOOTSLOG by Aaron Pastor, NicholasPerell, sodafungi, Alex Choate, Shaxipoo</a></iframe>
+
+Started during the 2025 GMTK Game Jam. The "loop" theme played into a lot of what the game became: the reload mechanic, the radiant dialogue dependant on how well you did each run compared to the last, and the narrative core of your character repeatedly trying to escape.
+
+![Dr. Ouroboros taunting the player after a failed escape attempt.](/imgs/posts/foot-slog-aug-demo/ouro-end-run.gif)
+
+My role on the team was the programmer. That meant the gameplay, enemies, UI, and systems. It was a lot to do over 96 hours, but I had a lot of fun with this team and spent most of it in a flow state. 
+
+After really enjoying our time during the jam and playing it ourselves, we agreed the game was fun and had a really strong identity. Its core mechanic, aesthetic, and radiant narrative really pulled it together. We decided to keep polishing what we had for the month of August.
+
+![A view from the game's dream world. The shotgun is resting against a tree, glowing red.](/imgs/posts/foot-slog-aug-demo/dream.gif)
+
+We didn't add new features, but we spent the month bug fixing, improving the player controller, and stitching the little bits of finale we didn't have the bandwidth to do during the jam. 
+
+# Programming on *FOOTSLOG*
+
+*FOOTSLOG* was developed in Unity 6.0.
+
+![Unity Editor of FOOTSLOG project.](/imgs/posts/foot-slog-aug-demo/unity-editor-screenshot.png)
+
+The first thing I want to highlight about *FOOTSLOG*'s programming is <u>our use of UI Toolkit</u>. [UI Toolkit](https://docs.unity3d.com/6000.3/Documentation/Manual/ui-systems/introduction-ui-toolkit.html) is inspired by the web techstack. In the same way web uses HTML, CSS, and JavaScript; UI Toolkit is comprised of UXML, USS, and C#.
+
+I'm working on a future blog post focusing on it, but for the needs of this post: I like UI Toolkit a lot, but there needs to be frameworks like in web development to improve the experience. *FOOTSLOG* has been a great chance to use some of those frameworks.
+
+I used [Virtual Maker's Bindings package](https://github.com/virtual-maker-net/com.virtualmaker.bindings/) to make properties that updated the UI when changed and could also be affected back (like in the case of the game's setting menu). 
+
+```cs
+// From MainMenuController.cs
+
+private void OnEnable()
+{
+    _bindings = new(_doc.rootVisualElement);
+
+    // ...
+
+    _bindings.OnClick("start-game-button", () => OnStartGameClicked?.Invoke());
+    _bindings.OnClick("options-button", () => _screenShown.Value = ScreenShown.Options);
+
+    // ...
+
+    _bindings.BindField("master-slider", settings.MasterVolume, twoWay: true);
+
+    // ...
+
+    _bindings.BindField("reload-sensitivity-slider", settings.ReloadSensitivity, twoWay: true);
+    _bindings.BindField("field-of-view-slider", settings.FieldOfView, twoWay: true);
+    _bindings.BindText("field-of-view-value", settings.FieldOfView, v => $"{Mathf.FloorToInt(v)}");
+
+    // ...
+
+    _bindings.BindClass("main-screen", "hidden", Derived.From(_screenShown, screen => screen != ScreenShown.Main));
+    _bindings.BindClass("options-screen", "hidden", Derived.From(_screenShown, screen => screen != ScreenShown.Options));
+
+    // ...
+
+}
+
+private void OnDisable()
+{
+    _bindings.Reset();
+}
+```
+
+Then, for the styling the UXML, I used a framework I've been working at on and off for over a year now: a recreation of the web framework [TailwindCSS](https://tailwindcss.com/) for UI Toolkit. A "TailwindUSS," if you will.
+
+TailwindUSS will generate a style sheet of utility classes (classes that only assign a value to one style property) based off the classes it reads in a UXML file, meaning all I have to do as a programmer is change the classes listed for an element to update its style and appearance.
+
+![3 buttons colored rose, amber, and emerald.](/imgs/posts/foot-slog-aug-demo/bg-color-example.png)
+```xml
+<ui:Button class="bg-rose-500 ..." ... />
+<ui:Button class="bg-amber-500 ..." ... />
+<ui:Button class="bg-emerald-500 ..." ... />
+```
+
+TailwindUSS includes "UXML_" files that copy over to UXML files with any special characters in the class attribute encoded via underscores so USS files recognize it as a valid class name. TailwindUSS then decodes it to assess the names and generate the classes.
+
+```xml
+<!-- .UXML_ -->
+<ui:Button class="bg-black/70 hover:bg-black/60 active:hover:bg-black ..." ... />
+<!-- .UXML -->
+<ui:Button class="bg-black_2F70 hover_3Abg-black_2F60 active_3Ahover_3Abg-black ..." ... />
+```
+
+And in cases where I didn't want to be copy/pasting any arbitrary values or utilities I would be using throughout the game, I updated to `tailwind.config.txt` file to customize the capabilities for the needs of *FOOTSLOG*.
+
+```
+@utility bg-*
+    background-image: --value(--img-*);
+
+@utility img-*
+    --unity-image: --value(--img-*);
+
+@utility img-stretch
+    ---unity-image-size: stretch-to-fill;
+
+@utility img-scale-crop
+    ---unity-image-size: scale-and-crop;
+
+@utility img-scale-fit
+    ---unity-image-size: scale-to-fit;
+
+@theme
+    --font-arcade: url(project://database/Assets/Fonts/PressStart2P/PressStart2P-Regular.ttf);
+
+    --color-red-title: #ff0d0d;
+    --color-red-credits: #890B0B;
+
+    --img-health-3: url(project://database/Assets/Art/UI/HUD/Icon.png);
+    --img-health-2: url(project://database/Assets/Art/UI/HUD/Icon1.png);
+    --img-health-1: url(project://database/Assets/Art/UI/HUD/Icon2.png);
+    --img-health-0: url(project://database/Assets/Art/UI/HUD/Icon3.png);
+    --img-title: url(project://database/Assets/Art/UI/Title.png);
+    --img-title-white: url(project://database/Assets/Art/UI/Title-White.png);
+
+    --text-soda: 18px;
+```
+
+With the Bindings and TailwindUSS frameworks, I was able to create some great UI elements, like the dialogue or gameplay HUD.
+
+![Reloading to spread or slug shot changes the game cross hairs to reflect the area the bullet covers.](/imgs/posts/foot-slog-aug-demo/hud-ui.gif)
+```xml
+<ui:VisualElement name="crosshair-panel" class="absolute size-full justify-center items-center">
+    <ui:VisualElement class="flex-row justify-center items-center *:duration-100 *:delay-0 *:transition-all">
+    <ui:VisualElement name="left-disc" class="w-1.5 h-3 overflow-hidden items-start">
+        <ui:VisualElement class="size-3 rounded-full border-1 border-white/50" />
+    </ui:VisualElement>
+    <ui:VisualElement name="plus" class="absolute size-3 justify-center items-center opacity-0">
+        <ui:VisualElement class="bg-white/50 absolute w-[2px] h-full"/>
+        <ui:VisualElement class="bg-white/50 absolute h-[2px] w-full"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="right-disc" class="w-1.5 h-3 overflow-hidden items-end mr-0">
+        <ui:VisualElement class="size-3 rounded-full border-1 border-white/50" />
+    </ui:VisualElement>
+    </ui:VisualElement>
+</ui:VisualElement>
+```
+
+Another aspect from the jam I felt was relatively involved was the enemy AI. It used a state machine to control the logic of the enemies while also giving the enemy controller itself plenty of methods to call in terms of shooting, aiming, perception, and movement.
+
+![Project screenshot. Mutant enemy is selected and it has gizmo lines to show the areas it checks to get sight of the player.](/imgs/posts/foot-slog-aug-demo/enemy-mutant-gizmos.png)
+
+```cs
+public class Persue : EnemyState
+{
+    float timeToCheckAgain = 1;
+    float timer;
+
+    /* ... */
+
+    public override void Update(float delta)
+    {
+        _enemy.PathToPlayer();
+        _enemy.Steer(delta);
+
+        timer -= delta;
+        if (timer <= 0)
+        {
+            timer += timeToCheckAgain;
+
+            if (_enemy.CanRaycastHeadToPlayer())
+            {
+                _enemy.ChangeState(Create<FaceAndShoot>());
+            }
+        }
+    }
+}
+
+public class FaceAndShoot : EnemyState
+{
+
+    float firingTimer;
+    float moveTimer;
+    Vector3 strafe;
+
+    /* ... */
+
+    public override void Update(float delta)
+    {
+        if (!_enemy.CanRaycastHeadToPlayer())
+        {
+            _enemy.ChangeState(Create<Persue>());
+            return;
+        }
+
+        _enemy.FaceDirectly();
+
+        _enemy.Strafe(strafe);
+
+        firingTimer -= delta;
+
+        if (firingTimer <= 0)
+        {
+            if (Random.value < _enemy.Config.OddsAccurateFire)
+            {
+                _enemy.FireAccountingForVelocity();
+            }
+            else
+            {
+                _enemy.FireDirectly();
+            }
+
+            firingTimer += Random.Range(_enemy.Config.TimePauseFireMin, _enemy.Config.TimePauseFireMax);
+        }
+
+        moveTimer -= delta;
+
+        if (moveTimer <= 0)
+        {
+            _enemy.Stop();
+
+            if (_enemy.MovementDir.Value.sqrMagnitude < 1)
+            {
+                strafe = _enemy.TurnToStrafe(Random.insideUnitCircle * 2);
+                moveTimer = Random.Range(_enemy.Config.TimeMovingMin, _enemy.Config.TimeMovingMax);
+            }
+        }
+
+        var diff = (_enemy.Player.transform.position - _enemy.transform.position).sqrMagnitude;
+
+        if (diff < _enemy.Config.MinSpacing * _enemy.Config.MinSpacing)
+        {
+            _enemy.Evade();
+        }
+        else if (diff > _enemy.Config.MaxSpacing * _enemy.Config.MaxSpacing || _enemy.Player.Ammo.Value == 0)
+        {
+            _enemy.RushPlayer();
+        }
+
+        _enemy.Steer(delta);
+    }
+
+    public override void OnColliderOverlap(Collider collision)
+    {
+        _enemy.Log.Info("Collided! Going to change direction");
+        moveTimer = -1;
+    }
+}
+```
+
+It definitely could be improved, like using an interface that had events to make requests for actions or data instead of having the `EnemyChar` outright accessed. However, it worked really well programmatically for the scope of what we wanted to achieve in August.
+
+# What Next?
+
+So, what is the future for *FOOTSLOG*, if anything?
+
+After uploading the vertical slice, we sent it around to many of our friends, family, mentors, and peers. I went to my area's Code & Coffee to get playtesters.
+
+The response we recieved was promising. Our guesses for the vertical slice's strengths and weaknesses aligned with playtesters' feedback, and we were told *FOOTSLOG* had legs. A professor suggested we look for funding. I was asked for the Steam page by playtesters so they could wishlist it.
+
+*FOOTSLOG* is a really fun game both to play and to work on. And with the positive response, the question went from if we wanted to keep developing the game, to if we actually *could*. The team as a whole can't afford to keep working on the game the amount we did this August. We have jobs, job searching, and commission work to do. We need to eat. Given that, don't expect a full-throtle production for *FOOTSLOG*. Don't expect a full release in January on Steam.
+
+That being said, don't expect *no* release on Steam. As a team, we've decided to develop it in a "slow burn" fashion going forward. We've made some clear boundries for what an expanded version of *FOOTSLOG* means, and will continue working on the project as we can, sharing updates and keeping each other posted about availability as it changes. We work well together, we have an organized backlog, and we've already started improving it.
+
+I'm looking for my next job, so my time's split between between applying, TailwindUSS, [Artemis](artemis), and *FOOTSLOG*. There's only so many new job postings each week, and I'm hoping with the other three to update my portfolio and code samples to my current skill level. I learnt and grew a lot as a programmer in my last role, and I want that reflected in what I show when I'm applying. 
+
+Expect updates and posts here as I make my own progress programming *FOOTSLOG*! Refactoring and improvements are already underway, and I'm confident about what's ahead of us.

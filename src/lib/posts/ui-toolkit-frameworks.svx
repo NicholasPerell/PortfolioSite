@@ -9,3 +9,8 @@ written: 2026-1-1
 ---
 
 So, UXML, huh?
+
+
+For designers, one of its sells is the [UI Builder window](https://docs.unity3d.com/6000.3/Documentation/Manual/UIB-interface-overview.html), which feels like Figma with a very specific restriction. There's still a heirarchy to the elements, so you can't just move and position everything about willy-nilly like in Figma. However, that restriction means that once the UI has been constructed in the window, *that's* the UXML and USS set up. All the UI programmer has to do now is implement behavior for it in C#.
+
+However, one issue with UI Toolkit is that it's hard to get into. In the past, as someone who was used to the older UI systems, every half-a-year I'd open up a new project, mess about with it, and bounce off. It's the same problem I had whenever I tried to learn web's vanilla tech stack by myself.
