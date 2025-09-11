@@ -9,6 +9,7 @@
 	export let written: string;
 	export let tags: string[];
 	export let tools: Tools[];
+	export let thumbnail: string;
 
 	let writtenArr = written.split('-').map((str) => parseInt(str));
 	let writtenDate = new Date(writtenArr[0], writtenArr[1] - 1, writtenArr[2]);
@@ -16,6 +17,11 @@
 </script>
 
 <HeadTitle name={'Post — ' + title} />
+
+<svelte:head>
+		<meta property="og:image" content={thumbnail.substring(1)}/>
+		<meta property="twitter:image" content={thumbnail.substring(1)}/> 
+</svelte:head>
 
 <FullBodyBg> 
 	<div class="w-full p-6 flex justify-center">
