@@ -162,7 +162,7 @@ Another aspect from the jam I felt was relatively involved was the enemy AI. It 
 ![Project screenshot. Mutant enemy is selected and it has gizmo lines to show the areas it checks to get sight of the player.](/imgs/posts/foot-slog-aug-demo/enemy-mutant-gizmos.png)
 
 ```cs
-public class Persue : EnemyState
+public class Pursue : EnemyState
 {
     float timeToCheckAgain = 1;
     float timer;
