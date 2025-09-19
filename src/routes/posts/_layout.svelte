@@ -99,6 +99,10 @@
 		@apply text-justify;
 	}
 
+	:global(.article p > code) {
+		@apply bg-white dark:bg-slate-800 p-0.5;
+	}
+
 	:global(.article > p > img) {
 		@apply mx-auto max-h-[32rem];
 	}
@@ -113,10 +117,13 @@
 
 	:global(.article pre) {
 		@apply rounded;
+		@media (prefers-color-scheme: light) {
+        	background-color: rgb(67, 86, 78);
+		}
 	}
 
 	:global(.article pre > code) {
-		@apply font-mono;
+		@apply font-mono text-base;
 	}
 
 	:global(.article a) {
