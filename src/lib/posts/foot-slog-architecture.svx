@@ -1,6 +1,6 @@
 ---
 title: Rearchitecting FOOTSLOG
-blurb: Services, State Machines, and Single Entry Protocal
+blurb: Services, State Machines, and Single Entry Protocal.
 thumbnail: ./imgs/posts/foot-slog-architecture/initstate-mermaid.png
 alt: FOOTSLOG. Subject 25 is ripping wires from the floor below him with one hand and holding his shotgun in the other.
 tags: ['Systems Programming','Game Architecture','FOOTSLOG']
