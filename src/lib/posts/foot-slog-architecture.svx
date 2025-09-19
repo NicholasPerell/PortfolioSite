@@ -1,0 +1,392 @@
+---
+title: Rearchitecting FOOTSLOG
+blurb: Services, State Machines, and Single Entry Protocal
+thumbnail: ./imgs/posts/foot-slog-architecture/initstate-mermaid.png
+alt: FOOTSLOG. Subject 25 is ripping wires from the floor below him with one hand and holding his shotgun in the other.
+tags: ['Systems Programming','Game Architecture','FOOTSLOG']
+tools: ['C#', 'Unity', 'Git']
+written: 2025-09-19
+layout: post
+---
+
+In my last post, we had wrapped a [successful month, post-jam, polishing *FOOTSLOG*](/posts/foot-slog-aug-demo). Now it was time, as the programmer, to get started overhauling things. The groundwork for the project was coded during the four-day game jam, and August faced a lot of post-jam triages being placed upon end-of-jam-rush triages. If we wanted something that could be expanded and iterated upon, there was a lot of cleaning house to be done.
+
+## Logger
+
+The first thing I knew I wanted was some helpful logging that would be easier to search for in the console and to turn parts on and off. Inspired by a logger [Stephen Hodgson](https://www.linkedin.com/in/stephenjhodgson/) and [Alon Farchy](https://www.virtualmaker.dev/) made while working on Burner Sphere, I decided to make my own.
+
+It starts off by taking in a prefix name and a color that then turns into a prefix wrapped in square brackets and given a color via a rich text tag.
+
+```cs
+public enum LogLevel
+{
+    Verbose,
+    Info,
+    Warning,
+    Error,
+}
+
+[Serializable]
+public struct Logger
+{
+    [SerializeField]
+    private string _prefix;
+
+    [SerializeField]
+    public LogLevel Level;
+
+    public UnityEngine.Object Obj;
+
+    public Logger(string prefix, Color color) : this(prefix, $"#{ColorUtility.ToHtmlStringRGBA(color)}")
+    { }
+
+    public Logger(string prefix, string color)
+    {
+        _prefix = $"<color={color}>[{prefix}]</color>";
+        Level = LogLevel.Error;
+        Obj = null;
+    }
+
+    // ...
+
+}
+```
+
+For example, `_log = new(nameof(HudUI), "#df432eff")` when calling `_log.Info("health 3")` would output:
+
+![[10:35:38] [HudUI] health 3. The HudUI is red.](/imgs/posts/foot-slog-architecture/hud-ui-console.png)
+
+The `Level` is used to determine what kind of debug logs show up in our console. A logger with the level set to `LogLevel.Warning` won't print calls to the `Info` nor `Verbose` methods, but will print `Warning` and `Error`.
+
+```cs
+public void Verbose(string message)
+{
+    if (Level == LogLevel.Verbose)
+    {
+        Debug.Log(Format(message));
+    }
+}
+
+public void Info(string message)
+{
+    if (Level <= LogLevel.Info)
+    {
+        Debug.Log(Format(message));
+    }
+}
+
+public void Warning(string message)
+{
+    if (Level <= LogLevel.Warning)
+    {
+        Debug.LogWarning(Format(message));
+    }
+}
+
+public void Error(string message) => Debug.LogError(Format(message));
+```
+
+These methods also allow the pass-in of not just a `string`, but also have overloads for `Func<string>`. Sometimes a lower-level log has a lot of information to gather and build into a string. Now that building can be avoided if the logger's level wouldn't have printed it, anyways.
+
+```cs
+public void Warning(Func<string> toString)
+{
+    if (Level <= LogLevel.Warning)
+    {
+        Warning(toString());
+    }
+}
+```
+
+Sometimes there may be multiple game objects with a component containing a logger. In those cases, that is what the `public UnityEngine.Object Obj;` is for. In the `Format` method, if the `Obj` is not set to null, then its name will be included in the prepend to the message in the console logs.
+
+```cs
+private string Format(string message)
+{
+    var sb = new StringBuilder(_prefix);
+
+    if (Obj.IsNotNull())
+    {
+        sb.Append(' ').Append(Obj.name).Append(':');
+    }
+
+    sb.Append(' ').Append(message);
+
+    return sb.ToString();
+}
+```
+
+Just by calling `_log.Obj = gameObject;` in the `Enemy`'s `Awake` method:
+
+![[11:06:21] [Enemy] Enemy (10): Removing SteerBehaviour Behaviour. \n [11:06:21] [Enemy] Sucker Punch Enemy: Adding VisionConeSightBehaviour Behaviour. \n [11:06:21] [Enemy] Entrance Gaurd: Adding VisionConeSightBehaviour Behaviour.](/imgs/posts/foot-slog-architecture/enemy-obj-console.png)
+
+Of course, we want changing the logger's value accessible to the designers, too. For that, I made a custom Property Drawer that allows the designer to change the prefix, color, and level.
+
+![Logger Property Drawer](/imgs/posts/foot-slog-architecture/pause-menu-logger-drawer.png)
+
+It was great having this for cleaning things up, as I could be smarter with my console searches and declutter once I was done debugging.
+
+## Base Architecture
+
+When working out the game's base architecture, I pulled from three points of inspiration.
+
+1) Service Locators. We made good use of them at Virtual Maker. Alon [mentions it in his comprehensive Git & Unity guide](https://www.virtualmaker.dev/blog/git-and-unity-a-comprehensive-guide-to-version-control-for-game-devs#avoiding-asset-references-dependency-injection-and-service-locator).
+
+2) [A great video on Single Entry Point from PracticAPI](https://youtu.be/jEx6XklIscg).
+
+3) Looking over the discontinued Unity Open Project's [Scene Architecture Diagram](https://miro.com/app/board/o9J_khLZ3kQ=/?moveToWidget=3074457353275877659&cot=14) to think about using an `EditorInitializer` to boot up the game from any scene.
+
+I decided on the following: the **Base Scene** holds the `ServiceLocator` with the different services as its children in the heirarchy. On `Awake`, the locator will get the `IService` components in its children. It'll call `ServiceEnable` for each service and invoke an event to signal the service has been enabled. The `GameStateService` is a state machine with states that make calls to other services or affect game-state values other objects might be looking to for guidance.
+
+When the application starts up with the Base Scene as the active scene, the default `InitState` for the Game State Service will kick off the state machine. It make the calls necessary for the Main Menu scene to load in and to listen for the main menu's start button to be pressed. 
+
+![InitState Process](/imgs/posts/foot-slog-architecture/initstate-mermaid-1.png)
+
+When the editor enters playmode from a different scene with an `EditorInitializer`, the following plays out:
+1) The Editor Initializer loads the missing Base Scene in.
+2) The Game State Service sees on `ServiceEnable` that the base class is a different scene. If that scene's `EditorInitializer` is storing a State, the Game State Service will start the state machine with this state instead.
+
+```cs
+// GameStateService.cs
+
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using VirtualMaker.Bindings;
+
+namespace OEG.FootSlog.GameState
+{
+    public class GameStateService : MonoBehaviour, IService
+    {
+        [SerializeField]
+        private Logger _log = new(nameof(GameStateService), "#AAFF99") { Level = LogLevel.Info };
+
+        [SerializeField]
+        private GameStateConfig _config;
+
+        [SerializeField]
+        internal Property<CursorLockMode> _cursorLock = new(CursorLockMode.Confined);
+
+        // More Properties ...
+
+        private Bindings _bindings = new();
+        private Bindings _stateBindings = new();
+
+        private IGameState _state;
+
+        public void ServiceEnable()
+        {
+            _bindings.AddUnsubscriber(() => _stateBindings.Reset());
+            _bindings.Bind(_cursorLock, mode => 
+            {
+                _log.Verbose($"{nameof(Cursor)}.{nameof(Cursor.lockState)} = {mode}");
+                Cursor.lockState = mode;
+            });
+
+#if UNITY_EDITOR
+            IGameState state = new InitState();
+            var activeSc = SceneManager.GetActiveScene();
+
+            if (activeSc.buildIndex != _config.BaseScene.BuildIndex)
+            {
+                var roots = activeSc.GetRootGameObjects();
+                foreach (var root in roots)
+                {
+                    if (root.TryGetComponent<EditorInitializer>(out var editorInit))
+                    {
+                        state = editorInit.State;
+                        break;
+                    }
+                }
+            }
+
+            SetState(state);
+#else //UNITY_EDITOR
+            SetState(new InitState());
+#endif //UNITY_EDITOR
+        }
+
+        public void ServiceDisable()
+        {
+            _bindings.Reset();
+        }
+
+        private void Update()
+        {
+            _state?.Update(Time.deltaTime);
+        }
+
+        private void SetState(IGameState state)
+        {
+            _stateBindings.Reset();
+            _state = state;
+            _log.Info($"{nameof(SetState)}: {state.GetType().Name}");
+            state.OnChange += SetState;
+            _stateBindings.AddUnsubscriber(() => state.OnChange -= SetState);
+            _stateBindings.AddUnsubscriber(() => state.Disable());
+            _state.Enable();
+        }
+    }
+}
+```
+
+Overall, pretty solid, but there are a couple spots where the **order of the services being enabled** or the **multi-scene loading** could lead to errors inside a gamestate.
+
+![InitState Process](/imgs/posts/foot-slog-architecture/initstate-mermaid-2.png)
+
+For the order of the services, I wrote an extension method for [VirtualMaker's Bindings](https://github.com/virtual-maker-net/com.virtualmaker.bindings/) called `OnService`. It passes in an action using a specified service. If the service doesn't exist to call the action immediately, the bindings will wait for the `ServiceLocator` to signal the service being enabled to call it.
+
+```cs
+using VirtualMaker.Bindings;
+using System;
+
+namespace OEG.FootSlog
+{
+    public static class BindingsServiceExtension
+    {
+        public static void OnService<T>(this Bindings bindings, Action<T> action) where T : IService
+        {
+            if (ServiceLocator.TryGet<T>(out var service))
+            {
+                action(service);
+            }
+            else
+            {
+                ServiceLocator.OnServiceEnabled += HandleServiceEnabled;
+                bindings.AddUnsubscriber(() => ServiceLocator.OnServiceEnabled -= HandleServiceEnabled);
+            }
+
+            void HandleServiceEnabled(Type type, IService iservice)
+            {
+                if (iservice is T service)
+                {
+                    ServiceLocator.OnServiceEnabled -= HandleServiceEnabled;
+                    action(service);
+                }
+            }
+        }
+    }
+}
+```
+
+```cs
+// Used here in the Enable of a game state. Waits for 
+// the SceneService to be available before making calls
+// to load scenes, then changes to a new game state.
+
+_bindings.OnService<ScenesService>(async scs =>
+{
+    await scs.PushLayerAsync(game.Config.Gameplay);
+    await scs.AddToLayerAsync(_gameWorldBase);
+    await scs.PushLayerAsync(_roomReached);
+    Change(new DemoLevelState());
+});
+```
+
+For handling the multi-scene loading, I added an `ObjectFinderService` that objects can declare its type's creation/deletion to, and for other objects to get a `Property<T>` of a requested type that updates its value between the found object of type T or null when there isn't one to be found.
+
+```cs
+using UnityEngine;
+using System;
+using System.Collections.Generic;
+using VirtualMaker.Bindings;
+
+namespace OEG.FootSlog
+{
+    public class ObjectFinderService : MonoBehaviour, IService
+    {
+        Dictionary<Type, Property<object>> _dict;
+
+        public void ServiceEnable()
+        {
+            _dict = new();
+        }
+
+        public void ServiceDisable()
+        {
+            foreach (var (_, prop) in _dict)
+            {
+                prop.Value = null;
+            }
+            _dict.Clear();
+        }
+
+        public void Report<T>(T obj) where T : class
+        {
+            if (_dict.TryGetValue(typeof(T), out var result))
+            {
+                if (result.Value == null)
+                {
+                    result.Value = obj;
+                }
+            }
+            else
+            {
+                _dict[typeof(T)] = new(obj);
+            }
+        }
+
+        public void Cancel<T>(T obj) where T : class
+        {
+            if (_dict.TryGetValue(typeof(T), out var result))
+            {
+                if (result.Value == (object)obj)
+                {
+                    result.Value = null;
+                }
+            }
+        }
+
+        public IProperty<T> Get<T>() where T : class
+        {
+            if (!_dict.TryGetValue(typeof(T), out var result))
+            {
+                _dict[typeof(T)] = new();
+            }
+
+            return Derived.From(_dict[typeof(T)], obj => obj == null ? null : (T)obj);
+        }
+
+        public bool TryGet<T>(out IProperty<T> result) where T : class
+        {
+            result = Get<T>();
+            return result.Value != null;
+        }
+    }
+}
+```
+
+This, along with writing another bindings extension, `BindFoundObject`, helped immensely.`InitState` can listen for the main menu's start button to be pressed, and controllers loaded in via an additive scene can find their manager to report for duty ASAP.
+
+``` cs
+// Both extensions used here in the Enable of the InitState.
+// Waits for the ObjectFinderService to be enabled, then
+// Listens to the MainMenuController's OnStartGameClicked 
+// event whenever it can be found.
+
+_bindings.OnService<ObjectFinderService>(finder =>
+{
+    _bindings.BindFoundObject<MainMenuController>(finder, (menu, subBindings) =>
+    {
+        subBindings.On(menu.OnStartGameClicked, () => OnChange?.Invoke(new GameStartState()));
+    });
+});
+```
+
+![InitState Process](/imgs/posts/foot-slog-architecture/initstate-mermaid-0.png)
+
+
+## Other Services
+Along with the Game State and Object Finder services, there's a couple more worth pointing out.
+
+- **Audio:** Created during the jam, the primary refactor since then is the creation of commands. The commands' constructors will `TryGet` the service before calling one of its public methods like `PlaySound2D`, `PlaySound3D`, or `PlayAttachedSound`.
+- **Gizmo:** Can temporily draw Gizmos lines and set colors that then disappear. Used for showing the firing lines of a scatter shot.
+- **FadeScreen:** Used for the fade to and from colors for scene transitions that'll change the active scene.
+
+![InitState Process](/imgs/posts/foot-slog-architecture/initstate-mermaid.png)
+
+The Scene Service has plenty of work I've done on it, but I think I'll keep those details for a future post.
+
+## Closing Thoughts
+
+I'm very happy with how things are coming together. Looking at logs on the task board, this all took about eighteen and a half hours, of which eight were spent making the game state service from scratch. The time spent appears to have been worth it. I'm loving the game state interfaces and how much faster it is to track/fix the game state. I'm also loving the service locator not being needed in every scene thanks to the single entry point and editor initializers. It has been a remarkable improvement, and the game is much more likely to succeed with this new foundation.
