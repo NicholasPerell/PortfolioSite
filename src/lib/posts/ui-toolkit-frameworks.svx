@@ -5,7 +5,7 @@ thumbnail: './imgs/unity-6-0-loading.png'
 alt: Unity 6
 tags: ['UI Programming']
 tools: ['Unity', 'TailwindCSS', 'UIToolkit', 'TypeScript', 'C#']
-written: 2026-1-1
+written: 2030-1-1
 ---
 
 So, UXML, huh?
