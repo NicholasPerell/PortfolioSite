@@ -47,7 +47,7 @@
             </p>
             {@render callToAction('hidden lg:flex')}
         </div>
-        <img class="hidden sm:block aspect-square max-w-[33%] md:max-w-full md:w-full h-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
+        <img class="hidden sm:block aspect-square max-w-[33%] h-full" src=".\imgs\nick\seattle-falls-shot.jpg" alt="Nicholas Perell" />
         </div>
             {@render callToAction('flex lg:hidden')}
         </div>

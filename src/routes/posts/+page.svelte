@@ -5,7 +5,7 @@
     import type { PageServerData } from './$types';
 
     let page:  PageServerData = $props();
-    const { posts } = page.data;
+    const { posts } = page;
 </script>
 
 <HeadTitle name="Posts" />
