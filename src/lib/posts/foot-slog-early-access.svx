@@ -1,0 +1,32 @@
+---
+title: FOOTSLOG on Early Access
+blurb: Play it on Steam!
+thumbnail: ./imgs/posts/foot-slog-early-access/out-now-art.jpg
+alt: FOOTSLOG. "Play Now!" Subject 25 has ripped part of the head off of an enemy mutant.
+tags: ['FOOTSLOG']
+tools: ['Unity', 'C#', 'Git', 'Yarn Spinner', 'UI Toolkit']
+written: 2026-04-27
+layout: post
+---
+
+<iframe
+        src="https://store.steampowered.com/widget/4387810/"
+        frameborder="0"
+        width="100%"
+        height="190"
+        title="Steam Embed"
+    ></iframe>
+
+After 9 months of chipping away at development, *FOOTSLOG* is out on Steam Early Access!
+
+This past August–March as *the* programmer on the game has been SO MUCH work, but I'm serious when I say: the team and I balled SO HARD with this one. Hard work. Quality work. The game's worth the asking price, in my humble opinion.
+
+<br>
+<iframe width="100%" class="aspect-video" src="https://www.youtube.com/embed/ToUO5sluIkQ" title="Footslog Early Access Gameplay Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+
+The reason for "early access" is because the designers have been having a lot of fun making the game, and they want to keep going at it with the level design, replayability, and progression. You can still play the game's campaign to its end in this version and get all the collectable data drives.
+
+This marks the third game I've gotten up on Steam, and the fourth on a store front. *FOOTSLOG* has some of the most serious work I've done as a Unity and C# dev. I handled the game architecture, level tools, underlying systems, narrative logic, gameplay, and UI. Even with things like the enemy AI, where I didn't have a stand out undertaking compared to some past projects (e.g. SVOs for underwater pathfinding), the code feels clean and reliable. I hope I can get posts discussing the things I worked on up on the site, soon. It'll be good to have code samples up.
+
+And hey, if *you're* looking for a programmer to contract or hire full time, you're in luck! I'm open to work and actively looking for something new. If you got something in mind, let's talk.
