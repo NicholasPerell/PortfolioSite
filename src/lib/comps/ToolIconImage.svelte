@@ -25,7 +25,7 @@
 			alt: 'Ink'
 		},
 		['Yarn Spinner']: {
-			src: 'https://camo.githubusercontent.com/d928ff77c57ff582c4ed8da2b3d13a6ff2b7b21ac780ea01e83ea31e2199551f/68747470733a2f2f646f776e6c6f6164732e7961726e7370696e6e65722e6465762f6765742f5961726e5370696e6e65724c6f676f2e706e67',
+			src: 'https://downloads.yarnspinner.dev/get/YarnSpinnerLogo.png',
 			alt: 'Yarn Spinner'
 		},
 		['Google Cloud TTS']: {
