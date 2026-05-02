@@ -23,7 +23,7 @@
 		<ul class="list-disc pl-8">
 			{#each data.items as item}
 				{#if item instanceof Formattable}
-					<Formatter data={item}/>
+					<li><Formatter data={item}/></li>
 				{:else}
 					<li>{item}</li>
 				{/if}
