@@ -10,6 +10,9 @@ export type Tools =
     'Firebase' |
     'Bitbucket' |
     'Atlassian' |
+    'UI Toolkit' |
+    'uGUI' |
+    'Svelte' |
     'TypeScript';
 
 export interface ImgAttributes {

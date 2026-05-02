@@ -29,15 +29,15 @@
 			alt: 'Yarn Spinner'
 		},
 		['Google Cloud TTS']: {
-			src: './imgs/text-to-speech.svg',
+			src: '/imgs/text-to-speech.svg',
 			alt: 'Google Cloud TTS'
 		},
 		['Firestore']: {
-			src: './imgs/firestore.svg',
+			src: '/imgs/firestore.svg',
 			alt: 'Firestore'
 		},
 		['Firebase']: {
-			src: './imgs/firebase.svg',
+			src: '/imgs/firebase.svg',
 			alt: 'Firebase'
 		},
 		['Bitbucket']: {
@@ -45,7 +45,7 @@
 			alt: 'Bitbucket'
 		},
 		['Atlassian']: {
-			src: './imgs/atlassian.svg',
+			src: '/imgs/atlassian.svg',
 			alt: 'Atlassian'
 		},
 		['TypeScript']: {
@@ -63,6 +63,14 @@
 		['InDesign']: {
 			src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/768px-Adobe_InDesign_CC_icon.svg.png',
 			alt: 'InDesign'
+		},
+		['uGUI']: {
+			src: '/imgs/canvas-icon.png',
+			alt: 'uGUI'
+		},
+		['UI Toolkit']: {
+			src: '/imgs/uxml-icon.png',
+			alt: 'UI Toolkit'
 		}
 	};
 
