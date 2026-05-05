@@ -19,7 +19,7 @@ layout: post
 
 After 9 months of chipping away at development, *FOOTSLOG* is out on Steam Early Access!
 
-This past August–March as *the* programmer on the game has been SO MUCH work, but I'm serious when I say: the team and I balled SO HARD with this one. Hard work. Quality work. The game's worth the asking price, in my humble opinion.
+This past August–March as *thee* programmer on the game has been SO MUCH work, but I'm serious when I say: the team and I balled SO HARD with this one. Hard work. Quality work. The game's worth the asking price, in my humble opinion.
 
 <br>
 <iframe width="100%" class="aspect-video" src="https://www.youtube.com/embed/ToUO5sluIkQ" title="Footslog Early Access Gameplay Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
