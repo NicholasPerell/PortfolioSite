@@ -13,6 +13,25 @@ export interface WorkCardData {
 
 export const works: WorkCardData[] = [
     {
+        title: 'FOOTSLOG',
+        thumbnail: {
+            src: './imgs/posts/foot-slog-aug-demo/itch-thumbnail.png',
+            alt: 'FOOTSLOG'
+        },
+        hoverPreview: {
+            src: './imgs/footslog-features.gif',
+            alt: 'Gameplay of FOOTSLOG where the player is reloading their weapon.'
+        },
+        logline: `FOOTSLOG is a retro-inspired FPS equipped with fast-paced action
+				and a unique interactive reloading mechanic. Take control of Subject 25 as you fight through
+				a twisted experiment that will stop at nothing to see you perfected. Can you truly walk away
+				from what this facility has made you become?`,
+        role: 'Lead Programmer',
+        hoverText: 'August 2025–April 2026',
+        tools: ['C#', 'Unity', 'Git', 'Yarn Spinner', 'UI Toolkit', 'Ink'],
+        uri: 'footslog'
+    },
+    {
         title: 'Addagrams',
         thumbnail: {
             src: './imgs/addagrams-thumbnail.jpg',
