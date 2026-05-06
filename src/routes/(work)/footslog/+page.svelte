@@ -59,7 +59,6 @@
 			header="Features"
 			items={[
 				'Fast-paced gameplay centered around spinning the gun to reload and parry.',
-				'Powerups to give hints help players spot word pairs.',
 				'Distinct style and art direction to capture the gritty essence of the game.',
 				'Radiant dialogue when downed and when taking reprieve in the dream world.',
 				'Levels to fight through a rehearsal of violence and explore.'
